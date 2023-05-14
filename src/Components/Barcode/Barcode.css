@@ -1,0 +1,81 @@
+.Barcode{
+    background: white;
+    border-radius: 10px;
+    width: 270px;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+@media (max-width:1113px) {
+    .Barcode{
+        width: 111%;
+    }.Barcode img{
+        width: 200px;
+        position: relative;
+        top: 20px;
+    }
+}
+@media (max-width:1023px) {
+    .Barcode{
+        width: 100% !important;
+    }.Barcode img {
+        width: 229px;
+        height: 207px;
+    }
+}
+
+@media (max-width:600px) {
+    .Barcode img {
+        width: 204px;
+        height: 183px;
+        margin-bottom: 5rem;
+    }
+}
+.Barcode .nav-tabs{
+    position: absolute;
+    bottom: 4px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    border: 0px !important;
+    background-color: #ececec ;
+
+}
+.Barcode .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+border: 0px !important;
+color: black !important;
+white-space: nowrap;
+
+}
+.Barcode .nav-item{
+    width: 50%;
+}
+.Barcode .nav-link {
+    border: 0px !important;
+    color: #a6a6a6;
+    font-size: .9rem;
+    width: 100%;
+    white-space: nowrap;
+}
+.Barcode .nav-link:hover{
+color: #a6a6a6;
+}
+.Barcode .active{
+    color: black !important;
+}
+.Barcode .active:active{
+    color: black !important;
+}
+.Barcode img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 1rem;
+    position: relative;
+    bottom: 5px;
+}
+@media (max-width:1151px) {
+    .Barcode img {
+        margin-top: 0rem;
+    }
+}

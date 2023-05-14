@@ -1,0 +1,314 @@
+.Login_Signup{
+  
+    z-index: 999;
+    width: 100%;
+  position: relative;
+
+  margin-left: auto;
+  margin-right: auto;
+  top: 15%;
+
+}
+ 
+.Login_Signup main section{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    border-radius: 10px;
+    background-color: #21284B;
+}
+.Login_Signup_bg{
+    height: 502px;
+}
+.Login_Signup_bg{
+position: relative;
+border-radius: 10px;
+}
+.Login_Signup_bg img{
+    border-radius: 10px;
+    height: 374px;
+    height: 100%;
+}
+.Login_Signup_bg img:nth-child(2){
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  
+}
+.Login_Signup form{
+    padding: 2rem;
+    width: 100%;
+}
+.Login_Signup .nav-item:hover{
+    border: none;
+}
+.Login_Signup .nav-item{
+    width: 50%;
+    border: none;
+}
+.Login_Signup .nav-link{
+    width: 100%;
+    border: none;
+    font-size: 1.5rem;
+    border: 0px !important;
+    color: #008FDF !important;
+    border-bottom: 3px solid  #ffffff33 !important;
+    outline: 0;
+}
+
+.nav-tabs .nav-link.active{
+    background-color: transparent !important;
+    border-bottom: 3px solid #008FDF !important;
+    color: #008FDF !important;
+}
+.nav-tabs{
+    border: 0px !important;
+    flex-wrap: nowrap;
+    gap: 0px;
+  
+}
+
+.sign-in input,
+.sign-up input,
+.forgot-password input{
+    background-color: transparent;
+    border-radius: 5px;
+    padding: .7rem 1rem;
+    margin-top: 2rem;
+    width: 100%;
+    color: white;
+    outline: 0;
+    border:1px solid  #ffffff33 !important;
+}
+.sign-in div,
+.sign-up div{
+    position: relative;
+}
+.form label {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid white;
+  }
+  .form label::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid #fce38a;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+  }
+  
+  .content-name {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+  }
+  .form input:focus {
+    outline: none;
+  }
+  .form input:focus + .label-name .content-name,
+  .form input:valid + .label-name .content-name {
+    transform: translateY(-150%);
+    font-size: 14px;
+    left: 0px;
+    color: #fce38a;
+  }
+  .form input:focus + .label-name::after,
+  .form input:valid + .label-name::after {
+    transform: translateX(0%);
+  }
+  .Login_Signup-bg{
+    width: 104.3%;
+    height: 100vh;
+    left: -31px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-image: url(https://fixedfloat.com/assets/images/background/main_bg.svg);
+    z-index: 400;
+    backdrop-filter: blur(10px);
+    background: rgba(33,40,75,0.4);
+    -webkit-transition: opacity .2s ease-in-out;
+    -o-transition: opacity .2s ease-in-out;
+    transition: opacity .2s ease;
+  }
+
+  #uncontrolled-tab-example-tab-forgot{
+    position: absolute;
+    font-size: 1rem;
+    top: 180px;
+    border: 0px !important;
+    left: -20px;
+    font-weight: 200;
+  }
+
+  .sign-in .btn{
+    margin-top:7rem;
+    font-size: 1.2rem;
+    margin-left: auto !important;
+    margin-right: auto;
+    width: 100%;
+    margin-left: 2rem;
+  }
+  .sign-up .btn{
+    margin-top:4rem;
+    font-size: 1.2rem;
+    margin-left: auto !important;
+    margin-right: auto;
+    width: 100%;
+    margin-left: 2rem;
+  }
+  .forgot-password .btn{
+    margin-top:1.5rem;
+    font-size: 1.2rem;
+    margin-left: auto !important;
+    margin-right: auto;
+    width: 100%;
+    margin-left: 2rem;
+
+  }
+  .sign-in div,
+  .sign-up div{
+    position: relative;
+  }
+  .show-icon::after{
+    content: "\e21e";
+  }
+  .show-icon{
+    position: absolute;
+    right: 15px;
+    top: 47px;
+    font-family: "Icons";
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    color: white;
+  }
+.show-Confrim-icon{
+  position: absolute;
+  right: 15px;
+  top: 47px;
+  font-family: "Icons";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: white;
+}
+.show-Confrim-icon:after{
+  content: "\e21e";
+}
+.hide-Confrim-icon{
+  position: absolute;
+  right: 15px;
+  top: 47px;
+  font-family: "Icons";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: white;
+}
+.hide-Confrim-icon::after{
+  content: "\e21f";
+}
+  .hide-icon::after{
+    content: "\e21f";
+  }
+  .hide-icon{
+    position: absolute;
+    right: 15px;
+    top: 47px;
+    font-family: "Icons";
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    color: white;
+  }
+
+  .login-parent{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+
+  }
+
+  .sign-up{
+    z-index: 300;
+    position: relative;
+    background-color: #21284B;
+  }
+
+  .forgot-password{
+    z-index: 300;
+    
+    padding-top: 5rem;
+    position: relative;
+    background-color: #21284B;
+    text-align: center;
+  }
+  .forgot-password a:hover{
+    color: white;
+  }
+ 
+
+  @media (max-width:800px) {
+    .Login_Signup_bg {
+      height: 440px;
+  }.Login_Signup main section {
+    width: 689px;
+
+  }.Login_Signup_bg img:nth-child(2) {
+    height: 102%;
+}.Login_Signup_bg img {
+  height: 102%;
+}
+  }
+
+  @media (max-width:767px) {
+    .Login_Signup_bg{
+      display: none;
+    }.Login_Signup main section {
+      width: 400px;
+  }.Login_Signup-bg {
+    width: 112.3% !important;
+  }
+  }
+
+  @media (max-width:403px) {
+    .Login_Signup main section {
+      width: 92% !important;
+  }.nav-link{
+    font-size: 1.2rem !important;
+  }#uncontrolled-tab-example-tab-forgot {
+    white-space: nowrap;
+    font-size: 1.2rem;
+  }.sign-up,.forgot-password {
+ 
+    width: 219px;
+    right: 4px;
+
+  }
+  }

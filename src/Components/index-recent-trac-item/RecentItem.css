@@ -1,0 +1,153 @@
+
+.ico-timer{
+    padding-right: 0.3em;
+    font-family: "Icons";
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+}
+.ico-timer::after{
+    content: "\e10a";
+}
+
+.Recent-transactions li{
+    background-color: #21284B;
+    height: 3.3rem;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 1rem;
+    list-style: none;
+    align-items: flex-end;
+}
+
+.Recent-transactions li p{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.Recent-transactions ul{
+    padding-left: 0rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.Recent-transactions ul li main p{
+    white-space: nowrap;
+    }
+.Recent-transactions ul li main{
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+    margin-left: 1rem;
+ 
+   
+}
+.Recent-transactions ul li main{
+    gap: 10px;
+}
+.Recent-transactions ul li main img{
+    width: 35px;
+    height: 32px; position: relative;
+    top: 12px;
+  
+}
+
+.Recent-transactions ul li main div{
+    font-family: "Icons";
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+    vertical-align: middle;
+}
+.Recent-transactions ul li main div::after{
+    content: "\e202";
+    font-size: .9rem;
+    margin: 0rem 1rem;
+    position: relative;
+    top: 2.5px;
+}
+.Recent-transactions-time{
+    justify-content: right;
+}
+
+@media (max-width:950px) {
+     .Recent-transactions li p {
+        font-size: .9rem;
+    }.Recent-transactions li {
+        width: 77%;
+    }
+}
+@media (max-width:769px) {
+    .Recent-transactions li p {
+        font-size: .7rem;
+
+    }
+}
+@media (max-width:767px) {
+    .Recent-transactions li {
+        width: 100%;
+    }.Recent-transactions-title {
+        text-align: left !important;
+        font-size: 1.7rem !important;
+    }
+}
+@media (min-width:556px) {
+  .Recent-transactions-time-2{
+    display: none !important;
+}  
+}
+
+.recentItem-time{
+    width: 100%;
+}
+
+@media (max-width:555px) {
+    .Recent-transactions-time-2{
+        display: block !important;
+    }.Recent-transactions li {
+        flex-direction: column;
+        height: 100% !important;
+    }.Recent-transactions-time-1{
+        display: none !important;
+    }.recentItem-time{
+        display: flex;
+        justify-content: center;
+        padding-top: .5rem;
+        padding-left: 2.5rem;
+    }.recentItem-time p{
+        width: 130px !important;
+        white-space: nowrap;
+    }.recentItem-time .ico-timer::after {
+        content: "\e10a";
+        top: 2px;
+        position: relative;
+    }.Recent-transactions ul li main {
+        gap: 3px;
+    }.Recent-transactions li hr{
+        display: block !important;
+    }
+}
+.Recent-transactions li hr{
+    display: none;
+    margin: 0rem 0 !important; 
+    color: inherit;
+    width: 100% !important;
+    border: 0;
+    border-top: 1px solid;
+    opacity: .5 !important;
+}
+
+@media (max-width:390px) {
+    .recentItem-time {
+        padding-left:1rem !important;
+        position: relative;
+        left: 10px;
+    }
+}
