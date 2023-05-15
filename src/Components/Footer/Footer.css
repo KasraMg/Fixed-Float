@@ -1,0 +1,55 @@
+footer section span{
+    color: white;
+    font-weight: 300;
+    opacity: .5;
+    font-size: .72em;
+    position:absolute;
+    bottom: 39px;
+    margin-top: 5.1em;
+}
+footer section div{
+    display: flex;
+    gap: 30px;
+    margin-top: 2rem;
+}
+footer section img{
+    width: 300px;
+}
+footer{
+    margin: 12rem 2rem 0rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid white;
+    display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding-bottom: 1rem;
+}
+footer section a{
+    color: white;
+    font-size: 1.4rem;
+}
+footer section a:hover{
+    color: white;
+}
+footer ul{
+    display: flex;
+    gap: 200px;
+    margin-right: 2rem;
+}
+footer ul div p{
+    color: white;
+    opacity: .4;
+    font-size: 1.1rem;
+}
+footer ul div a:hover{
+    color: #f7931a;
+}
+footer ul div a{
+    color: white;
+    text-decoration: none;
+}
+footer ul div a li{ 
+    list-style: none;
+    font-size: 1.1rem;
+    margin-top: .5rem;
+}

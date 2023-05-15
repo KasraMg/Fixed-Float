@@ -1,0 +1,20 @@
+.AdvantageSection{
+    width: 33.33%;
+    background: linear-gradient(180deg,#21284B 39.69%,#5153E7 146.53%);
+    padding: 1.5em;
+    border-radius: 0.5em;
+    color: white;
+}
+.AdvantageSection div{
+    background-color: #008FDF;
+    padding: 0.8em;
+    display: inline-block;
+    border-radius: 3em;
+    margin-bottom: 1em;
+    
+}
+.AdvantageSection-icon{
+    font-size: 1.5rem;
+    position: relative;
+    bottom: 1px;
+}

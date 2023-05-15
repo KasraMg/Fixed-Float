@@ -1,0 +1,21 @@
+.AvailableCurrencies p{ 
+margin-top: 1rem;
+font-size: 1.2rem;
+}
+.AvailableCurrencies{
+    background-color: #161A30;
+    margin-bottom: 0;
+    padding-left: 0;
+    border-radius: 0.6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 1.5em;
+    width: 180px;
+}
+.AvailableCurrencies img{
+    width: 72px;
+    height: 72px;
+}
