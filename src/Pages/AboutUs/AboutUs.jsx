@@ -22,7 +22,7 @@ export default function AboutUs() {
             </div>
         </section>
 
-        <div className="Advantages">
+     <div className="Advantages">
         <p className="Advantages-title">
              Advantages
             </p>
@@ -34,7 +34,7 @@ export default function AboutUs() {
             </main>
 
         </div>
-
+    
         <div className="Mission">
             <section>
                 <div className="about-mission-hand-right">
@@ -77,6 +77,7 @@ export default function AboutUs() {
             <AvailableCurrencies/>
         </main>
         </div>
+        
         <Footer/>
     </div>
   )

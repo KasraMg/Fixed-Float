@@ -13,9 +13,20 @@ font-size: 1.2rem;
     color: white;
     text-align: center;
     padding: 1.5em;
-    width: 180px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .AvailableCurrencies img{
     width: 72px;
     height: 72px;
+}
+@media (min-width:424px) {
+    .AvailableCurrencies {
+        width: 180px;
+    }
+}
+@media (max-width:424px) {
+    .AvailableCurrencies {
+        width: 100%;
+    }
 }

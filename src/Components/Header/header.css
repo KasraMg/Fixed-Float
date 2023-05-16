@@ -140,7 +140,7 @@ background-color: transparent;
 @media (max-width:768px) {
     header{
         margin: 0rem ;
-        padding: 0rem 2rem;
+        padding: 0rem 0rem;
     }
    
 }

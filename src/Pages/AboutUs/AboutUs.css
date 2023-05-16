@@ -167,3 +167,113 @@ width: 80px;
     grid-template-columns: auto auto auto auto auto auto;
     gap: 20px;
 }
+
+/* AboutUs-first-section */
+@media (max-width:768px) {
+    .AboutUs-title {
+        text-align: center;
+        font-size: 4rem;
+    }  .AboutUs{
+        padding:0rem 1rem !important;
+    }
+}
+@media (max-width:630px) {
+    .AboutUs-first-section div img{
+        display: none;
+    }.AboutUs-first-section {
+        padding: 4rem 1rem;
+    }.AboutUs-title {
+        font-size: 3rem !important;
+    }.AboutUs-first-section div p {
+        font-size: 1.2em;
+        text-align: center;
+    }
+}
+/* AboutUs-first-section */
+ 
+
+
+/* Advantages */
+@media (max-width:1023px) {
+    .Advantages main {
+        display: grid !important;
+        grid-template-columns: auto auto;
+    }
+}
+@media (max-width:767px) {
+    .Advantages main {
+        grid-template-columns: auto;
+    }.Advantages-title {
+        font-size: 2.5rem !important;
+        text-align: center;
+    }.Advantages {
+        padding: 5rem 1rem;
+    }
+}
+/* Advantages */
+
+
+
+/* Mission */
+@media (max-width:767px) {
+    .Mission {
+        width: 100% !important;
+    }.Mission-title{
+        font-size: 2.5rem;
+        margin-top: 30%;
+    }.Mission p {
+        font-size: 1em;
+        word-wrap: break-word;
+    width: 80%;
+    
+    }.Mission section{
+        display: none !important;
+    }
+}
+@media (max-width:500px) {
+    .Mission-title{
+        margin-top: 15%;
+    }.Mission:before {
+        height: 430px;
+    }
+}
+@media (max-width:330px) {
+    .Mission:before {
+        height: 470px;
+    }
+    .Mission{
+        padding-top: 1rem;
+    }
+}
+/* Mission */
+
+
+/* Supported */
+@media (max-width:1230px) {
+    .Supported-currencies main{
+        grid-template-columns: auto auto auto auto ;
+    }
+}
+@media (max-width:854px) {
+    .Supported-currencies main{
+        grid-template-columns: auto auto auto  ;
+    }.Supported-currencies-title {
+        font-size: 3rem;
+    }
+}
+@media (max-width:669px) {
+    .Supported-currencies main{
+        grid-template-columns: auto auto   ;
+    }.Supported-currencies-title {
+        font-size:2.5rem;
+        text-align: center;
+        display: block;
+        margin-bottom: 3rem;
+    }
+}
+@media (max-width:424px) {
+    .Supported-currencies main{
+        grid-template-columns: auto  !important  ;
+    }
+}
+/* Supported */

@@ -1,0 +1,68 @@
+.SupportSection{
+    border-radius: 0.5em;
+    display: block;
+    display: grid;
+    padding: 2em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+
+} 
+.first-SupportSection{
+    font-size: 1rem !important;
+ 
+}
+.first-SupportSection  svg{
+    left: 14px !important;
+}
+.SupportSection div{
+    background-color: white;
+    color: #008FDF;
+    display: inline-block;
+   width: 44px !important;
+   height: 46px;
+    border-radius: 50px;
+    width: max-content;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+}
+.SupportSection div svg{
+    position: relative;
+    left: 11px;
+}
+.SupportSection p{
+    color: #008FDF;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 2rem;
+    margin-bottom: 0.4em;
+    margin-top: 0.7em;
+}
+.SupportSection span{
+color: white;
+}
+.SupportSection button:hover{
+    background-color: #063DA7;
+}
+.SupportSection button{
+    outline: none;
+    background-color: #008FDF;
+    border: none;
+    padding: .5rem 1rem;
+    color: white;
+    border-radius: 5px;
+    width: max-content;
+    margin-top: 1rem;
+    transition: .3s all ease-in;
+}
+
+@media (max-width:500px) {
+    .SupportSection{
+        justify-content: center;
+        text-align: center;
+    }.SupportSection div{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
