@@ -61,7 +61,7 @@ footer ul div a li{
 }
 @media (max-width:627px) {
    footer ul {
-        display: grid;
+        display: none !important;
         gap: 52px !important;
         grid-template-columns: auto ;
 
@@ -69,11 +69,22 @@ footer ul div a li{
             text-align: center;
             margin-bottom: 4rem !important;
     }footer section img {
-        width: 100% !important;
+        width: 70% !important;
     }footer section div {
         gap: 21px !important;
+    }footer section div {
+        margin-top: 1rem !important;
+    }footer section span {
+        bottom: 11px !important;
+    }footer{
+        padding-bottom: 4rem;
     }
 
+}
+@media (max-width:390px) {
+    footer section img {
+        width: 100% !important;
+    }
 }
 @media (max-width:950px) {
  

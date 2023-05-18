@@ -246,13 +246,17 @@ p{
     position: relative;
     right: 41px;
     overflow: hidden;
+} .index footer{
+    margin: 0rem 2rem;
 }
 }
 @media (min-width:1351px) {
    .index-main{
     padding: 0rem 10rem;
 
-} 
+} .index footer{
+    margin: 0rem 10rem;
+}
  
 }
  @media (max-width:1023px) {
@@ -271,7 +275,10 @@ p{
         grid-template-columns: auto !important;
     }.index-main{
         padding: 0rem 1rem !important;
-    }.advantages-inner div img{
+    }.index footer{
+        margin: 0rem 1rem !important;
+    }
+    .advantages-inner div img{
         right:-70px !important;
     }
  }
@@ -456,6 +463,8 @@ background-image: url("data:image/svg+xml,%3Csvg width='393' height='544' fill='
         height: 1.5rem !important;
     }    .accordion-body {
         padding-left: 0rem !important;
+    }.exchange-form-outer-container {
+        padding-bottom: 2rem !important;
     }
 }
 @media (max-width:420px) {
@@ -558,5 +567,51 @@ bottom: 4px;
         bottom: 56%;
     }
 }
-/* kehiiiiya@gmail.com */
-/* keyhan@15087858 */
+
+
+
+.IndexSwiper{
+    margin-bottom: 4rem;
+}
+
+.IndexSwiper-title{
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(180deg,#FFF 0,#B1DAFF 100%);
+    font-weight: 700;
+    line-height: 1.15em;
+    margin-bottom: 0.7em;
+    font-size: 3.5rem;
+    margin-top: 10rem;
+}
+.index-swiper-btn:hover{
+    background-color: #008FDF;
+    border-color: transparent;
+    color: #fff;
+}
+.index-swiper-btn  {
+    padding: 1em 4.5em;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid;
+    display: block;
+    transition: .2s ease-in all;
+    margin-left: auto;
+    margin-right: auto;
+    color: #008FDF;
+}
+@media (max-width: 500px){
+.IndexSwiper-title {
+    font-size: 1.9rem;
+}
+}
+@media (max-width: 348px){
+    .IndexSwiper-title {
+        font-size: 1.5rem !important;
+    }
+    }
+    
+
+
+    
