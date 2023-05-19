@@ -91,20 +91,26 @@ header a{
     top: 5px;
     cursor: pointer;
 }
+.header-btns button:nth-child(1) a{
+    color: white !important;
+}
 .header-btns button:nth-child(1){
 background-color: transparent;
 }
-.header-btns button:nth-child(1):hover {
-    color: #f7931a;
+.header-btns button:nth-child(1) a:hover {
+    color: #f7931a !important;
 }
 .header-btns button:nth-child(2):hover {
-    background-color: #063DA7;
+    background-color: #063DA7 !important;
 }
 
 
+.header-btns button:nth-child(2) a{
+ color: white !important;
+}
 .header-btns button:nth-child(2){
     background-color: #008fdf;
-    color: white;
+   
     transition: .3s ease all;
 }
 .header-btns::before{
@@ -153,4 +159,45 @@ background-color: transparent;
     }.logo-3::after {
         left: 73px;
     }
+}
+
+/* offcanvas */
+.offcanvas{
+    background-color: #21284B !important;
+    width: 300px !important;
+    overflow-y: auto;
+}
+.offcanvas hr{
+    color: white;
+    width: 100%;
+}
+.offcanvas-header{
+    display: flex;
+    flex-direction: column; 
+    
+}
+.offcanvas-close{
+    color: white;
+    margin-right: auto;
+    font-size: 1.5rem;
+}
+.offcanvas ul{
+    padding-left: 0px;
+}
+.offcanvas ul li{
+    list-style: none;
+    margin-top: 1rem;
+}
+.offcanvas-body {
+padding-top: 0px !important;
+overflow-y: unset !important;
+}
+.offcanvas ul p{
+    margin-bottom: 0px;
+    margin-top: 2rem;
+    color: rgba(255, 255, 255, 0.432);
+}
+.offcanvas ul li{
+    color: white;
+
 }

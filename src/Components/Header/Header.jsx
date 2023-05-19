@@ -1,8 +1,9 @@
 import React,{useState} from 'react'
 import './header.css'
-import { AiOutlineMenu } from 'react-icons/ai'
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import Login_Signup from '../../Pages/Login&Signup/Login&Signup'
 import { Offcanvas } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 export default function Header() {
     const [showLogin_Signup,setShowlogin_Signup]=useState(false)
     const [show, setShow] = useState(false);
@@ -14,12 +15,26 @@ export default function Header() {
   return (
     <header>
         <Offcanvas show={show} onHide={handleClose}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+        <Offcanvas.Header>
+          <AiOutlineClose className='offcanvas-close' onClick={handleClose} />
+          <hr />
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+         <ul>
+          <p className='mt-0'>Account</p>
+          <li>Sign in</li>
+          <li>Sign up</li>
+          <p>FixedFloat</p>
+          <li>About</li>
+          <li>Blog</li>
+          <li>FAQ</li>
+          <li>Support</li>
+          <li>Affiliate program</li>
+          <li>Our brand</li>
+          <p>Rules</p>
+          <li>Terms of Service</li>
+          <li>Privacy Policy</li>
+         </ul>
         </Offcanvas.Body>
       </Offcanvas>
 
@@ -41,13 +56,13 @@ export default function Header() {
                     <li><a href="">Support</a> </li>
                 </ul>
                 <div class="header-btns">
-                    <button onClick={()=>setShowlogin_Signup(true)}>Sign in</button>
-                    <button onClick={()=>setShowlogin_Signup(true)}>Sign up</button>
+                    <button><Link to='/Login'>Sign in</Link></button>
+                  <button> <Link to='/SignUp'>Sign up</Link></button>
                 </div>
             </div>
 
 
-            {showLogin_Signup &&(
+            {/* {showLogin_Signup &&(
                 <div className='login-parent'>
                    <div onClick={()=>setShowlogin_Signup(false)} className="Login_Signup-bg">
                
@@ -55,7 +70,7 @@ export default function Header() {
                      <Login_Signup />
                 </div>
              
-            )}
+            )} */}
         </header>
   )
 }

@@ -304,9 +304,9 @@ border-radius: 10px;
     font-size: 1.2rem !important;
   }#uncontrolled-tab-example-tab-forgot {
     white-space: nowrap;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }.sign-up,.forgot-password {
- 
+ left: 10px !important;
     width: 219px;
     right: 4px;
 
