@@ -3,10 +3,11 @@ footer section span{
     font-weight: 300;
     opacity: .5;
     font-size: .72em;
-    position:absolute;
-    bottom: 39px;
-    margin-top: 5.1em;
+ position: relative;
+   
+ top: 20px;
 }
+ 
 footer section div{
     display: flex;
     gap: 30px;
@@ -16,7 +17,7 @@ footer section img{
     width: 300px;
 }
 footer{
-    margin: 12rem 2rem 0rem;
+    margin: 12rem 2rem 1rem;
     padding-top: 2.5rem;
     border-top: 1px solid white;
     display: flex;
@@ -74,28 +75,33 @@ footer ul div a li{
         gap: 21px !important;
     }footer section div {
         margin-top: 1rem !important;
-    }footer section span {
-        bottom: 11px !important;
-    }footer{
+    }
+    footer{
         padding-bottom: 4rem;
+    }footer section span{
+        bottom: 10px !important;
     }
 
 }
 @media (max-width:390px) {
     footer section img {
-        width: 100% !important;
+        width:260px !important;
+        margin-bottom: 1.5rem;
     }
 }
 @media (max-width:950px) {
- 
+    footer section span{
+        position: absolute !important;   
+        bottom: -5px ;
+        top: unset !important;
+       }
     footer{
         flex-direction: column;
   
-            margin: 12rem 0rem 0rem !important;
+            margin: 12rem 0rem 2rem !important;
     }footer section span {
         margin-left: auto;
-        margin-right: auto;
-    bottom: 9px;
+        margin-right: auto; 
         display: block;
         width: 100%;
         text-align: center;
@@ -114,3 +120,5 @@ footer ul div a li{
         justify-content: space-around;
     }
 }
+
+

@@ -5,6 +5,7 @@ import Support from './Pages/Support/Support'
 import Blogs from './Pages/Blogs/Blogs'
 import Login from "./Pages/Login/Login";
 import SignUp from "./Pages/SignUp/SignUp";
+import FAQ from "./Pages/FAQ/FAQ";
  const routes=[
 
 
@@ -15,6 +16,7 @@ import SignUp from "./Pages/SignUp/SignUp";
    {path:'/Blogs' , element:<Blogs/>},
    {path:'/Login' , element:<Login/>},
    {path:'/SignUp' , element:<SignUp/>},
+   {path:'/FAQ' , element:<FAQ/>},
  
  
 
