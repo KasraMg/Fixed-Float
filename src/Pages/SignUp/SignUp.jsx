@@ -88,6 +88,7 @@ export default function SignUp() {
                     <Tab className='forgot-password-tab' eventKey="forgot" title="forgot password">
                         <div className="forgot-password">
 
+                                        <p style={{color:'white'}}>Please Type Your Email</p>
                                 <input type="email" placeholder='Email' />
                            
                             <button className='btn btn-primary'>Reset Password</button>

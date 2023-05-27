@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import './header.css'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
-import Login_Signup from '../../Pages/Login&Signup/Login&Signup'
+ 
 import { Offcanvas } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 export default function Header() {
@@ -22,24 +22,21 @@ export default function Header() {
         <Offcanvas.Body>
          <ul>
           <p className='mt-0'>Account</p>
-          <li>Sign in</li>
-          <li>Sign up</li>
-          <p>FixedFloat</p>
-          <li>About</li>
-          <li>Blog</li>
-          <li>FAQ</li>
-          <li>Support</li>
-          <li>Affiliate program</li>
-          <li>Our brand</li>
-          <p>Rules</p>
-          <li>Terms of Service</li>
-          <li>Privacy Policy</li>
+               <Link to="/Login"><li>Sign in</li></Link>
+               <Link to="/SignUp"><li>Sign up</li></Link>
+               <p>FixedFloat</p>
+               <Link to="/About"><li>About</li></Link>
+               <Link to="/Blogs"><li>Blog</li></Link>
+               <Link to="/FAQ"><li>FAQ</li></Link>
+               <Link to="/Support"><li>Support</li></Link>
+              
+               
          </ul>
         </Offcanvas.Body>
       </Offcanvas>
 
       <button className='offcanvas-btn' onClick={handleShow}><AiOutlineMenu/></button>
-            <a href="https://fixedfloat.com/" class="logo">
+            <Link to="/" class="logo">
                 <p class="logo-1"></p>
                 <div>
                     <p class="logo-2"></p>
@@ -47,13 +44,13 @@ export default function Header() {
                 </div>
 
                 <p class="logo-4"></p>
-            </a>
+            </Link>
             <div class="header-secton-right">
                 <ul>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Blog</a> </li>
-                    <li><a href="">FAQ</a> </li>
-                    <li><a href="">Support</a> </li>
+                    <li><Link to="/About">About</Link></li>
+                    <li><Link to="/Blogs">Blog</Link> </li>
+                    <li><Link to="/FAQ">FAQ</Link> </li>
+                    <li><Link to="/Support">Support</Link> </li>
                 </ul>
                 <div class="header-btns">
                     <button><Link to='/Login'>Sign in</Link></button>
@@ -61,16 +58,7 @@ export default function Header() {
                 </div>
             </div>
 
-
-            {/* {showLogin_Signup &&(
-                <div className='login-parent'>
-                   <div onClick={()=>setShowlogin_Signup(false)} className="Login_Signup-bg">
-               
-                </div>
-                     <Login_Signup />
-                </div>
-             
-            )} */}
+ 
         </header>
   )
 }

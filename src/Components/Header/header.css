@@ -8,6 +8,9 @@ header{
     position: relative;
     justify-content: space-between;
 }
+.offcanvas ul a{
+    text-decoration: none;
+}
 header ul{
     display: flex;
     gap:30px;
