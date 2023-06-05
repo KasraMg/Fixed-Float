@@ -129,3 +129,8 @@ border-radius: 10px;
         vertical-align: middle;
         margin-left: .5rem;
 }
+
+.currsy-not-found{
+    text-align: center;
+    color: white;
+}
