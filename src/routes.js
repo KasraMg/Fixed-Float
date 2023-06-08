@@ -10,7 +10,7 @@ import FAQ from "./Pages/FAQ/FAQ";
 
 
    {path:'/' , element:<Index/>},
-   {path:'/Order' , element:<Order/>},
+   {path:'/Order/:id' , element:<Order/>},
    {path:'/About' , element:<AboutUs/>},
    {path:'/Support' , element:<Support/>},
    {path:'/Blogs' , element:<Blogs/>},

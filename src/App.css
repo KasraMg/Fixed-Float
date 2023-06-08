@@ -7,3 +7,27 @@
 ::selection {
   background: rgba(16,106,208,0.35);
 }
+
+.swal-footer {
+  text-align: center;
+}
+
+.swal-modal{
+  background-size: 100%;
+  border-radius: 22px;
+  padding-bottom: 0.5rem;
+  background-image: url(https://fixedfloat.com/assets/images/background/main_bg.svg);
+}
+.swal-title {
+  color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(180deg,#FFF 0,#B1DAFF 100%);
+}
+.swal-button {
+  color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    border: 1px solid #B1DAFF;
+    background-image: linear-gradient(180deg,#FFF 0,#B1DAFF 100%);
+}

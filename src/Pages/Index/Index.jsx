@@ -7,6 +7,7 @@ import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import IndexSwiper1 from '../../Components/IndexSwiper/IndexSwiper1'
 import ExchangeAmounts from '../../Components/ExchangeAmounts/ExchangeAmounts'; 
+import ExchangeDestination from '../../Components/ExchangeDestination/ExchangeDestination';
 export default function Index() {
 
 
@@ -26,27 +27,11 @@ export default function Index() {
                 </p>
 
 
-        <ExchangeAmounts  />
+                          <ExchangeAmounts  />
 
+                         <ExchangeDestination/>
 
-
-                {/* <!-- exchange-Destination --> */}
-                <div className="exchange-Destination">
-                    <p className="exchange-Destination-title">Destination</p>
-                    <input placeholder="Your Ethereum address" type="text" />
-                    <div>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-
-                <button className="Exchange-btn" disabled>Exchange now</button>
-                {/* <!-- exchange-Destination --> */}
-                <div className="terms">
-                    <p>By using the site and creating an exchange, you agree to the
-                        FixedFloat's <a href="">Terms of Services</a> and <a
-                            href="">Privacy Policy</a></p>
-                </div>
+          
             </div>
             {/* <!-- exchange-form -->*/}
 

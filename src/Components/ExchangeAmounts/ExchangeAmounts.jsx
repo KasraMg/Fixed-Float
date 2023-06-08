@@ -8,20 +8,21 @@ export default function ExchangeAmounts( ) {
     const [SendExchangeDropDown, setSendExchangeDropDown] = useState(false)
     const [ReciveExchangeDropDown, setReciveExchangeDropDown] = useState(false)
     const [sendExchangeValue,setSendExchangeValue] = useState()
-    const [AllData,setAllData] = useState()
-    const [Value,setValue]=useState()
+    const [AllData,setAllData] = useState() 
     const [ReciveValue,setReciveValue]=useState(0) 
     useEffect(() => {
          if (context.Sendcurrency && context.Recivecurrency  ) {
             console.log('3');
-           let value = Value / context.Sendcurrency.price
-           let newValue=value * context.Recivecurrency.price
+           let value =Math.round(  context.Value * context.Sendcurrency.price) 
+           console.log(value);
+           let newValue=value / context.Recivecurrency.price
+           console.log(newValue);
            let lastValue=`${newValue}`
-           setReciveValue(lastValue.slice(7,20) )
+           setReciveValue(lastValue.slice(0,8) )
      
          }
       
-    }, [Value])
+    }, [context.Value])
     
      
     useEffect(() => {
@@ -38,11 +39,11 @@ export default function ExchangeAmounts( ) {
         const regex= RegExp(/^\d+$/) 
         const regexStatus = regex.test(e.target.value)
         console.log(regexStatus);
-   if (Value && Value.length == 1) {
-    setValue(e.target.value)
+   if ( context.Value &&  context.Value.length == 1) {
+    context.setValue(e.target.value)
    }else{
  if (regexStatus) {
-        setValue(e.target.value)
+    context.setValue(e.target.value)
     }
    
    }
@@ -51,6 +52,21 @@ export default function ExchangeAmounts( ) {
           
        
     }
+
+    const changeCurrency=()=>{
+        let newSendCurrency={...context.Recivecurrency}
+        let newReciveCurrency={...context.Sendcurrency}
+
+        context.setSendCurrency(newSendCurrency)
+        context.setReciveCurrency(newReciveCurrency)
+       
+    }
+
+    useEffect(() => {
+        context.setValue('')
+        setReciveValue('')
+    }, [context.Sendcurrency, context.Recivecurrency ])
+    
   return (
     <div className="exchange-amounts">
     {/* <!-- exchange input--> */}
@@ -60,7 +76,7 @@ export default function ExchangeAmounts( ) {
             <p>{context.Sendcurrency  ? context.Sendcurrency.symbol:'select'}</p>
         </section>
         <div style={{ position: "relative" }}>
-            <input  autocomplete="off" value={Value} placeholder='0'   onChange={(e)=>inputChangeHandler(e)}
+            <input  autocomplete="off" value={ context.Value} placeholder='0'   onChange={(e)=>inputChangeHandler(e)}
                 className="Send-input mt-lg-2" type="text" />
 
             <lable className="select-outer" onClick={() => setSendExchangeDropDown(true)}>
@@ -90,7 +106,7 @@ export default function ExchangeAmounts( ) {
     </div>
     {/* <!-- exchange input--> */}
 
-    <div className="btn-reverse-to">
+    <div className="btn-reverse-to" onClick={changeCurrency}>
         <span></span>
         <span></span>
     </div>

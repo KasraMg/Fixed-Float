@@ -3,8 +3,14 @@ import './Order.css'
 import Header from '../../Components/Header/Header'
 import { RiFileCopyFill } from 'react-icons/ri'
 import Barcode from '../../Components/Barcode/Barcode'
+import { useParams } from 'react-router-dom'
+import OrderGuide from '../../Components/OrderGuide/OrderGuide'
 export default function Order() {
+  
+  let id=useParams()
+  console.log(id);
   return (
+
     <div className='order'>
       <Header />
 
@@ -75,6 +81,7 @@ export default function Order() {
         <div className='barcode-1'><Barcode /></div>
       </div>
 
+        <OrderGuide/>
 
 
     </div>
