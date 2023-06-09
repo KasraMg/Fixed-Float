@@ -134,8 +134,11 @@ color: white;
     color: #f7931a;
     font-size: 1.4rem;
 }
-.order-info div{
-    margin-bottom: .5rem;
+.order-info div p{
+    margin-bottom: 0px;
+}
+.order-info div{ 
+    margin-top: 1.2rem;
     border-bottom: 1px solid #ffffff3b;
 }
 
@@ -295,3 +298,9 @@ flex-direction: column;
 .order-detail-span-2{
     display: block !important;
 }
+.order-details{
+    padding: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+

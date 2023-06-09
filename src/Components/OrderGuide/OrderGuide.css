@@ -6,6 +6,19 @@
     padding: 2.5em 2em;
     width: 70%;
 }
+@media (max-width:1000px) {
+    .OrderGuide {
+        flex-direction: column;
+        padding: 1rem 0rem !important;
+        gap: 15px;
+    }.OrderGuide main {
+        width: 100%;
+    } .OrderGuide section  {
+        width: 100% !important;
+    }.OrderGuide section  img{
+        display: none;
+    }
+}
 
 .OrderGuide section div{
     background: linear-gradient(#21284b, rgb(38 42 100));
@@ -128,5 +141,20 @@ line-height: 2;
     background-color: #063DA7;
 }
 .OrderGuide img{
- 
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    border-radius: 10px;
+}
+
+@media (max-width:500px) {
+    .OrderGuide main div {
+        flex-direction: column-reverse;
+    }.OrderGuide-icon {
+        margin-left: auto;
+        margin-top: 1rem;
+        margin-right: auto !important;
+    }.OrderGuide main div p {
+        text-align: center;
+    }
 }

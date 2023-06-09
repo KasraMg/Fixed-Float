@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer>
       <section>
-        <img src="./images/index/logo.PNG" alt="" />
+        <img src="/images/index/logo.PNG" alt="" />
         <div>
             <Link to=""><FaTelegramPlane/></Link>
           <Link to=""> <AiOutlineTwitter/></Link> 

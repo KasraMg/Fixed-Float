@@ -1,37 +1,55 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import './Order.css'
 import Header from '../../Components/Header/Header'
+import Footer from '../../Components/Footer/Footer'
 import { RiFileCopyFill } from 'react-icons/ri'
 import Barcode from '../../Components/Barcode/Barcode'
 import { useParams } from 'react-router-dom'
 import OrderGuide from '../../Components/OrderGuide/OrderGuide'
+import OrderDetail from '../../Components/OrderDetail/OrderDetail'
 export default function Order() {
+  const [details,setDetails]=useState()
+  const [allQrData,setAllQrData]=useState()
+  let hashChange=useParams()
+  let qrData;
+  useEffect(() => {
+    if (hashChange) {
+        fetch(`https://traderplus.info/exchange/api/payment_check.php?payment_id=&hash_change=${hashChange.id}`,{
+      method:'POST'
+     }).then(res=>res.json())
+     .then(data=>{ 
+      setDetails(data)  
+     })
+
+    }
+   
+  }, [])
   
-  let id=useParams()
-  console.log(id);
   return (
 
     <div className='order'>
       <Header />
+{details &&(
+  <>
 
-      <section className='order-direction'>
+  <section className='order-direction'>
         <div className='your-send-order'>
           <div>
             <p className='mb-1'>YOU SEND</p>
-            <span>0.00174516 BTC</span>
-            <p>bc1qh3wq7u5g9vk0rmpw0wcthmeatuwk99kv299d5c</p>
+            <span>  {details.amount_user}  {details.symbol1}  </span>
+            <p>{details.adress_nowpayment}</p>
           </div>
-          <img src="../../images/order/icons8-bitcoin-60.png" alt="" />
+          <img src={details.imagesymbol1}alt="" />
         </div>
 
         <div className='order-direction-arrow'></div>
 
         <div className='your-receive-order'>
-          <img src="../../images/order/icons8-bitcoin-60.png" alt="" />
+          <img src={details.imagesymbol2}alt="" />
           <div>
             <p className='mb-1'>YOU RECEIVE</p>
-            <span>0.0251267 ETH</span>
-            <p>0x29D7d1dd5B6f9C864d9db560D72a247c178aE86B</p>
+            <span>  {details.amount_send.slice(0,9)}  {details.symbol2} </span>
+            <p>{details.adress_user}</p>
           </div>
 
         </div>
@@ -51,39 +69,46 @@ export default function Order() {
               <span>23:23</span>
             </div>
 
-            <div>
-              <p>Order type</p>
-              <p>Float rate</p>
-            </div>
+            
 
             <div className='border-0'>
               <p>Creation Time</p>
-              <p>04/26/2023 5:34 PM</p>
+              <p>{details.creation_time.slice(0,10)}    {details.creation_time.slice(11,20)}</p>
             </div>
           </div>
-
-          <div className='barcode-2'><Barcode /></div>
+{/* allData={qrData && qrData} */}
+          <div className='barcode-2'><Barcode address={2} /></div>
         </div>
 
 
         <div className="order-detail">
-          <span >Send <p className='mb-0'>0.00167632 BTC</p> to the address:</span>
-          <p className='order-detail-address'>bc1qk2xy5k7nwr6k4zew79c63d33lry9ge5lk08srt <RiFileCopyFill className='order-copy-icon' /></p>
+          <span >Send <p className='mb-0'> {details.amount_user}  {details.symbol1}</p> to the address:</span>
+          <p className='order-detail-address'>{details.adress_nowpayment} <RiFileCopyFill className='order-copy-icon' /></p>
           <span className="order-detail-span-2">he exchange rate will be fixed after receiving <strong style={{ color: 'white' }}>1</strong> network confirmations.</span>
 
 
           <div>
             <span>Receiving address ETH</span>
-            <p>0x29D7d1dd5B6f9C864d9db560D72a247c178aE86B</p>
+            <p>{details.adress_user}</p>
           </div>
         </div>
 
         <div className='barcode-1'><Barcode /></div>
       </div>
 
+      <div className='order-details'>
+          <OrderDetail icon='order-await' text='Awaiting deposit' flash={true}/>
+          <OrderDetail icon='order-wait' text='Awaiting confirmations' flash={true}/>
+          <OrderDetail icon='order-done' text='Done' flash={false}/>
+      </div>
+
+
         <OrderGuide/>
+        </>
+)}
+      
 
-
+<Footer/>
     </div>
   )
 }
