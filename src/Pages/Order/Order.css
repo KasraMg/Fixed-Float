@@ -301,6 +301,7 @@ flex-direction: column;
 .order-details{
     padding: 2rem;
     display: flex;
+    margin-top: 1rem;
     justify-content: space-evenly;
 }
 

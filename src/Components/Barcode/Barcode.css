@@ -72,7 +72,21 @@ color: #a6a6a6;
         height: 210px;
     }.Barcode svg{
         position: relative;
-        top: 10px;
+        bottom: 40px !important;
+    }  .Barcode svg {
+        width: 150px !important;
     }
 
+}
+@media (max-width:1000px) {
+    .Barcode svg {
+        width: 42%; 
+        bottom: 11px;
+        position: relative;
+    }
+}
+@media (max-width:800px) {
+    .Barcode svg {
+        width: 52%; 
+    }
 }

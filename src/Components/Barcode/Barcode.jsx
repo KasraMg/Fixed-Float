@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
-import {QRCodeSVG} from 'qrcode.react'; 
+import Tabs from 'react-bootstrap/Tabs'; 
 import { useParams } from 'react-router-dom';
 import './Barcode.css'
+import QRCode from 'react-qr-code';
 export default function Barcode() {
   const [details,setDetails]=useState() 
+  const [addressBarcode, setaddressBarcode] = useState();
+  const [allDataBarcode, setAllDataBarcode] = useState();
   let hashChange=useParams() 
   let dataa;
   useEffect(() => {
@@ -15,7 +17,10 @@ export default function Barcode() {
      }).then(res=>res.json())
      .then(data=>{
       console.log(data)
-      setDetails(data)  
+      setDetails(data) 
+      setaddressBarcode(`${data.adress_nowpayment}`) 
+      setAllDataBarcode(`${data.symbol1}:${data.adress_nowpayment}?amount=${data.amount_user}`)
+      console.log(allDataBarcode);
      })
 
     }
@@ -36,11 +41,11 @@ export default function Barcode() {
     
     > 
      <Tab eventKey="Address" title="Address">
-     <QRCodeSVG value={dataa}  />
+     <QRCode value={addressBarcode}  />
       </Tab>
 
       <Tab eventKey="With-amount" title="With amount">
-      <QRCodeSVG value={`1`}  />
+      <QRCode value={allDataBarcode} />
       </Tab>
     
     </Tabs>

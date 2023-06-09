@@ -8,10 +8,9 @@ import { useParams } from 'react-router-dom'
 import OrderGuide from '../../Components/OrderGuide/OrderGuide'
 import OrderDetail from '../../Components/OrderDetail/OrderDetail'
 export default function Order() {
-  const [details,setDetails]=useState()
-  const [allQrData,setAllQrData]=useState()
+  const [details,setDetails]=useState() 
   let hashChange=useParams()
-  let qrData;
+ 
   useEffect(() => {
     if (hashChange) {
         fetch(`https://traderplus.info/exchange/api/payment_check.php?payment_id=&hash_change=${hashChange.id}`,{
