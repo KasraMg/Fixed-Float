@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React,{ useEffect , useState, useRef} from 'react'
 import './Order.css'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
@@ -60,7 +60,7 @@ export default function Order() {
           <div className="order-info">
             <div>
               <p>Order ID</p>
-              <span>3157H2 <RiFileCopyFill className='order-copy-icon' /></span>
+              <span onClick={() => navigator.clipboard.writeText('3157H2')}>3157H2 <RiFileCopyFill className='order-copy-icon' /></span>
             </div>
 
             <div>
@@ -82,7 +82,7 @@ export default function Order() {
 
         <div className="order-detail">
           <span >Send <p className='mb-0'> {details.amount_user}  {details.symbol1}</p> to the address:</span>
-          <p className='order-detail-address'>{details.adress_nowpayment} <RiFileCopyFill className='order-copy-icon' /></p>
+          <p className='order-detail-address'>{details.adress_nowpayment} <RiFileCopyFill onClick={() => navigator.clipboard.writeText(details.adress_nowpayment)} className='order-copy-icon' /></p>
           <span className="order-detail-span-2">he exchange rate will be fixed after receiving <strong style={{ color: 'white' }}>1</strong> network confirmations.</span>
 
 
