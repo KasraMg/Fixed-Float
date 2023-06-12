@@ -9,8 +9,10 @@ import OrderGuide from '../../Components/OrderGuide/OrderGuide'
 import OrderDetail from '../../Components/OrderDetail/OrderDetail'
 export default function Order() {
   const [details,setDetails]=useState() 
+  const [Minutes,setMinutes]=useState() 
+  const [seconds,setSeconds]=useState() 
   let hashChange=useParams()
- 
+  
   useEffect(() => {
     if (hashChange) {
         fetch(`https://traderplus.info/exchange/api/payment_check.php?payment_id=&hash_change=${hashChange.id}`,{
@@ -18,10 +20,23 @@ export default function Order() {
      }).then(res=>res.json())
      .then(data=>{ 
       setDetails(data)  
+    
+      if (data.secondsleft > 1801) {
+        setMinutes(`0`)
+        setSeconds(`0000`)
+      }else{
+        const minutesAndSec = data.secondsleft  / 60
+        setMinutes(`${minutesAndSec}`) 
+      }
+  
      })
 
     }
    
+ 
+
+    
+
   }, [])
   
   return (
@@ -65,7 +80,10 @@ export default function Order() {
 
             <div>
               <p>Time remaining</p>
-              <span>23:23</span>
+             
+                    <span>{Minutes.slice(0,2)} minutes</span>
+               
+          
             </div>
 
             
@@ -74,8 +92,7 @@ export default function Order() {
               <p>Creation Time</p>
               <p>{details.creation_time.slice(0,10)}    {details.creation_time.slice(11,20)}</p>
             </div>
-          </div>
-{/* allData={qrData && qrData} */}
+          </div> 
           <div className='barcode-2'><Barcode address={2} /></div>
         </div>
 

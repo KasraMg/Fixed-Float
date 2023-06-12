@@ -24,7 +24,7 @@ export default function Barcode() {
           setDetails(data) 
           setaddressBarcode(`${data.adress_nowpayment}`) 
           setAllDataBarcode(`${data.symbol1}:${data.adress_nowpayment}?amount=${data.amount_user}`)
-          console.log(allDataBarcode);
+       
          })
     
         setCount(prev=>prev + 1)
@@ -34,7 +34,7 @@ export default function Barcode() {
 
    if (details) {
     dataa=`${details.adress_nowpayment}` 
-    console.log(dataa);
+  
    }
    
   }, [Count])

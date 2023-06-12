@@ -22,7 +22,7 @@ background: url("data:image/svg+xml,%3Csvg width='1233' height='333' viewBox='0 
     text-align: right;
 }
 .your-send-order,.your-receive-order{
-    width: 360px;
+    width:400px;
 }
 .your-send-order span{
     font-size: 1.4em;
