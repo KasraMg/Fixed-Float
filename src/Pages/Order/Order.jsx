@@ -4,23 +4,47 @@ import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import { RiFileCopyFill } from 'react-icons/ri'
 import Barcode from '../../Components/Barcode/Barcode'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import OrderGuide from '../../Components/OrderGuide/OrderGuide'
 import OrderDetail from '../../Components/OrderDetail/OrderDetail'
+import swal from 'sweetalert'
+import Loader from '../../Components/Loader/Loader'
 export default function Order() {
   const [details,setDetails]=useState() 
   const [Minutes,setMinutes]=useState() 
-  const [seconds,setSeconds]=useState() 
+  const [seconds,setSeconds]=useState()  
+  const [Count, setCount] = useState();
+  const [status200, setstatus200] = useState();
+  const [LoaderStatus, setLoader] = useState(true);
   let hashChange=useParams()
-  
+  const navigate=useNavigate()
   useEffect(() => {
     if (hashChange) {
+      setInterval(() => {
         fetch(`https://traderplus.info/exchange/api/payment_check.php?payment_id=&hash_change=${hashChange.id}`,{
       method:'POST'
      }).then(res=>res.json())
      .then(data=>{ 
-      setDetails(data)  
-    
+     
+      if (data.status==200) {
+        setstatus200(true)
+      }
+      else if(data.status==404){
+       
+          swal({
+          title:'Submit a New Request',
+          icon :'error',
+          button:'ok'
+        }).then(()=>{
+          navigate('/')
+          window.location.reload()
+       } )
+        
+        
+      }
+      setDetails(data)   
+      setLoader(false)
+      console.log(data)
       if (data.secondsleft > 1801) {
         setMinutes(`0`)
         setSeconds(`0000`)
@@ -30,8 +54,56 @@ export default function Order() {
       }
   
      })
+     setCount(prev=>prev + 1)
+    }, 40000);
+   
+  }
+   
+ 
 
-    }
+    
+
+  }, [Count])
+  
+  useEffect(() => {
+    if (hashChange) {
+      setInterval(() => {
+        fetch(`https://traderplus.info/exchange/api/payment_check.php?payment_id=&hash_change=${hashChange.id}`,{
+      method:'POST'
+     }).then(res=>res.json())
+     .then(data=>{ 
+      if (data.status==200) {
+        setstatus200(true)
+      }
+      else if(data.status==404){
+       
+          swal({
+          title:'Submit a New Request',
+          icon :'error',
+          button:'ok'
+        }).then(()=>{
+          navigate('/')
+          window.location.reload()
+       } )
+         
+        
+      }
+      setDetails(data)
+      setLoader(false)
+        console.log(data)
+      if (data.secondsleft > 1801) {
+        setMinutes(`0`)
+        setSeconds(`0000`)
+      }else{
+        const minutesAndSec = data.secondsleft  / 60
+        setMinutes(`${minutesAndSec}`) 
+      }
+  
+     })
+     setCount(prev=>prev + 1)
+    }, 30000);
+   
+  }
    
  
 
@@ -46,7 +118,18 @@ export default function Order() {
 {details &&(
   <>
 
-  <section className='order-direction'>
+{status200 &&(
+<>
+<img src="/images/order/icons8-wait-96.png" className='wait-img' alt="" />
+<p className='please-wait-title'>Please Wait...</p>
+</>
+)}
+
+{!status200 &&(
+  <>
+
+ 
+   <section className='order-direction'>
         <div className='your-send-order'>
           <div>
             <p className='mb-1'>YOU SEND</p>
@@ -117,13 +200,18 @@ export default function Order() {
           <OrderDetail icon='order-wait' text='Awaiting confirmations' flash={true}/>
           <OrderDetail icon='order-done' text='Done' flash={false}/>
       </div>
+ <OrderGuide/>
+ </>
+  )}
+ 
 
-
-        <OrderGuide/>
+       
         </>
 )}
       
-
+{LoaderStatus&&(
+  <Loader/>
+)}
 <Footer/>
     </div>
   )

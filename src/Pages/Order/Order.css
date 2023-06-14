@@ -317,3 +317,30 @@ flex-direction: column;
         width: 120px !important;
     }
 }
+
+
+.please-wait-title{
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(180deg,#FFF 0,#B1DAFF 100%);
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 2rem;
+}
+.wait-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7rem;
+    animation: rotation 2s infinite linear;
+}
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
