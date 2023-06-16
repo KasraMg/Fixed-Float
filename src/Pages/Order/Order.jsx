@@ -14,7 +14,10 @@ export default function Order() {
   const [Minutes,setMinutes]=useState() 
   const [seconds,setSeconds]=useState()  
   const [Count, setCount] = useState();
+  const [waiting,setWaiting]=useState()
   const [status200, setstatus200] = useState();
+  const [finalStatus, setFinalStatus] = useState();
+  const [Status404, setStatus404] = useState();
   const [LoaderStatus, setLoader] = useState(true);
   let hashChange=useParams()
   const navigate=useNavigate()
@@ -28,9 +31,11 @@ export default function Order() {
      
       if (data.status==200) {
         setstatus200(true)
+        setWaiting(false)
+        setFinalStatus(false)
       }
       else if(data.status==404){
-       
+        setStatus404(true)
           swal({
           title:'Submit a New Request',
           icon :'error',
@@ -41,7 +46,15 @@ export default function Order() {
        } )
         
         
-      }
+      }else if(data.status==201){
+        setFinalStatus(true)
+        setstatus200(false)
+        setWaiting(false)
+      }else if (data.status==300){
+        setWaiting(true)
+        setstatus200(false)
+        setFinalStatus(false)
+      } 
       setDetails(data)   
       setLoader(false)
       console.log(data)
@@ -125,7 +138,7 @@ export default function Order() {
 </>
 )}
 
-{!status200 &&(
+{waiting  &&(
   <>
 
  
@@ -203,8 +216,99 @@ export default function Order() {
  <OrderGuide/>
  </>
   )}
+
+{finalStatus &&(
+<>
+<section className='order-direction'>
+        <div className='your-send-order'>
+          <div>
+            <p className='mb-1'>YOU SEND</p>
+            <span>  {details.amount_user}  {details.symbol1}  </span>
+            <p>{details.adress_nowpayment}</p>
+          </div>
+          <img src={details.imagesymbol1}alt="" />
+        </div>
+
+        <div className='order-direction-arrow'></div>
+
+        <div className='your-receive-order'>
+          <img src={details.imagesymbol2}alt="" />
+          <div>
+            <p className='mb-1'>YOU RECEIVE</p>
+            <span>  {details.amount_send.slice(0,9)}  {details.symbol2} </span>
+            <p>{details.adress_user}</p>
+          </div>
+
+        </div>
+      </section>
+
+      <div className="order-action-body">
+
+<div className='barcode-2-parent'>
+  <div className="order-info">
+    <div>
+      <p>Order ID</p>
+      <span onClick={() => navigator.clipboard.writeText('3157H2')}>3157H2 <RiFileCopyFill className='order-copy-icon' /></span>
+    </div>
+
+    <div>
+      <p>Order status</p>
+     
+            <span atyle={{color:'green'}}>Complate</span>
+       
+  
+    </div>
+
+    
+
+    <div>
+      <p>Creation Time</p>
+      <p>{details.creation_time.slice(0,10)}    {details.creation_time.slice(11,20)}</p>
+    </div>
+    
+    <div>
+      <p>Received Time</p>
+      <p>{details.time_change.slice(0,10)}    {details.time_change.slice(11,20)}</p>
+    </div>
+    
+    <div className='border-0'>
+      <p>Completed Time</p>
+      <p>{details.time_send.slice(0,10)}    {details.time_send.slice(11,20)}</p>
+    </div>
+  </div> 
+   
+</div>
+
+
+<div className=" order-finaly-data">
+  <section>
+     <span className='order-finaly-data-title' >Your {details.symbol2} was sent</span>
+  <p className='order-finaly-data-body'>If you enjoy your experience on FixedFloat, please leave a review at services below. We appreciate your support! <span></span> </p>
+  <div className="order-finaly-detail "> 
+  <p><i></i> Bestchange</p> 
+  <p><i></i> Trustpilot</p>
+  </div>
+  </section>
  
 
+
+  <div className='order-finaly-data-img'>
+  <img src="/images/order/svgexport-8.svg" alt="" />
+  </div>
+</div>
+ 
+</div>
+
+  <div className="order-user-info">
+    <section></section>
+    <section></section>
+  </div>
+</>
+  )}
+ 
+{Status404 &&(
+  <div style={{height:'50vh',width:'100px'}}></div>
+)}
        
         </>
 )}
