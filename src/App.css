@@ -18,10 +18,18 @@
   padding-bottom: 0.5rem;
   background-image: url(https://fixedfloat.com/assets/images/background/main_bg.svg);
 }
-.swal-title {
+.swal-title,.swal-text {
   color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
+    font-weight: 600;
+    text-transform: none;
+    position: relative;
+    display: block;
+    padding: 13px 16px;
+    font-size: 27px;
+    line-height: normal;
+    text-align: center;
     background-image: linear-gradient(180deg,#FFF 0,#B1DAFF 100%);
 }
 .swal-button {

@@ -8,25 +8,103 @@ import Footer from '../../Components/Footer/Footer'
 import { useState } from 'react';
 import { useFormik } from "formik";
 import registerSchema from '../../Validations/register'
+import swal from 'sweetalert';
 export default function Login() {
     const [passwordShow, setPasswordShow] = useState(false)
     const [confrimePassword, setconfrimePassword] = useState(false)
-
+    
 
     const loginform = useFormik({
-        initialValues: { password: "", email: "" },
-
-        onSubmit: (values, { setSubmitting }) => {
-            console.log("Form Inputs Data =>", values);
-            setTimeout(() => {
-                setSubmitting(false);
-            }, 3000);
-        },
-
+        initialValues: { PassWord: "", email: "" },
         validationSchema: registerSchema,
     });
+    const registerform = useFormik({
+        initialValues: { PassWord: "", email: "",ReapetPassWord:"" },
+        validationSchema: registerSchema,
+    });
+   
+
+const loginClickHandle=(e)=>{
+    e.preventDefault()
+    console.log(loginform.errors);
+    console.log(loginform.values.PassWord.length);
+    console.log(loginform.values.email.length);
+
+    
+if (loginform.errors.email || loginform.errors.PassWord ) {
+    
+    swal({
+        title:loginform.errors.email && loginform.errors.email,
+        text:loginform.errors.PassWord && loginform.errors.PassWord,
+        icon:'error',
+        button:'try again'
+    })
+  
+ 
+   
+}
+
+else{
+    if ( loginform.values.PassWord.length === 0 && loginform.values.email.length ===0 ) {
+        swal({
+            title:'email or password is not valid!',
+            icon:'error',
+            button:'try again'
+        })
+    }else{
+        fetch('')
+        swal({
+            title:'nice',
+            icon:'error',
+            button:'try again'
+        })
+    }
+
+ 
+}
+   
+}
 
 
+const registerClickHandle=(e)=>{
+    e.preventDefault()
+    console.log(registerform.errors);
+     
+
+    
+if (registerform.errors.email || registerform.errors.PassWord || registerform.errors.ReapetPassWord ) {
+    
+    swal({
+        title:registerform.errors.email && registerform.errors.email,
+        text:registerform.errors.PassWord && registerform.errors.PassWord,
+        icon:'error',
+        button:'try again'
+    })
+  
+ 
+   
+}
+
+else{
+    if ( registerform.values.PassWord.length === 0 && registerform.values.email.length ===0  && registerform.values.ReapetPassWord.length ===0 ) {
+        swal({
+            title:'email or password is not valid!',
+            icon:'error',
+            button:'try again'
+        })
+    }else{
+        fetch('')
+        swal({
+            title:'nice',
+            icon:'error',
+            button:'try again'
+        })
+    }
+
+ 
+}
+   
+}
     return (
         <div className='Login_Signup Login'>
             <Header />
@@ -52,18 +130,18 @@ export default function Login() {
 
                                         <input type="email"
                                           name="email" 
-                                        value={loginform.values.name}
+                                        value={loginform.values.email}
                                         onChange={loginform.handleChange}
                                         onBlur={loginform.handleBlur}
                                          placeholder='Email' />
-                                         {loginform.errors.email && loginform.touched.email && loginform.errors.email}
+                                         
                                     </div>
 
                                             
                                     <div>
                                         <input 
-                                        name='password'
-                                        value={loginform.values.name}
+                                        name='PassWord'
+                                        value={loginform.values.PassWord}
                                         onChange={loginform.handleChange}
                                         onBlur={loginform.handleBlur} type={passwordShow ? 'text' : "password"} placeholder='Password' />
                                         {!passwordShow ? (
@@ -72,10 +150,10 @@ export default function Login() {
                                             <span className='hide-icon' onClick={() => setPasswordShow(false)}></span>
                                         )}
 
-                                                {loginform.errors.password && loginform.touched.password && loginform.errors.password}
+                                               
                                     </div>
 
-                                    <button  type="submit" className='btn btn-primary'>sign in</button>
+                                    <button onClick={(e)=>loginClickHandle(e)}  type="submit" className='btn btn-primary'>sign in</button>
 
                                    
 
@@ -88,15 +166,25 @@ export default function Login() {
                             </Tab>
 
                             <Tab eventKey="Signup" title="Sign up">
-                                <div className="sign-up">
+                                <registerform  onSubmit={registerform.handleSubmit} className="sign-up">
 
                                     <div>
-
-                                        <input type="email" placeholder='Email' />
+                                        <input  
+                                        name='email'
+                                         value={registerform.values.email}
+                                        onChange={registerform.handleChange}
+                                        onBlur={registerform.handleBlur} 
+                                        type="email"
+                                         placeholder='Email' />
                                     </div>
 
                                     <div>
-                                        <input type={passwordShow ? 'text' : "password"} placeholder='Password' />
+                                        <input
+                                           name='PassWord'
+                                           value={registerform.values.PassWord}
+                                           onChange={registerform.handleChange}
+                                           onBlur={registerform.handleBlur}
+                                            type={passwordShow ? 'text' : "password"} placeholder='Password' />
                                         {!passwordShow ? (
                                             <span className='show-icon' onClick={() => setPasswordShow(true)}></span>
                                         ) : (
@@ -104,7 +192,12 @@ export default function Login() {
                                         )}
 
                                         <div>
-                                            <input type={confrimePassword ? 'text' : "password"} placeholder='Confrim Password' />
+                                            <input
+                                               name='ReapetPassWord'
+                                               value={registerform.values.ReapetPassWord}
+                                               onChange={registerform.handleChange}
+                                               onBlur={registerform.handleBlur}
+                                                type={confrimePassword ? 'text' : "password"} placeholder='Confrim Password' />
                                             {!confrimePassword ? (
                                                 <span className='show-Confrim-icon' onClick={() => setconfrimePassword(true)}></span>
                                             ) : (
@@ -117,8 +210,8 @@ export default function Login() {
 
                                     </div>
 
-                                    <button className='btn btn-primary'>sign up</button>
-                                </div>
+                                    <button onClick={(e)=>registerClickHandle(e)} className='btn btn-primary'>sign up</button>
+                                </registerform>
                             </Tab>
                             <Tab className='forgot-password-tab' eventKey="forgot" title="forgot password">
                                 <div className="forgot-password">
