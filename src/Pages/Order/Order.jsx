@@ -135,7 +135,7 @@ export default function Order() {
             <>
               <img src="/images/order/icons8-wait-96.png" className='wait-img' alt="" />
               <p className='please-wait-title'>Please Wait...</p>
-              <div className='order-details'>
+              <div className='order-details order-details-status-200'>
                 <OrderDetail icon='order-await' text='Awaiting deposit' flash={true} dark={false} />
                 <OrderDetail icon='order-wait' text='Awaiting confirmations' flash={true} dark={false} />
                 <OrderDetail icon='order-done' text='Done' flash={false} dark={true} />

@@ -1,10 +1,10 @@
 
 import './App.css';
-import {useEffect,useState,}from 'react'
+import {useEffect,useState,useCallback}from 'react'
 import { useRoutes } from 'react-router-dom'
 import contextDatas from './Context/allData';
 import routes from './routes'
-
+ 
 import ScrollToUp from './ScrollToUp';
 function App() {
 
@@ -15,6 +15,22 @@ const [Sendcurrency,setSendCurrency]=useState(null)
 const [Recivecurrency,setReciveCurrency]=useState(null) 
 const [Value,setValue]=useState(null) 
 const [address,setAddress]=useState()
+
+
+const login = (userInfos, token) => {
+  setToken(token); 
+  setUserInfos(userInfos);
+  localStorage.setItem("FixedFloat", JSON.stringify({ token }));
+};
+
+
+
+const logout = useCallback(() => {
+  setToken(null); 
+  localStorage.removeItem("FixedFloat");
+  setUserInfos({});
+});
+
   return (
    
     <div>
@@ -31,7 +47,9 @@ const [address,setAddress]=useState()
         setValue,
         Value,
         address,
-        setAddress
+        setAddress, 
+        login, 
+        logout,
       }}>
 
 

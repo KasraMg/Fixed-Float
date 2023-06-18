@@ -353,4 +353,13 @@ flex-direction: column;
     }
   }
 
-  
+  .order-details-status-200{
+        position: relative;
+        right: 29px;
+        top: 30px;
+  }
+  @media (max-width:1025px) {
+    .order-details-status-200{ 
+        right: 0 !important;
+  }
+  }
