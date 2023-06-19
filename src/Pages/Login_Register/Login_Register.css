@@ -411,3 +411,8 @@ input[data-autocompleted] {
  left: 10px !important;
         }
     }
+
+    .sign-up  .loader-section,
+    .sign-in .loader-section{
+height: 0vh !important;
+    }

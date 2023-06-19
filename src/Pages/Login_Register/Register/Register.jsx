@@ -1,10 +1,16 @@
-import React,{ useState } from 'react'
+import React, { useState,useContext } from 'react'
 import { useFormik } from "formik";
 import registerSchema from '../../../Validations/register';
 import swal from 'sweetalert';
-import { Navigate } from 'react-router-dom';
+import Loader from '../../../Components/Loader/Loader';
+import { useNavigate } from 'react-router-dom';
+import allData from '../../../Context/allData'
+
 export default function Register() {
+    const navigate=useNavigate()
+    const authContext=useContext(allData)
     const [passwordShow, setPasswordShow] = useState(false)
+    const [LoaderStatus, setLoader] = useState(false)
     const [confrimePassword, setconfrimePassword] = useState(false)
     const registerform = useFormik({
         initialValues: { PassWord: "", email: "", ReapetPassWord: "", name: "" },
@@ -38,38 +44,37 @@ export default function Register() {
                     button: 'try again'
                 })
             } else {
-            
+
                 if (registerform.values.PassWord == registerform.values.ReapetPassWord) {
-                     
-                    fetch(`https://traderplus.info/exchange/api/register.php?name=${registerform.values.name}&email=${registerform.values.email}&password1=${registerform.values.PassWord}&password2=${registerform.values.ReapetPassWord}`,{
-                        method:'POST' 
+                    setLoader(true)
+                    fetch(`https://traderplus.info/exchange/api/register.php?name=${registerform.values.name}&email=${registerform.values.email}&password1=${registerform.values.PassWord}&password2=${registerform.values.ReapetPassWord}`, {
+                        method: 'POST'
                     })
-                    .then(res=> res.json())
-                    .then(data=>{
-                        console.log(data);
-                        console.log(registerform.values.email);
-                        console.log(registerform.values.PassWord);
-                        console.log(registerform.values.ReapetPassWord);
-                        if (data.code == 200) {
-                            swal({
-                                title:'Registration was successful',
-                                icon:'success',
-                                button:'ok'
-                            }).then(()=>{
-                                Navigate('/')
-                            })
-                        }
-                        else if(data.code == 400){
-                            swal({
-                                title:'This email is already registered',
-                                icon:'error',
-                                button:'ok'
-                            })
-                        
-                        }
-                      
-                    })
-                  
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data); 
+                            setLoader(false)
+                            if (data.code == 200) {
+                                authContext.login(data.userdata, data.token);
+                                swal({
+                                    title: 'Registration was successful',
+                                    icon: 'success',
+                                    button: 'ok'
+                                }).then(() => {
+                                    navigate('/')
+                                })
+                            }
+                            else if (data.code == 400) {
+                                swal({
+                                    title: 'This email is already registered',
+                                    icon: 'error',
+                                    button: 'ok'
+                                })
+
+                            }
+
+                        })
+
                 } else {
                     swal({
                         title: 'Password do not match',
@@ -77,9 +82,9 @@ export default function Register() {
                         button: 'try again'
                     })
                 }
-            
 
-              
+
+
             }
 
 
@@ -90,7 +95,7 @@ export default function Register() {
     return (
         <registerform onSubmit={registerform.handleSubmit} className="sign-up">
 
-           <div>
+            <div>
                 <input
                     name='name'
                     value={registerform.values.name}
@@ -143,6 +148,12 @@ export default function Register() {
             </div>
 
             <button onClick={(e) => registerClickHandle(e)} className='btn btn-primary'>sign up</button>
+
+
+            {LoaderStatus && (
+                <Loader />
+            )}
+
         </registerform>
     )
 }

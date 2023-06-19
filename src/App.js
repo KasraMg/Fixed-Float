@@ -31,6 +31,22 @@ const logout = useCallback(() => {
   setUserInfos({});
 });
 
+useEffect(() => { 
+  const localStorageData = JSON.parse(localStorage.getItem("FixedFloat"));
+
+  if (localStorageData) { 
+    fetch(`https://traderplus.info/exchange/api/user_info.php?token=${localStorageData.token}`, {
+      method:'POST'
+    })
+      .then((res) => res.json())
+      .then((userInfo) => {
+        setUserInfos(userInfo.userdata)
+       console.log(userInfo);
+       
+      });
+  }  
+},[]);
+ 
   return (
    
     <div>

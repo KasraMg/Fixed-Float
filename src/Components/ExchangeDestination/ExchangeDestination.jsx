@@ -1,7 +1,6 @@
-import React,{ useEffect,useState } from 'react' 
+import React,{ useEffect,useState,useContext } from 'react' 
 import { AiOutlineClose } from 'react-icons/ai'
 import './ExchangeDestination.css'
-import { useContext } from 'react'
 import swal from 'sweetalert'
 import allData from '../../Context/allData'
 import { useNavigate } from 'react-router-dom'

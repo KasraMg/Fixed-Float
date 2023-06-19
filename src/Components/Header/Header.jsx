@@ -1,16 +1,14 @@
-import React,{useState} from 'react'
+import React,{useState,useContext} from 'react'
 import './header.css'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
- 
+import allData from '../../Context/allData'
 import { Offcanvas } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-export default function Header() {
-    const [showLogin_Signup,setShowlogin_Signup]=useState(false)
-    const [show, setShow] = useState(false);
-
+export default function Header() { 
+    const [show, setShow] = useState(false); 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
+    const  userContext=useContext(allData)
   
   return (
     <header>
@@ -52,10 +50,20 @@ export default function Header() {
                     <li><Link to="/FAQ">FAQ</Link> </li>
                     <li><Link to="/Support">Support</Link> </li>
                 </ul>
-                <div class="header-btns">
+                {userContext.userInfos ?(
+                  <div class="header-account">
+                      <p className='profile-text'> Account </p> 
+                  </div>
+               
+                ):(
+                  <> 
+                  <div class="header-btns">
                     <button><Link to='/Login'>Sign in</Link></button>
                   <button> <Link to='/Login'>Sign up</Link></button>
                 </div>
+                </>
+                )}
+                
             </div>
 
  

@@ -43,5 +43,5 @@
 background: none !important;
 }
 .swal-icon--success__hide-corners {
-background-color: none !important;
+display: none !important;
 }

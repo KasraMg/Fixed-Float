@@ -204,3 +204,28 @@ overflow-y: unset !important;
     color: white;
 
 }
+
+.profile-text{
+    color: white;
+    margin-bottom: 0px; 
+    font-weight: 600;
+    font-family: sans-serif;
+    padding: .8rem 1.6rem;
+    top: 5px;
+    position: relative;
+    cursor: pointer;
+}
+.header-account::before{
+    background-color: #fff;
+    content: "";
+    height: 1.8em;
+   
+    position: absolute;
+    top: 53%;
+    width: 1px;
+    
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
