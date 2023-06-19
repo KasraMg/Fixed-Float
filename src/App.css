@@ -39,3 +39,9 @@
     border: 1px solid #B1DAFF;
     background-image: linear-gradient(180deg,#FFF 0,#B1DAFF 100%);
 }
+.swal-icon--success:after, .swal-icon--success:before {
+background: none !important;
+}
+.swal-icon--success__hide-corners {
+background-color: none !important;
+}

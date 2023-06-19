@@ -1,3 +1,37 @@
+.Login_Signup-title{ 
+    margin-top: 0.8125em;
+    margin-bottom: 0.8125em;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(180deg,#FFF 0,#B1DAFF 100%);
+    font-weight: 700;
+    line-height: 1.15em;
+    padding: 0rem 2rem;
+}
+
+.Login main{
+    margin-top: 4rem;
+}
+.Login{
+    padding: 0rem 7.6rem;
+
+}
+@media (max-width:1350px) {
+    .Login{
+        padding: 0rem 2rem;
+    }
+}
+@media (max-width:500px) {
+    .Login{
+        padding: 0rem 1rem;
+    }
+}
+.Login form {
+position: relative;
+}
+
+
 .Login_Signup{
   
     z-index: 999;
@@ -18,9 +52,7 @@
     border-radius: 10px;
     background-color: #21284B;
 }
-.Login_Signup_bg{
-    height: 502px;
-}
+ 
 .Login_Signup_bg{
 position: relative;
 border-radius: 10px;
@@ -69,7 +101,13 @@ border-radius: 10px;
     gap: 0px;
   
 }
-
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
 .sign-in input,
 .sign-up input,
 .forgot-password input{
@@ -85,6 +123,7 @@ border-radius: 10px;
 .sign-in div,
 .sign-up div{
     position: relative;
+    background-color: #21284B;
 }
 .form label {
     position: absolute;
@@ -305,10 +344,70 @@ border-radius: 10px;
   }#uncontrolled-tab-example-tab-forgot {
     white-space: nowrap;
     font-size: 1rem;
-  }.sign-up,.forgot-password {
+  }.forgot-password {
  left: 10px !important;
     width: 219px;
     right: 4px;
 
   }
   }
+
+
+
+  
+@media (max-width:500px) {
+     .Login_Signup form {
+        padding: 2rem 1rem !important;
+    }.Login_Signup main section {
+        width: 100% !important;
+    }
+}
+@media (max-width:769px) {
+    .Login_Signup-title{
+        font-size: 3rem;
+        padding-left: 0rem !important;
+    }   .SignUp #uncontrolled-tab-example-tab-forgot {
+       
+        left: 22px !important; 
+         
+    }
+}
+@media (min-width:800px) {
+    .Login_Signup-title{
+        font-size: 5em;
+    }
+}
+@media (max-width:500px) {
+    .Login_Signup-title{
+        font-size: 1.7rem !important;
+        margin-top: 5rem !important;
+    }
+}
+ 
+    .Login_Signup-title{
+       
+        margin-top: 0.8125em;
+        margin-bottom: 0.8125em;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-image: linear-gradient(180deg,#FFF 0,#B1DAFF 100%);
+        font-weight: 700;
+        line-height: 1.15em;
+        padding: 0rem 2rem;
+    }
+     #uncontrolled-tab-example-tab-forgot {
+        position: absolute;
+        font-size: 1rem;
+        top: 250px;
+        
+       
+        width: 39%;
+        height: 16%;
+        white-space: nowrap;
+    }
+    @media (min-width:770px) {
+         #uncontrolled-tab-example-tab-forgot {
+ left: 10px !important;
+        }
+    }

@@ -23,7 +23,7 @@ export default function Header() {
          <ul>
           <p className='mt-0'>Account</p>
                <Link to="/Login"><li>Sign in</li></Link>
-               <Link to="/SignUp"><li>Sign up</li></Link>
+               <Link to="/Login"><li>Sign up</li></Link>
                <p>FixedFloat</p>
                <Link to="/About"><li>About</li></Link>
                <Link to="/Blogs"><li>Blog</li></Link>
@@ -54,7 +54,7 @@ export default function Header() {
                 </ul>
                 <div class="header-btns">
                     <button><Link to='/Login'>Sign in</Link></button>
-                  <button> <Link to='/SignUp'>Sign up</Link></button>
+                  <button> <Link to='/Login'>Sign up</Link></button>
                 </div>
             </div>
 
