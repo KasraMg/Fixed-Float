@@ -93,7 +93,7 @@ export default function Register() {
     }
 
     return (
-        <registerform onSubmit={registerform.handleSubmit} className="sign-up">
+        <registerform  onSubmit={registerform.handleSubmit} className="sign-up">
 
             <div>
                 <input

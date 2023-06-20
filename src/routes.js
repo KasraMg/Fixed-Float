@@ -14,6 +14,8 @@ import FAQ from "./Pages/FAQ/FAQ";
    {path:'/Support' , element:<Support/>},
    {path:'/Blogs' , element:<Blogs/>},
    {path:'/Login' , element:<Login_Register/>}, 
+   {path:'/Register' , element:<Login_Register/>}, 
+   {path:'/ForgotPassword' , element:<Login_Register/>}, 
    {path:'/FAQ' , element:<FAQ/>},
  
  
