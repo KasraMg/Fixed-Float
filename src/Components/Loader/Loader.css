@@ -14,7 +14,7 @@
   animation: rotation 1s linear infinite;
 }
 .loader-section{
-  height: 35vh;
+  height:43vh;
 }
 .Loader-bg{
   position:fixed !important;

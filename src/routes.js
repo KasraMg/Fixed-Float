@@ -5,6 +5,9 @@ import Support from './Pages/Support/Support'
 import Blogs from './Pages/Blogs/Blogs'
 import Login_Register from "./Pages/Login_Register/Login_Register"; 
 import FAQ from "./Pages/FAQ/FAQ";
+import UserDashboard from './Pages/userDashboard/UserDashboard'
+import OrderHistory from "./Pages/userDashboard/OrderHistory/OrderHistory";
+import UserProfile from "./Pages/userDashboard/UserProfile/UserProfile";
  const routes=[
 
 
@@ -18,7 +21,15 @@ import FAQ from "./Pages/FAQ/FAQ";
    {path:'/ForgotPassword' , element:<Login_Register/>}, 
    {path:'/FAQ' , element:<FAQ/>},
  
- 
+   {
+    path: "/user-Dashboard/*",
+    element: <UserDashboard />,
+    children: [
+        { path: "OrderHistory", element: <OrderHistory /> },
+        { path: "UserProfile", element: <UserProfile /> },
+       
+    ],
+  },
 
 ]
 export default routes

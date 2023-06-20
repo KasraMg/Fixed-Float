@@ -89,7 +89,7 @@ export default function Header() {
             <ul>
               <li><BsPerson className='cms-dashboard-icon' /> Personal data</li>
               <li><BsFileText className='cms-dashboard-icon' /> Orders history</li>
-              <li><CiLogout className='cms-dashboard-icon' /> Sign out</li>
+              <li style={{color: '#ffb0b0'}}><CiLogout className='cms-dashboard-icon' /> Sign out</li>
             </ul>
           </div>
         </>
