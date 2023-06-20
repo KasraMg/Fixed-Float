@@ -6,9 +6,8 @@ import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import Login from './Login/Login';
 import Register from './Register/Register';
+import ForgetPassword from './ForgetPass/ForgetPassword';
 export default function Login_Register() {
-
-
     return (
         <div className='Login_Signup Login'>
             <Header />
@@ -37,17 +36,7 @@ export default function Login_Register() {
                                 <Register/>
                             </Tab>
                             <Tab className='forgot-password-tab' eventKey="forgot" title="forgot password">
-                                <div className="forgot-password">
-                                    <p style={{ color: 'white' }}>Please Type Your Email</p>
-                                    <input type="email" placeholder='Email' />
-
-                                    <button className='btn btn-primary'>Reset Password</button>
-
-
-
-
-
-                                </div>
+                               <ForgetPassword/>
                             </Tab>
                         </Tabs>
 

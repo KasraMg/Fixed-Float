@@ -302,10 +302,10 @@ input[data-autocompleted] {
 
   .forgot-password{
     z-index: 300;
-    
-    padding-top: 5rem;
+    top: 70px;
     position: relative;
     background-color: #21284B;
+    display: block;
     text-align: center;
   }
   .forgot-password a:hover{
@@ -333,6 +333,12 @@ input[data-autocompleted] {
       width: 400px;
   }.Login_Signup-bg {
     width: 112.3% !important;
+  }.forgot-password{
+    top: 5px !important;
+  }.tab-content > .active {
+    height: 100% !important;
+  }#uncontrolled-tab-example-tab-forgot {
+    left: 10px !important;
   }
   }
 
@@ -344,12 +350,7 @@ input[data-autocompleted] {
   }#uncontrolled-tab-example-tab-forgot {
     white-space: nowrap;
     font-size: 1rem;
-  }.forgot-password {
- left: 10px !important;
-    width: 219px;
-    right: 4px;
-
-  }
+  }  
   }
 
 
@@ -413,6 +414,7 @@ input[data-autocompleted] {
     }
 
     .sign-up  .loader-section,
-    .sign-in .loader-section{
-height: 0vh !important;
+    .sign-in .loader-section,
+    .forgot-password .loader-section{
+      height: 0vh !important;
     }
