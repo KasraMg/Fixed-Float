@@ -57,8 +57,11 @@ export default function ExchangeAmounts( ) {
         let newSendCurrency={...context.Recivecurrency}
         let newReciveCurrency={...context.Sendcurrency}
 
-        context.setSendCurrency(newSendCurrency)
-        context.setReciveCurrency(newReciveCurrency)
+            if (context.Sendcurrency && context.Recivecurrency) {
+                context.setSendCurrency(newSendCurrency)
+                context.setReciveCurrency(newReciveCurrency)
+            }
+     
        
     }
 
@@ -76,7 +79,7 @@ export default function ExchangeAmounts( ) {
             <p>{context.Sendcurrency  ? context.Sendcurrency.symbol:'select'}</p>
         </section>
         <div style={{ position: "relative" }}>
-            <input  autocomplete="off" value={ context.Value} placeholder='0'   onChange={(e)=>inputChangeHandler(e)}
+            <input maxLength={13} autocomplete="off" value={ context.Value} placeholder='0'   onChange={(e)=>inputChangeHandler(e)}
                 className="Send-input mt-lg-2" type="text" />
 
             <lable className="select-outer" onClick={() => setSendExchangeDropDown(true)}>

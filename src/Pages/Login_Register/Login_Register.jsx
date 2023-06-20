@@ -18,7 +18,8 @@ export default function Login_Register() {
         } else if (window.location.pathname == '/ForgotPassword') {
             setTabStatus(3)
         }
-    }, [])
+        console.log('hi2');
+    }, [window.location.pathname])
 
 
     return (
@@ -36,7 +37,7 @@ export default function Login_Register() {
                     <form action="">
                         {tabStatus && (
                             <Tabs
-                                defaultActiveKey={tabStatus == 1 && "Signin" || tabStatus == 2 && "Signup" || tabStatus == 3 && "forgot"}
+                                defaultActiveKey={tabStatus === 1 && "Signin" || tabStatus === 2 && "Signup" || tabStatus === 3 && "forgot"}
                                 id="uncontrolled-tab-example"
                                 className="mb-3"
                             >
