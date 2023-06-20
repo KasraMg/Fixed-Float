@@ -154,10 +154,7 @@ background-color: transparent;
    
 }
 @media (max-width:500px) {
-    header{
-      
-        padding: 0rem 1rem;
-    }.logo{
+    .logo{
         font-size: 13px;
     }.logo-3::after {
         left: 73px;

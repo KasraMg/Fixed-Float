@@ -1,15 +1,48 @@
-import React, { useContext } from 'react'
+import React, { useContext,useState } from 'react'
 import './UserProfile.css'
 import allData from '../../../Context/allData'
 import swal from 'sweetalert'
 export default function UserProfile() {
     const context = useContext(allData)
-
+    const [CurrentPassword,setCurrentPassword]=useState()
     const editPassHandler=()=>{
         swal({
             title:'Please enter your current password',
             content: "input",
             buttons: "ok",
+        }).then(currentPass=>{
+            if (currentPass.length) {
+                setCurrentPassword(currentPass)
+             swal({
+                title:'Please enter your new password',
+                content: "input",
+                buttons: "change",
+             }).then(newPassword=>{
+              if (newPassword) {
+                const localStorageData = JSON.parse(localStorage.getItem("FixedFloat"));
+                fetch(`https://traderplus.info/exchange/api/user_password_change.php?password=${CurrentPassword}&password1=${newPassword}&token=${localStorageData.token}`,{
+                    method:'POST'
+                })
+                .then(res=>res.json())
+                .then(data=>{
+                    console.log(data);
+                   if (data.code==400) {
+                    swal({
+                        title:'Password is wrong',
+                        icon:'error',
+                        button:'try again'
+                    }) 
+                   }else if(data.code==200){
+                    swal({
+                        title:'Your password has changed',
+                        icon:'success',
+                        button:'ok'
+                    })
+                   }
+                })
+              }
+             })
+            }
         })
     }
     return (

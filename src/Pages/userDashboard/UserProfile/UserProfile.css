@@ -62,3 +62,24 @@
     background-color: #008fdf;
     padding: 0.65em 4em;
 }
+@media (max-width:1000px) {
+    .UserProfile {
+        padding: 2rem;
+    }
+}
+@media (max-width:500px) {
+    .edit-pass-btn {
+        padding: 0.65em 1em;
+    }.user-details div div { 
+        gap: 40px;
+    }.user-details main {
+        padding: 1rem;
+    }.user-register-time {
+        margin-left: 1rem !important;
+    }
+}
+@media (max-width:768px) {
+    .UserProfile {
+        padding:3rem 0rem;
+    }
+}

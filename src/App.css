@@ -45,3 +45,8 @@ background: none !important;
 .swal-icon--success__hide-corners {
 display: none !important;
 }
+.swal-content__input, .swal-content__textarea { 
+  background-color: #ffffff24;
+  color: white;
+  border-radius: 11px !important;
+}
