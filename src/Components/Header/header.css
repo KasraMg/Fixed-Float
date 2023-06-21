@@ -227,9 +227,11 @@ overflow-y: unset !important;
     transform: translateY(-50%);
 }
 
+.cms-dashboard a{ 
+    color: #808191;
+}
 .cms-dashboard{
     width: 207px; 
-    color: #808191;
     margin-top: -0.8em;  
     opacity: 1;
     position: absolute;
@@ -248,6 +250,7 @@ overflow-y: unset !important;
     align-items: center;
     font-weight: 300 !important;
     -webkit-transition: background .25s;
+    width: 100%;
     -o-transition: background .25s;
     transition: background .25s;
     align-items: center;

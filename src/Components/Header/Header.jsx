@@ -87,8 +87,8 @@ export default function Header() {
           <div className='cms-dashboard'>
             <div className="cms-dashboard-bg" onClick={() => setShowCms(false)}></div>
             <ul>
-              <li><BsPerson className='cms-dashboard-icon' /> Personal data</li>
-              <li><BsFileText className='cms-dashboard-icon' /> Orders history</li>
+              <Link to='/user-Dashboard/UserProfile'><li><BsPerson className='cms-dashboard-icon' /> Personal data</li> </Link> 
+              <Link to='/user-Dashboard/OrderHistory'> <li><BsFileText className='cms-dashboard-icon' /> Orders history</li></Link>
               <li style={{color: '#ffb0b0'}}><CiLogout className='cms-dashboard-icon' /> Sign out</li>
             </ul>
           </div>

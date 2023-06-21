@@ -28,7 +28,7 @@ export default function UserProfile() {
                     console.log(data);
                    if (data.code==400) {
                     swal({
-                        title:'Password is wrong',
+                        title:'Current password is wrong',
                         icon:'error',
                         button:'try again'
                     }) 
