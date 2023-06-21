@@ -1,0 +1,139 @@
+.OrderHistory-section-title{
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(180deg,#FFF 0,#B1DAFF 100%);
+    font-size: 2rem;
+    margin-bottom: 1.6rem;
+    font-weight: 600;  
+}
+.OrderHistory{
+    padding: 2rem 0rem 2rem 2rem;
+}
+
+.OrderHistory main div{
+    display: flex;
+    gap: 50px;
+    justify-content: space-around;
+}
+.table > :not(caption) > * > * {
+    color: #808191 !important;
+    font-weight: 700;
+    padding-left: 1rem !important;
+}
+
+.table > :not(caption) > * > * { 
+    background-color:  transparent !important;
+}
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    --bs-table-accent-bg: transparent !important;
+    color: white !important;
+    font-weight: 300 !important;
+    padding: 1rem !important ;
+    
+     
+}
+.Order-History-user-details{
+   background-color: #191c32 !important;
+}
+.table > thead { 
+    position: relative;
+    bottom: 4px;
+    border: 0 !important;
+}
+tr{
+    border: 0; 
+}
+.Order-History-user-details:hover{
+    background-color: #20284b !important;
+}
+.table > :not(caption) > * > * {
+    border: 0 !important;
+}
+
+.OrderHistory-selectBox select{
+margin: 0rem 10px;
+background-color: #161A30;
+    border-radius: 0.5em;
+    height: 40px;
+    color: #fff;
+    border: 0;
+    width: 70px;
+    outline: none;
+    padding-left: 0.75em;
+}
+.OrderHistory-selectBox {
+    color: white;
+}
+.OrderHistory-footer{
+    display: flex;
+    justify-content: space-between !important;
+    flex-direction: row-reverse;
+    padding-top: 1rem;
+}
+.OrderHistory-pagination-control p{
+margin-bottom: 0px;
+}
+.OrderHistory-pagination-control-count{
+    background-color: #20284b;
+    border-color: #161a30;
+    color: #008FDF;
+    z-index: 1;
+    padding: .5rem 1rem;
+    font-weight: bold;
+}
+.OrderHistory-pagination-control{
+    width: 120px;
+    gap: 10px !important;
+    border-radius: 5px;
+    align-items: center;
+    padding: 0rem .5rem;
+    color: white;
+    background-color: #161A30;
+}
+.Order-History-user-details img{
+    position: relative;
+    bottom: 2px;
+}
+.order-history-notfound p{
+    margin-bottom: 0px;
+    font-size: 1.2rem;
+}
+.order-history-notfound{
+    color: white;
+    background-color: #161A30;
+    text-align: center;
+    background-color: #191c32 !important;
+    padding: 1rem 0rem;
+    margin-bottom:1rem;
+}
+.table > :not(caption) > * > * {
+white-space: nowrap;
+}
+@media (max-width:900px) {
+    .OrderHistory {
+        padding: 2rem 0rem 2rem 0rem;
+    }
+}
+@media (max-width:500px) {
+    td{
+        font-size: .8rem !important;
+    }.OrderHistory main div {
+        flex-direction: column;
+    }.OrderHistory-pagination-control{
+        flex-direction: row !important;
+        width: 100% !important;
+    }.OrderHistory-pagination-control-count { 
+        padding: 0.5rem 3rem !important;
+    }.OrderHistory-selectBox{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    }.OrderHistory-selectBox select{
+        width: 59% !important;
+    }.OrderHistory-section-title {
+        font-size: 1.5rem;
+    }.table-striped > tbody > tr:nth-of-type(odd) > * {
+        white-space: nowrap;
+    }
+}

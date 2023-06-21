@@ -20,13 +20,13 @@ export default function Header() {
           <AiOutlineClose className='offcanvas-close' onClick={handleClose} />
           <hr />
         </Offcanvas.Header>
-        <Offcanvas.Body>
+        <Offcanvas.Body onClick={handleClose}>
           <ul>
             <p className='mt-0'>Account</p>
             {userContext.userInfos ? (
               <>
-                <Link><li><BsPerson  style={{fontSize:'1.2rem',marginRight:'.5rem'}}/> Personal data</li></Link>
-                <Link><li><BsFileText style={{fontSize:'1.2rem',marginRight:'.5rem'}}/> Orders history</li> </Link>
+                <Link to='/user-Dashboard/UserProfile'><li><BsPerson  style={{fontSize:'1.2rem',marginRight:'.5rem'}}/> Personal data</li></Link>
+                <Link to='/user-Dashboard/OrderHistory'><li><BsFileText style={{fontSize:'1.2rem',marginRight:'.5rem'}}/> Orders history</li> </Link>
                 <li style={{color: '#ffb0b0'}}><CiLogout style={{fontSize:'1.2rem',marginRight:'.5rem', color: '#ffb0b0'}}/> Sign out</li>
 
               </>

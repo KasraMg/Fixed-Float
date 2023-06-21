@@ -40,9 +40,7 @@ useEffect(() => {
     })
       .then((res) => res.json())
       .then((userInfo) => {
-        setUserInfos(userInfo.userdata)
-       console.log(userInfo);
-       
+        setUserInfos(userInfo.userdata)  
       });
   }  
 },[]);
