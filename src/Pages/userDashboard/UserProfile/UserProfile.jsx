@@ -56,7 +56,7 @@ export default function UserProfile() {
             {context.userInfos && (
                 <section className='user-details'>
                     <div className='user-register-time'>
-                        <p><strong>Registration date:</strong>{context.userInfos.register_date}</p>
+                        <p><strong>Registration date:</strong>{context.userInfos.register_date &&context.userInfos.register_date}</p>
                     </div>
                     <hr />
                     <main>

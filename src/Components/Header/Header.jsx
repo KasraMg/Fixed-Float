@@ -5,14 +5,24 @@ import { BsPerson, BsFileText } from 'react-icons/bs'
 import { CiLogout } from 'react-icons/ci'
 import allData from '../../Context/allData'
 import { Offcanvas } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom' 
+import swal from 'sweetalert'
 export default function Header() {
   const [show, setShow] = useState(false);
   const [showCms, setShowCms] = useState(false)
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const userContext = useContext(allData)
-
+  const signOutHandler=()=>{
+    swal({
+     title:'Are you sure to logout?',
+     icon:'warning',
+     buttons:['no','yes']
+    }).then(res=>{
+      userContext.logout()
+      setShowCms(false)
+    })
+ }
   return (
     <header>
       <Offcanvas show={show} onHide={handleClose}>
@@ -27,7 +37,7 @@ export default function Header() {
               <>
                 <Link to='/user-Dashboard/UserProfile'><li><BsPerson  style={{fontSize:'1.2rem',marginRight:'.5rem'}}/> Personal data</li></Link>
                 <Link to='/user-Dashboard/OrderHistory'><li><BsFileText style={{fontSize:'1.2rem',marginRight:'.5rem'}}/> Orders history</li> </Link>
-                <li style={{color: '#ffb0b0'}}><CiLogout style={{fontSize:'1.2rem',marginRight:'.5rem', color: '#ffb0b0'}}/> Sign out</li>
+                <li onClick={signOutHandler} style={{color: '#ffb0b0'}}><CiLogout style={{fontSize:'1.2rem',marginRight:'.5rem', color: '#ffb0b0'}}/> Sign out</li>
 
               </>
             ) : (
@@ -89,7 +99,7 @@ export default function Header() {
             <ul>
               <Link to='/user-Dashboard/UserProfile'><li><BsPerson className='cms-dashboard-icon' /> Personal data</li> </Link> 
               <Link to='/user-Dashboard/OrderHistory'> <li><BsFileText className='cms-dashboard-icon' /> Orders history</li></Link>
-              <li style={{color: '#ffb0b0'}}><CiLogout className='cms-dashboard-icon' /> Sign out</li>
+              <li onClick={signOutHandler} style={{color: '#ffb0b0'}}><CiLogout className='cms-dashboard-icon' /> Sign out</li>
             </ul>
           </div>
         </>

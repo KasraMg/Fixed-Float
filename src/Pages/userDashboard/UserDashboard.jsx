@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState,useEffect,useContext } from 'react'
 import './UserDashboard.css'
 import Header from '../../Components/Header/Header'
 import { BsFileText } from 'react-icons/bs'
@@ -6,14 +6,25 @@ import { CiLogout } from 'react-icons/ci'
 import { FaUser } from 'react-icons/fa'
 import Footer from '../../Components/Footer/Footer'
 import { Link,useParams,Outlet } from 'react-router-dom' 
+import allData from '../../Context/allData'
+import swal from 'sweetalert'
 export default function UserDashboard() {
     const [activeRoute, setActiveRoute] = useState('Personal data')
-    const path=useParams()
+    const context=useContext(allData)
 
     useEffect(() => {
         setActiveRoute(window.location.pathname.slice(16,29));
     }, [window.location.pathname])
     
+    const signOutHandler=()=>{
+       swal({
+        title:'Are you sure to logout?',
+        icon:'warning',
+        buttons:['no','yes']
+       }).then(res=>{
+        context.logout()
+       })
+    }
     return (
         <div className='UserDashboard'>
             <Header />
@@ -29,7 +40,7 @@ export default function UserDashboard() {
                             <BsFileText className='user-dashboard-icon' />Orders history
                         </li>
                         </Link>
-                        <li className='logout-link' style={{ color: ' #ffb0b0 ' }}> <CiLogout className='user-dashboard-icon' /> Sign out  </li>
+                        <li onClick={signOutHandler} className='logout-link' style={{ color: ' #ffb0b0 ' }}> <CiLogout className='user-dashboard-icon' /> Sign out  </li>
                     </ul>
                 </section>
                 <main className='main-UserDashboard'>

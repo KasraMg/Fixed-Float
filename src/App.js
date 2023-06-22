@@ -4,10 +4,10 @@ import {useEffect,useState,useCallback}from 'react'
 import { useRoutes } from 'react-router-dom'
 import contextDatas from './Context/allData';
 import routes from './routes'
- 
+import { useNavigate } from 'react-router-dom';
 import ScrollToUp from './ScrollToUp';
 function App() {
-
+const navigate=useNavigate()
 let router =useRoutes(routes)
 const [token,setToken]=useState(null)
 const [userInfos,setUserInfos]=useState(null)
@@ -26,9 +26,10 @@ const login = (userInfos, token) => {
 
 
 const logout = useCallback(() => {
+  setUserInfos(null);
   setToken(null); 
   localStorage.removeItem("FixedFloat");
-  setUserInfos({});
+  navigate('/')
 });
 
 useEffect(() => { 
