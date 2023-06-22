@@ -1,9 +1,24 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import Table from 'react-bootstrap/Table';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md'
 
-export default function UserComplateOrders({ orderDetail }) {
-    console.log(orderDetail.order_id);
+export default function UserComplateOrders({ orderDetail,pageCount,minusOrdercloseCount,plusOrdercloseCount }) {
+    
+
+    const [count,setCount]=useState(1)
+
+    const nextPageComplateOrder=()=>{
+        if (pageCount > count ) {
+            setCount(prev=>prev +1)
+            plusOrdercloseCount()
+        }
+    }
+    const prevPageComplateOrder=()=>{
+        if (count > 1 ) {
+            setCount(prev=>prev -1)
+            minusOrdercloseCount()
+        }
+    }
     return (
         <section className='mt-5'>
             <p className='OrderHistory-section-title'>Сompleted orders</p>
@@ -33,9 +48,9 @@ export default function UserComplateOrders({ orderDetail }) {
                     </Table>
                     <div className='OrderHistory-footer'>
                         <div className='OrderHistory-pagination-control'>
-                            <i><MdOutlineKeyboardArrowLeft /></i>
-                            <div className='OrderHistory-pagination-control-count'>1</div>
-                            <i><MdOutlineKeyboardArrowRight /></i>
+                            <i onClick={prevPageComplateOrder}><MdOutlineKeyboardArrowLeft /></i>
+                            <div className='OrderHistory-pagination-control-count'>{count}</div>
+                            <i onClick={nextPageComplateOrder}><MdOutlineKeyboardArrowRight /></i>
                         </div>
                     
                     </div>

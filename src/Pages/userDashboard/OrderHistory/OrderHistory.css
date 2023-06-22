@@ -10,7 +10,9 @@
 .OrderHistory{
     padding: 2rem 0rem 2rem 2rem;
 }
-
+.OrderHistory-pagination-control i{
+    cursor: pointer;
+}
 .OrderHistory main div{
     display: flex;
     gap: 50px;

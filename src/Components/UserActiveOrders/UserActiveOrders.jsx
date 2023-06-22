@@ -1,9 +1,22 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import Table from 'react-bootstrap/Table';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md'
 
-export default function UserActiveOrders({ orderDetail }) {
-    console.log(orderDetail);
+export default function UserActiveOrders({ orderDetail,pageCount,plusOrderopenCount,minusOrderopenCount }) {
+    const [count,setCount]=useState(1)
+
+    const nextPageComplateOrder=()=>{
+        if (pageCount > count ) {
+            setCount(prev=>prev +1)
+            plusOrderopenCount()
+        }
+    }
+    const prevPageComplateOrder=()=>{
+        if (count > 1 ) {
+            setCount(prev=>prev -1)
+            minusOrderopenCount()
+        }
+    }
 
     return (
 
@@ -35,9 +48,9 @@ export default function UserActiveOrders({ orderDetail }) {
                     </Table>
                     <div className='OrderHistory-footer'>
                         <div className='OrderHistory-pagination-control'>
-                            <i><MdOutlineKeyboardArrowLeft /></i>
-                            <div className='OrderHistory-pagination-control-count'>1</div>
-                            <i><MdOutlineKeyboardArrowRight /></i>
+                        <i onClick={prevPageComplateOrder}><MdOutlineKeyboardArrowLeft /></i>
+                            <div className='OrderHistory-pagination-control-count'>{count}</div>
+                            <i onClick={nextPageComplateOrder}><MdOutlineKeyboardArrowRight /></i>
                         </div>
                        
                     </div>

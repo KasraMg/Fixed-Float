@@ -6,29 +6,46 @@ import UserComplateOrders from '../../../Components/UserComplateOrders/UserCompl
 export default function OrderHistory() {
   const [orderDatas, setOrderDatas] = useState()
   const [loaderStatus, setLoaderStatus] = useState(false)
+  const [orders_openCount,setOrders_openCount]= useState(1)
+  const [orders_closeCount,setOrders_closeCount]= useState(1)
   useEffect(() => {
     const localStorageData = JSON.parse(localStorage.getItem("FixedFloat"));
     if (localStorageData) {
       setLoaderStatus(true)
-      fetch(`https://traderplus.info/exchange/api/user_orders.php?token=${localStorageData.token}`, {
+
+      fetch(`https://traderplus.info/exchange/api/user_orders.php?pageopen=${orders_openCount}&pageclose=${orders_closeCount}&token=${localStorageData.token}`,{
         method: 'POST'
       })
         .then(res => res.json())
         .then(data => {
           console.log(data);
+         
           setOrderDatas(data);
           setLoaderStatus(false)
         })
     }
-  }, [])
+  }, [orders_openCount,orders_closeCount])
+
+  const plusOrdercloseCount=()=>{
+    setOrders_closeCount(prev=>prev +1)
+  }
+  const minusOrdercloseCount=()=>{
+    setOrders_closeCount(prev=>prev -1)
+  }
+  const plusOrderopenCount=()=>{
+    setOrders_openCount(prev=>prev +1)
+  }
+  const minusOrderopenCount=()=>{
+    setOrders_openCount(prev=>prev -1)
+  }
 
   return (
     <div className='OrderHistory'>
 
       {orderDatas && (
         <>
-          <UserActiveOrders orderDetail={orderDatas.orders_open} />
-          <UserComplateOrders orderDetail={orderDatas.orders_close} />
+          <UserActiveOrders plusOrderopenCount={plusOrderopenCount} minusOrderopenCount={minusOrderopenCount} orderDetail={orderDatas.orders_open}  pageCount={Math.ceil(orderDatas.orderopencount / 10)}/>
+          <UserComplateOrders minusOrdercloseCount={minusOrdercloseCount} plusOrdercloseCount={plusOrdercloseCount} orderDetail={orderDatas.orders_close} pageCount={Math.ceil(orderDatas.orderclosecount / 10)} />
         </>
       )}
       {loaderStatus && (
