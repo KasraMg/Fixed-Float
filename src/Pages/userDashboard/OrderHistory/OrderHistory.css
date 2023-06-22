@@ -67,7 +67,7 @@ background-color: #161A30;
 }
 .OrderHistory-footer{
     display: flex;
-    justify-content: space-between !important;
+    justify-content:center !important;
     flex-direction: row-reverse;
     padding-top: 1rem;
 }

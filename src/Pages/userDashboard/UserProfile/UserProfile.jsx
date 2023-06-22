@@ -2,9 +2,12 @@ import React, { useContext,useState } from 'react'
 import './UserProfile.css'
 import allData from '../../../Context/allData'
 import swal from 'sweetalert'
+import Loader from '../../../Components/Loader/Loader'
 export default function UserProfile() {
     const context = useContext(allData)
+    const [loaderStatus, setLoaderStatus] = useState(false)
     const [CurrentPassword,setCurrentPassword]=useState()
+
     const editPassHandler=()=>{
         swal({
             title:'Please enter your current password',
@@ -20,11 +23,13 @@ export default function UserProfile() {
              }).then(newPassword=>{
               if (newPassword) {
                 const localStorageData = JSON.parse(localStorage.getItem("FixedFloat"));
+                setLoaderStatus(true)
                 fetch(`https://traderplus.info/exchange/api/user_password_change.php?password=${CurrentPassword}&password1=${newPassword}&token=${localStorageData.token}`,{
                     method:'POST'
                 })
                 .then(res=>res.json())
                 .then(data=>{
+                    setLoaderStatus(false)
                     console.log(data);
                    if (data.code==400) {
                     swal({
@@ -85,7 +90,10 @@ export default function UserProfile() {
 
                 </section>
             )}
+     {loaderStatus && (
+        <Loader />
 
+      )}
         </div>
     )
 }
