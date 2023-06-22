@@ -4,7 +4,7 @@ import * as Yup from "yup";
 const registerSchema = Yup.object().shape({
   PassWord: Yup.string()
     .min(3, "Password must have 3 characters")
-    .max(12, "password must have a maximum of 12 characters")
+    .max(20, "password must have a maximum of 20 characters")
     .required("Enter the password"),
   email: Yup.string()
     .email("Email is not valid")
@@ -14,7 +14,7 @@ const registerSchema = Yup.object().shape({
 
     ReapetPassWord: Yup.string() 
     .min(3, "Password must have 3 characters")
-    .max(12, "password must have a maximum of 12 characters")
+    .max(20, "password must have a maximum of 20 characters")
     .required("Enter the password"),
 
     name: Yup.string() 

@@ -18,7 +18,7 @@ export default function ExchangeAmounts( ) {
            let newValue=value / context.Recivecurrency.price
            console.log(newValue);
            let lastValue=`${newValue}`
-           setReciveValue(lastValue.slice(0,8) )
+           setReciveValue(lastValue.slice(0,10) )
      
          }
       
