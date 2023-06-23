@@ -11,8 +11,19 @@ const navigate=useNavigate()
 let router =useRoutes(routes)
 const [token,setToken]=useState(null)
 const [userInfos,setUserInfos]=useState(null)
-const [Sendcurrency,setSendCurrency]=useState(null) 
-const [Recivecurrency,setReciveCurrency]=useState(null) 
+const [Sendcurrency,setSendCurrency]=useState({
+  symbol: "BTC",
+  price: "25633.10000000",
+  status: "1",
+  image: "https://traderplus.info/exchange/image/1.png"
+  
+  }) 
+const [Recivecurrency,setReciveCurrency]=useState({
+  symbol: "1INCH",
+  price :"0.32800000",
+  status :  "1",
+  image:"https://traderplus.info/exchange/image/8104.png"
+}) 
 const [Value,setValue]=useState(null) 
 const [address,setAddress]=useState()
 

@@ -190,6 +190,8 @@ p{
     }
     .advantages-inner div img{
         right:-70px !important;
+    }.index header{
+        padding:0rem 1rem;
     }
  }
  @media (max-width:500px) {
