@@ -67,6 +67,11 @@ const context =useContext(allData)
       }
      
     }
+
+    const pasteClipboard=async()=>{
+      const ClipBoardText=await navigator.clipboard.readText()
+      context.setAddress(ClipBoardText)
+    }
   return (
 
     <>
@@ -78,7 +83,7 @@ const context =useContext(allData)
         <AiOutlineClose className='delete-icon' onClick={()=>context.setAddress('')}/>
       ):(
         <div>
-          <span></span> 
+          <span onClick={pasteClipboard}></span> 
         </div>
       )}
         

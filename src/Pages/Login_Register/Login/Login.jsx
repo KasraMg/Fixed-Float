@@ -56,11 +56,7 @@ export default function Login() {
                         setLoader(false)
                         if (data.code == 200) {
                             authContext.login(data.userdata, data.token);
-                            swal({
-                                title: 'Registration was successful',
-                                icon: 'success',
-                                button: 'ok'
-                            }).then(res=>navigate('/'))
+                            navigate('/user-Dashboard/UserProfile')
                         }else if(data.code == 400){
                             swal({
                                 title: 'Email or password is wrong',

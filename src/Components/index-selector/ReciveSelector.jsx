@@ -56,7 +56,7 @@ export default function ReciveSelector({ReciveExchangeDropDown,setReciveExchange
     </div>
 
     <main>
-        <p className="select-option-title">Popular currencies</p>
+        <p className="select-option-title">All currencies</p>
     <ul  onClick={()=>setReciveExchangeDropDown(false)}>
     {showResult && (
                         <>

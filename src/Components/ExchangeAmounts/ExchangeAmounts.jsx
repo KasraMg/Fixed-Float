@@ -10,6 +10,8 @@ export default function ExchangeAmounts( ) {
     const [sendExchangeValue,setSendExchangeValue] = useState()
     const [AllData,setAllData] = useState() 
     const [ReciveValue,setReciveValue]=useState(0) 
+    const [rateusdSend,setRateusdSend]=useState()
+    const [rateusdRecive,setRateusdRecive]=useState()
     useEffect(() => {
          if (context.Sendcurrency && context.Recivecurrency  ) {
             console.log('3');
@@ -19,7 +21,14 @@ export default function ExchangeAmounts( ) {
            console.log(newValue);
            let lastValue=`${newValue}`
            setReciveValue(lastValue.slice(0,10) )
-     
+           let ratecurrceysend=context.Value * context.Sendcurrency.price
+           let ratecurrceyrecive=context.Value * context.Recivecurrency.price
+           let Newratecurrceysend=`${ratecurrceysend}`
+           let Newratecurrceyrecive=`${ratecurrceyrecive}`
+           setRateusdSend(Newratecurrceysend.slice(0,5))
+           setRateusdRecive(Newratecurrceyrecive.slice(0,5))
+
+            
          }
       
     }, [context.Value])
@@ -79,7 +88,7 @@ export default function ExchangeAmounts( ) {
             <p>{context.Sendcurrency  ? context.Sendcurrency.symbol:'select'}</p>
         </section>
         <div style={{ position: "relative" }}>
-            <input maxLength={13} autocomplete="off" value={ context.Value} placeholder='0'   onChange={(e)=>inputChangeHandler(e)}
+            <input maxLength={13} autocomplete="off" value={ context.Value } placeholder='0'   onChange={(e)=>inputChangeHandler(e)}
                 className="Send-input mt-lg-2" type="text" />
 
             <lable className="select-outer" onClick={() => setSendExchangeDropDown(true)}>
@@ -96,7 +105,7 @@ export default function ExchangeAmounts( ) {
 {context.Sendcurrency ?(
     <div className="exchange-amounts-details">
             <p>1 {context.Sendcurrency.symbol} ≈ {context.Sendcurrency.price}</p>
-            <p>$ 49.98</p>
+            <p>${rateusdSend}</p>
         </div>
 ):(
     <div className="exchange-amounts-details">
@@ -135,7 +144,7 @@ export default function ExchangeAmounts( ) {
         {context.Recivecurrency ?(
     <div className="exchange-amounts-details">
             <p>1 {context.Recivecurrency.symbol} ≈ {context.Recivecurrency.price}</p>
-            <p>$ 49.98</p>
+            <p>{rateusdRecive}</p>
         </div>
 ):(
     <div className="exchange-amounts-details">

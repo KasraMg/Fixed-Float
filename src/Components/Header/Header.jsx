@@ -19,8 +19,11 @@ export default function Header() {
      icon:'warning',
      buttons:['no','yes']
     }).then(res=>{
-      userContext.logout()
-      setShowCms(false)
+      if (res) {
+        userContext.logout()
+        setShowCms(false)
+    }
+ 
     })
  }
   return (

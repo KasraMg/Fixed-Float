@@ -56,13 +56,7 @@ export default function Register() {
                             setLoader(false)
                             if (data.code == 200) {
                                 authContext.login(data.userdata, data.token);
-                                swal({
-                                    title: 'Registration was successful',
-                                    icon: 'success',
-                                    button: 'ok'
-                                }).then(() => {
-                                    navigate('/')
-                                })
+                                navigate('/user-Dashboard/UserProfile')
                             }
                             else if (data.code == 400) {
                                 swal({

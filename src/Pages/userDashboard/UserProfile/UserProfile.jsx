@@ -6,8 +6,7 @@ import Loader from '../../../Components/Loader/Loader'
 export default function UserProfile() {
     const context = useContext(allData)
     const [loaderStatus, setLoaderStatus] = useState(false)
-    const [CurrentPassword,setCurrentPassword]=useState()
-
+    const [CurrentPassword,setCurrentPassword]=useState() 
     const editPassHandler=()=>{
         swal({
             title:'Please enter your current password',

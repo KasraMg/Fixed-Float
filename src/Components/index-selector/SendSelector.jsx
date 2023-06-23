@@ -59,7 +59,7 @@ const setCurrencyHandler=(data) => {
             </div>
 
             <main>
-                <p className="select-option-title">Popular currencies</p>
+                <p className="select-option-title">All currencies</p>
                 <ul onClick={() => setSendExchangeDropDown(false)}>
                     {showResult && (
                         <>
