@@ -13,7 +13,7 @@ export default function ExchangeAmounts( ) {
     useEffect(() => {
          if (context.Sendcurrency && context.Recivecurrency  ) {
             console.log('3');
-           let value =Math.round(  context.Value * context.Sendcurrency.price) 
+           let value =context.Value * context.Sendcurrency.price
            console.log(value);
            let newValue=value / context.Recivecurrency.price
            console.log(newValue);
@@ -36,7 +36,7 @@ export default function ExchangeAmounts( ) {
     }, [])
     
     const inputChangeHandler=(e)=>{ 
-        const regex= RegExp(/^\d+$/) 
+        const regex= RegExp(/^[0-9\.]+$/) 
         const regexStatus = regex.test(e.target.value)
         console.log(regexStatus);
    if ( context.Value &&  context.Value.length == 1) {
