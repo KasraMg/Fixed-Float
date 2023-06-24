@@ -39,6 +39,7 @@
 }
 .Recent-transactions ul li main p{
     white-space: nowrap;
+    width: 70px;
     }
 .Recent-transactions ul li main{
     display: flex;

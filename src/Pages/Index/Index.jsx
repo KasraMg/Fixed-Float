@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import RecentItem from '../../Components/index-recent-trac-item/RecentItem'
 import './Index.css'
 import Accordion from 'react-bootstrap/Accordion';
@@ -6,9 +6,18 @@ import IndexSwiper2 from '../../Components/IndexSwiper/IndexSwiper2'
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import IndexSwiper1 from '../../Components/IndexSwiper/IndexSwiper1'
-import ExchangeAmounts from '../../Components/ExchangeAmounts/ExchangeAmounts'; 
+import ExchangeAmounts from '../../Components/ExchangeAmounts/ExchangeAmounts';
 import ExchangeDestination from '../../Components/ExchangeDestination/ExchangeDestination';
 export default function Index() {
+    const [lastOrder, setLastOrder] = useState()
+    useEffect(() => {
+        fetch('https://traderplus.info/exchange/api/main_10list.php')
+            .then(res => res.json())
+            .then(data => {
+                setLastOrder(data.orders_open)
+                console.log(data)
+            })
+    }, [])
 
 
 
@@ -27,11 +36,11 @@ export default function Index() {
                 </p>
 
 
-                          <ExchangeAmounts  />
+                <ExchangeAmounts />
 
-                         <ExchangeDestination/>
+                <ExchangeDestination />
 
-          
+
             </div>
             {/* <!-- exchange-form -->*/}
 
@@ -87,14 +96,11 @@ export default function Index() {
                 <section class="Recent-transactions">
                     <p class="Recent-transactions-title">Recent transactions</p>
                     <ul>
-                        <RecentItem />
-                        <RecentItem />
-                        <RecentItem />
-                        <RecentItem />
-                        <RecentItem />
-                        <RecentItem />
-                        <RecentItem />
-                        <RecentItem />
+                        {lastOrder && lastOrder.map(data => (
+                            <RecentItem {...data}/>
+                        ))}
+
+                        
                     </ul>
 
                 </section>
@@ -146,7 +152,7 @@ export default function Index() {
                 </div>
 
             </main>
-            <Footer/>
+            <Footer />
         </div>
 
     )
