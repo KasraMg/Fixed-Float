@@ -8,6 +8,7 @@ import Footer from '../../Components/Footer/Footer';
 import IndexSwiper1 from '../../Components/IndexSwiper/IndexSwiper1'
 import ExchangeAmounts from '../../Components/ExchangeAmounts/ExchangeAmounts';
 import ExchangeDestination from '../../Components/ExchangeDestination/ExchangeDestination';
+import { Link } from 'react-router-dom';
 export default function Index() {
     const [lastOrder, setLastOrder] = useState()
     useEffect(() => {
@@ -142,13 +143,13 @@ export default function Index() {
 
                 <div className='IndexSwiper IndexSwiper1'>
                     <p className="IndexSwiper-title">News</p>
-                    <IndexSwiper1 />
-                    <button className='index-swiper-btn'>Read All</button>
+                    <IndexSwiper1 /> 
+                    <Link style={{textDecoration:'none'}} to={`/blogs`}> <button className='index-swiper-btn'>Read All</button></Link>
                 </div>
                 <div className='IndexSwiper'>
                     <p className="IndexSwiper-title">Guides and tutorials</p>
-                    <IndexSwiper2 />
-                    <button className='index-swiper-btn'>Read All</button>
+                    <IndexSwiper2 /> 
+                    <Link style={{textDecoration:'none'}} to={`/blogs`}> <button className='index-swiper-btn'>Read All</button></Link>
                 </div>
 
             </main>

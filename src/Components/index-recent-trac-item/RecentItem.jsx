@@ -18,7 +18,7 @@ export default function recentItem(props) {
                 <p> {props.symbol2}</p>
             </main>
             <p class="Recent-transactions-time Recent-transactions-time-1"><i
-                class="ico-timer"></i>23 min</p>
+                class="ico-timer"></i>{props.time2}</p>
         </li>
     )
 }

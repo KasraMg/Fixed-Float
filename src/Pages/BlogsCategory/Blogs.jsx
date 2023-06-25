@@ -13,8 +13,7 @@ const [blogsCount,setBlogsCount]=useState()
     useEffect(() => { 
       fetch(`https://traderplus.info/exchange/api/blogs.php?typeing=${activeCat}&pageopen=${pageCount}`)
       .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
+        .then(data=>{ 
             setDeatils(data); 
             setBlogsCount(Math.ceil(data.blogcount / 10))
              
