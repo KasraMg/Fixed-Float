@@ -114,6 +114,12 @@
         padding: 1.8em 1em 2em !important;
       }.Blogs{
         padding: 0rem 1rem !important;
+    }.Blogs-pagination {
+      flex-direction: column-reverse;
+      gap: 25px !important;
+      justify-content: center;
+    }.Blogs-pagination section {
+      gap: 15px !important;
     }
   }
  

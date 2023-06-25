@@ -6,23 +6,31 @@ import Footer from '../../Components/Footer/Footer'
 import { Link } from 'react-router-dom'
 export default function Blogs() {
 const [activeCat,setActiveCat]=useState('')
-const [details,setDeatils]=useState()
-const [loaderStatus,setLoader]=useState(false)
-const [pageCount,setPageCount]=useState(0)
+const [details,setDeatils]=useState() 
+const [pageCount,setPageCount]=useState(1)
 const [blogsCount,setBlogsCount]=useState()
-let BlogsCount;
+
     useEffect(() => { 
-      fetch(`https://traderplus.info/exchange/api/blogs.php?typeing=${activeCat}&pageopen=1`)
+      fetch(`https://traderplus.info/exchange/api/blogs.php?typeing=${activeCat}&pageopen=${pageCount}`)
       .then(res=>res.json())
         .then(data=>{
             console.log(data);
-            setDeatils(data);
-            setLoader(false)
+            setDeatils(data); 
             setBlogsCount(Math.ceil(data.blogcount / 10))
-            console.log(BlogsCount);
+             
         })
-    }, [activeCat])
+    }, [activeCat,pageCount])
     
+    const plusPageCount=()=>{
+        if (pageCount < blogsCount) {
+            setPageCount(prev=>prev+1)
+        }
+    }
+    const minusPageCount=()=>{
+        if (pageCount > 1) {
+            setPageCount(prev=>prev-1)
+        }
+    }
     return (
         <>
         {details &&(
@@ -76,15 +84,19 @@ let BlogsCount;
  
                  <div className="Blogs-pagination">
                      <section>
-                         <div className='blog-active-pagination'>1</div>
-                         <div>2</div>
+                        {Array(blogsCount)
+                        .fill().map((data,index)=>(
+                            <div onClick={()=>setPageCount(index+1)} className={index + 1 == pageCount && 'blog-active-pagination'}>{index + 1}</div>
+                        ))}
+                        
+                          
                      </section>
                      <div>
                          <button>
-                             <HiArrowNarrowLeft/>
+                             <HiArrowNarrowLeft onClick={minusPageCount}/>
                          </button>
                          <button>
-                             <HiArrowNarrowRight/>
+                             <HiArrowNarrowRight onClick={plusPageCount} />
                          </button>
                      </div>
                  </div>
