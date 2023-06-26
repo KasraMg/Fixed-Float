@@ -9,7 +9,7 @@ import FAQ from "./Pages/FAQ/FAQ";
 import UserDashboard from './Pages/userDashboard/UserDashboard'
 import OrderHistory from "./Pages/userDashboard/OrderHistory/OrderHistory";
 import UserProfile from "./Pages/userDashboard/UserProfile/UserProfile";
-
+import Page404 from "./Pages/Page404/Page404";
  const routes=[
 
 
@@ -42,6 +42,9 @@ import UserProfile from "./Pages/userDashboard/UserProfile/UserProfile";
   },
    {
     path:'/Blogs/:id' , element:<Blog/>
+  },
+   {
+    path:'/*' , element:<Page404/>
   },
  
    {

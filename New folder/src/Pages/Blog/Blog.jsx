@@ -28,8 +28,10 @@ export default function Blog() {
                 buttons:'ok'
             }).then(res=>navigate('/blogs'))
         }
-         
-    }) 
+        
+        
+    })
+    console.log(blogData.text);
     }, [])
     
   return (

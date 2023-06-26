@@ -1,4 +1,13 @@
 
+.swiper-index-2  section {
+  height: 448px;
+  position: relative;
+}
+.swiper-time{
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+}
 .IndexSwiper .swiper {
     width: 100%;
     height: 100%;
@@ -11,6 +20,10 @@
     font-size: .9rem;
   }
   
+  .IndexSwiper .swiper-slide a{
+    text-decoration: none;
+    color: white; 
+  }
   .IndexSwiper .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -26,7 +39,7 @@
 
   }
   .IndexSwiper .swiper-slide div{
-    padding: 1.8em 1.5em 2em;
+    padding: 1.2em 1.5em 2em;
     display: flex;
     flex-direction: column;
   }
@@ -102,6 +115,8 @@ left: 70px !important;
         left: 37% !important;
       }.IndexSwiper .swiper-button-next{
         left:49% !important;
+      }.swiper-time{ 
+        left: 17px !important;
       }
   }
   @media (max-width:500px) {
@@ -171,7 +186,7 @@ left: 70px !important;
 .IndexSwiper1 .swiper-slide-next,
 .IndexSwiper1 .swiper-slide{
   opacity: .3;
-height: 370px ;
+height: 400px !important ;
   position: relative;
   top: 50px;
 }

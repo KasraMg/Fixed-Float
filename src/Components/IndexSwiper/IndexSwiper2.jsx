@@ -16,11 +16,8 @@ export default function App() {
     useEffect(() => {
         fetch(`https://traderplus.info/exchange/api/blogs.php?typeing=&pageopen=1`)
         .then(res=>res.json())
-          .then(data=>{ 
-            console.log(data)
-              setDeatils(data.blogs); 
-               
-               
+          .then(data=>{  
+              setDeatils(data.blogs);  
           })
     }, [])
     

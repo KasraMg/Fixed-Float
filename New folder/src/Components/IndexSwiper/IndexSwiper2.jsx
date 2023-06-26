@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import './IndexSwiper.css'
@@ -9,8 +9,18 @@ import "swiper/css/scrollbar";
 import { Navigation } from "swiper";
 // import required modules
 import { Scrollbar } from "swiper";
+import { Link } from "react-router-dom";
 
 export default function App() {
+    const [details,setDeatils]=useState() 
+    useEffect(() => {
+        fetch(`https://traderplus.info/exchange/api/blogs.php?typeing=&pageopen=1`)
+        .then(res=>res.json())
+          .then(data=>{  
+              setDeatils(data.blogs);  
+          })
+    }, [])
+    
     return (
         <>
             <Swiper
@@ -38,99 +48,25 @@ export default function App() {
                     },
                 }}
                 modules={[Scrollbar, Navigation]}
-                className="mySwiper"
+                className="mySwiper swiper-index-2"
             >
-                <SwiperSlide>
+                {details && details.map(data=>(
+                       <SwiperSlide>
                     <section>
-                        <img src="https://fixedfloat.com/media/thumbs/blog/v2/crypto_wallets_w768.jpg" alt="" />
+                       <Link style={{width:'100%'}} to={`/blogs/${data.id_blog}`}>
+                       <img style={{height:'234px'}} src={data.image} alt="" />
+                       </Link>  
 
                         <div> 
-                            <p>Types of cryptocurrency wallets</p>
-                            <span>FixedFloat is a non-custodial exchange, our users take care of storing their coins on their own. We figured out the types of wallets and gave some tips on choosing the right one.</span>
-                            <span className="mt-4">December 1, 2022</span>
+                        <Link to={`/blogs/${data.id_blog}`}> <p>{data.title}</p></Link>    
+                            <span>{data.description}</span>
+                            <span  className="mt-4 swiper-time">{data.time.slice(0,11)}</span>
                         </div>
                     </section>
                 </SwiperSlide>
-                <SwiperSlide>
-                    <section>
-                        <img src="https://fixedfloat.com/media/thumbs/blog/v2/crypto_wallets_w768.jpg" alt="" />
-
-                        <div> 
-                              <p>Types of cryptocurrency wallets</p>
-                            <span>FixedFloat is a non-custodial exchange, our users take care of storing their coins on their own. We figured out the types of wallets and gave some tips on choosing the right one.</span>
-                            <span className="mt-4">December 1, 2022</span>
-                        </div>
-                    </section></SwiperSlide>
-                <SwiperSlide>
-                    <section>
-                        <img src="https://fixedfloat.com/media/thumbs/blog/v2/crypto_wallets_w768.jpg" alt="" />
-
-                        <div>
-                              <p>Types of cryptocurrency wallets</p>
-                            <span>FixedFloat is a non-custodial exchange, our users take care of storing their coins on their own. We figured out the types of wallets and gave some tips on choosing the right one.</span>
-                            <span className="mt-4">December 1, 2022</span>
-                        </div>
-                    </section></SwiperSlide>
-                <SwiperSlide>
-                    <section>
-                        <img src="https://fixedfloat.com/media/thumbs/blog/v2/crypto_wallets_w768.jpg" alt="" />
-
-                        <div> 
-                            <p>Types of cryptocurrency wallets</p>
-                            <span>FixedFloat is a non-custodial exchange, our users take care of storing their coins on their own. We figured out the types of wallets and gave some tips on choosing the right one.</span>
-                            <span className="mt-4">December 1, 2022</span>
-                        </div>
-                    </section></SwiperSlide>
-                <SwiperSlide>
-                    <section>
-                        <img src="https://fixedfloat.com/media/thumbs/blog/v2/crypto_wallets_w768.jpg" alt="" />
-
-                        <div>   
-                            <p>Types of cryptocurrency wallets</p>
-                            <span>FixedFloat is a non-custodial exchange, our users take care of storing their coins on their own. We figured out the types of wallets and gave some tips on choosing the right one.</span>
-                            <span className="mt-4">December 1, 2022</span>
-                        </div>
-                    </section></SwiperSlide>
-                <SwiperSlide>
-                    <section>
-                        <img src="https://fixedfloat.com/media/thumbs/blog/v2/crypto_wallets_w768.jpg" alt="" />
-
-                        <div> 
-                            <p>Types of cryptocurrency wallets</p>
-                            <span>FixedFloat is a non-custodial exchange, our users take care of storing their coins on their own. We figured out the types of wallets and gave some tips on choosing the right one.</span>
-                            <span className="mt-4">December 1, 2022</span>
-                        </div>
-                    </section></SwiperSlide>
-                <SwiperSlide>
-                    <section>
-                        <img src="https://fixedfloat.com/media/thumbs/blog/v2/crypto_wallets_w768.jpg" alt="" />
-
-                        <div> 
-                            <p>Types of cryptocurrency wallets</p>
-                            <span>FixedFloat is a non-custodial exchange, our users take care of storing their coins on their own. We figured out the types of wallets and gave some tips on choosing the right one.</span>
-                            <span className="mt-4">December 1, 2022</span>
-                        </div>
-                    </section></SwiperSlide>
-                <SwiperSlide>
-                    <section>
-                        <img src="https://fixedfloat.com/media/thumbs/blog/v2/crypto_wallets_w768.jpg" alt="" />
-
-                        <div> 
-                            <p>Types of cryptocurrency wallets</p>
-                            <span>FixedFloat is a non-custodial exchange, our users take care of storing their coins on their own. We figured out the types of wallets and gave some tips on choosing the right one.</span>
-                            <span className="mt-4">December 1, 2022</span>
-                        </div>
-                    </section></SwiperSlide>
-                <SwiperSlide>
-                    <section>
-                        <img src="https://fixedfloat.com/media/thumbs/blog/v2/crypto_wallets_w768.jpg" alt="" />
-
-                        <div> 
-                            <p>Types of cryptocurrency wallets</p>
-                            <span>FixedFloat is a non-custodial exchange, our users take care of storing their coins on their own. We figured out the types of wallets and gave some tips on choosing the right one.</span>
-                            <span className="mt-4">December 1, 2022</span>
-                        </div>
-                    </section></SwiperSlide>
+                ))}
+             
+                
             </Swiper>
         </>
 

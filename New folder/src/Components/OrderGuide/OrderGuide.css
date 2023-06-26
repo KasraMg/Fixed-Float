@@ -135,6 +135,8 @@ line-height: 2;
    background-color: #008FDF;
    padding: 1rem;
    cursor: pointer;
+   z-index: 999;
+   position: relative;
    margin-top: 1rem;
 }
  .OrderGuide section button:hover {
