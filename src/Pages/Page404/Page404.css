@@ -22,11 +22,13 @@
         left: 0; 
         width: 100%;
         z-index: 4;
+      
     }
     .Page404-footer-img{
         position: absolute;
         bottom: 140px;
         left: 0;  
+        display: none !important;
         width: 100%;
         z-index: 4;
     }

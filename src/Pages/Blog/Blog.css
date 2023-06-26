@@ -10,6 +10,12 @@
 @media (max-width:768px) {
     .Blog{
         padding: 0rem 1rem !important;
+    }.blog-intro p {
+        font-size: 3rem !important;
+    }.Blog-bg {
+        height: 340px !important;
+    }.blog-intro {
+        margin-top: 7rem !important;
     }
 }
 @media (max-width:767px) {
@@ -18,7 +24,11 @@
     padding: 0rem 0rem !important;
 }
 }
-
+@media (max-width:500px) {
+    .blog-intro p {
+        font-size: 2rem !important;
+    }
+}
 .Blog-bg{
     position: absolute;
     top: 60px;

@@ -5,13 +5,14 @@ import Header from '../../Components/Header/Header'
 import {  Link, useNavigate, useParams } from 'react-router-dom'
 import swal from 'sweetalert'
 import Loader from '../../Components/Loader/Loader'
+import DOMPurify from 'dompurify'
 import  IndexSwiper2 from '../../Components/IndexSwiper/IndexSwiper2' 
 export default function Blog() {
     const param=useParams()
     const navigate=useNavigate()
     const [blogData,setBlogData]=useState()
-    const [loaderStatus,setloaderStatus]=useState()
-   
+    const [loaderStatus,setloaderStatus]=useState() 
+    const myHtmlContent = blogData &&`${blogData.text}`;
     useEffect(() => {
         setloaderStatus(true)
        fetch(`https://traderplus.info/exchange/api/blog.php?id_blog=${param.id}`)
@@ -21,6 +22,7 @@ export default function Blog() {
            setloaderStatus(false)
         if (data.code==200) {
             setBlogData(data) 
+          console.log(data.text);
         }else{
             swal({
                 title:'Blog not found',
@@ -45,7 +47,8 @@ export default function Blog() {
         </section>
 
         <main>
-            <p>{blogData.text}</p>
+    
+        <div dangerouslySetInnerHTML={{ __html: myHtmlContent }} />
             <div className='IndexSwiper'>
                     <p className="IndexSwiper-title">Recent posts</p>
                     <IndexSwiper2 />

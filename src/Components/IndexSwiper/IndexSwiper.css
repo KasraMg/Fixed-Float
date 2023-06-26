@@ -129,6 +129,8 @@ left: 70px !important;
         top: 82% !important;
       }.IndexSwiper .swiper-slide div {
         padding: 1.8em 1em 2em !important;
+      }.index-swiper-btn {
+        padding: 0.5em 2.5em !important;
       }
   }
   @media (max-width:350px) {
