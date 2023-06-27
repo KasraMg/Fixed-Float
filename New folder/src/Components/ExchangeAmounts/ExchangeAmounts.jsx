@@ -13,12 +13,9 @@ export default function ExchangeAmounts( ) {
     const [rateusdSend,setRateusdSend]=useState()
     const [rateusdRecive,setRateusdRecive]=useState()
     useEffect(() => {
-         if (context.Sendcurrency && context.Recivecurrency  ) {
-            console.log('3');
-           let value =context.Value * context.Sendcurrency.price
-           console.log(value);
-           let newValue=value / context.Recivecurrency.price
-           console.log(newValue);
+         if (context.Sendcurrency && context.Recivecurrency  ) { 
+           let value =context.Value * context.Sendcurrency.price 
+           let newValue=value / context.Recivecurrency.price 
            let lastValue=`${newValue}`
            setReciveValue(lastValue.slice(0,10) )
            let ratecurrceysend=context.Value * context.Sendcurrency.price
@@ -33,29 +30,33 @@ export default function ExchangeAmounts( ) {
       
     }, [context.Value])
     useEffect(() => {
-        let ratecurrceysend=context.Value * context.Sendcurrency.price
+        if (ReciveValue) {
+                   let ratecurrceysend=context.Value * context.Sendcurrency.price
         let ratecurrceyrecive=ReciveValue * context.Recivecurrency.price
         let Newratecurrceysend=`${ratecurrceysend}`
         let Newratecurrceyrecive=`${ratecurrceyrecive}`
         setRateusdSend(Newratecurrceysend.slice(0,20))
         setRateusdRecive(Newratecurrceyrecive.slice(0,20))
+        }
+ 
     }, [ReciveValue])
     
      
     useEffect(() => {
-        fetch('https://traderplus.info/exchange/api/market.json')
+        fetch('https://traderplus.info/exchange/api/market2.json')
         .then(res=>res.json())
         .then(data=>{
             setAllData(data)
             console.log(data)
+            context.setSendCurrency(data.Select1[14])
+            context.setReciveCurrency(data.Select1[33])
              
         })
     }, [])
     
     const inputChangeHandler=(e)=>{ 
         const regex= RegExp(/^[0-9\.]+$/) 
-        const regexStatus = regex.test(e.target.value)
-        console.log(regexStatus);
+        const regexStatus = regex.test(e.target.value) 
    if ( context.Value &&  context.Value.length == 1) {
     context.setValue(e.target.value)
    }else{
@@ -93,7 +94,7 @@ export default function ExchangeAmounts( ) {
     <div>
         <section className="exchange-amounts-lable">
             <p>Send</p>
-            <p>{context.Sendcurrency  ? context.Sendcurrency.symbol:'select'}</p>
+            <p>{context.Sendcurrency  ? context.Sendcurrency.name:'select'}</p>
         </section>
         <div style={{ position: "relative" }}>
             <input maxLength={13} autocomplete="off" value={ context.Value } placeholder='0'   onChange={(e)=>inputChangeHandler(e)}
@@ -134,7 +135,7 @@ export default function ExchangeAmounts( ) {
     <div>
         <section className="exchange-amounts-lable" style={{ color: "#fff !important" }} >
             <p>Receive</p>
-            <p>    <p>{context.Recivecurrency  ? context.Recivecurrency.symbol:'select'}</p></p>
+            <p>    <p>{context.Recivecurrency  ? context.Recivecurrency.name:'select'}</p></p>
         </section>
         <div style={{ position: "relative" }}>
             <input className="Receive-input" placeholder='0'  value={ReciveValue}

@@ -15,8 +15,7 @@ export default function Index() {
         fetch('https://traderplus.info/exchange/api/main_10list.php')
             .then(res => res.json())
             .then(data => {
-                setLastOrder(data.orders_open)
-                console.log(data)
+                setLastOrder(data.orders_open) 
             })
     }, [])
 

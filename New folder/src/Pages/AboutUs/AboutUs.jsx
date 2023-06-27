@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ useEffect,useState } from 'react'
 import './AboutUs.css'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
@@ -8,6 +8,16 @@ import { SiSpringsecurity } from 'react-icons/si'
 import AvailableCurrencies from '../../Components/AvailableCurrencies/AvailableCurrencies'
 import { MdOutlineTimer } from 'react-icons/md'
 export default function AboutUs() {
+    const [currency,setCurrency]=useState()
+    useEffect(() => {
+      fetch('https://traderplus.info/exchange/api/coins.json')
+      .then(res=>res.json())
+      .then(data=>{
+        console.log(data);
+        setCurrency(data)
+      })
+    }, [])
+    
   return (
     <div className='AboutUs'>
         <Header/>
@@ -55,26 +65,11 @@ export default function AboutUs() {
         <p className="Supported-currencies-title">Supported currencies</p>
 
         <main>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
+            {currency && currency.map(data=>(
+                 <AvailableCurrencies {...data}/> 
+            ))}
+          
+             
         </main>
         </div>
         

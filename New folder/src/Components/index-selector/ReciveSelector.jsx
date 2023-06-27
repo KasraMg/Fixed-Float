@@ -17,7 +17,7 @@ export default function ReciveSelector({ReciveExchangeDropDown,setReciveExchange
     useEffect(() => {
         if (inputData) {
              let newData =AllData && AllData.Select2.filter(data => {
-            return data.symbol.includes(inputData.toUpperCase()) 
+            return data.name.includes(inputData) 
         })
         setresult(newData)
       
@@ -38,7 +38,7 @@ export default function ReciveSelector({ReciveExchangeDropDown,setReciveExchange
  
  const setCurrencyHandler=(data) => {
     console.log(data);
-    if (context.Sendcurrency && data.symbol==context.Sendcurrency.symbol) { 
+    if (context.Sendcurrency && data.name==context.Sendcurrency.name) { 
         context.setReciveCurrency(context.Sendcurrency)
         context.setSendCurrency(context.Recivecurrency)
     }else{
@@ -66,10 +66,13 @@ export default function ReciveSelector({ReciveExchangeDropDown,setReciveExchange
                                     {AllData && currencyData.Select1.map(data => (
                                         <li className="option active" onClick={()=>setCurrencyHandler(data)} >
                                             <div>
-                                                <p style={{ position: 'relative', top: '3px' }}>{data.symbol}</p>
+                                                <p style={{ position: 'relative', top: '3px' }}>{data.name}</p>
                                                 <img width={30} src={data.image} alt="" />
                                             </div>
-                                            <p>{data.symbol}</p>
+                                            <div className='selector-network'>
+                                         <p>{data.symbol}</p>
+                                         <img width={25} src={data.network_image}alt="" />
+                                    </div>
                                         </li>
                                     ))}
                                 </>
@@ -82,10 +85,13 @@ export default function ReciveSelector({ReciveExchangeDropDown,setReciveExchange
                         {result && result.map(data => (
                                 <li className="option active" onClick={()=>setCurrencyHandler(data)} >
                                     <div>
-                                        <p style={{ position: 'relative', top: '3px' }}>{data.symbol}</p> 
+                                        <p style={{ position: 'relative', top: '3px' }}>{data.name}</p> 
                                         <img width={30} src={data.image} alt="" />
                                     </div>
-                                    <p>{data.symbol}</p>
+                                    <div className='selector-network'>
+                                         <p>{data.symbol}</p>
+                                         <img width={25} src={data.network_image}alt="" />
+                                    </div>
                                 </li>
                             ))}
 

@@ -28,7 +28,7 @@ export default function ExchangeAmounts( ) {
             
          }
       
-    }, [context.Value])
+    }, [context.Value,context.Sendcurrency])
     useEffect(() => {
         if (ReciveValue) {
                    let ratecurrceysend=context.Value * context.Sendcurrency.price
@@ -83,10 +83,10 @@ export default function ExchangeAmounts( ) {
        
     }
 
-    useEffect(() => {
-        context.setValue('')
-        setReciveValue('')
-    }, [context.Sendcurrency, context.Recivecurrency ])
+    // useEffect(() => {
+    //     context.setValue('')
+    //     setReciveValue('')
+    // }, [context.Sendcurrency, context.Recivecurrency ])
     
   return (
     <div className="exchange-amounts">
