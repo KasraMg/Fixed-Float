@@ -13,12 +13,9 @@ export default function ExchangeAmounts( ) {
     const [rateusdSend,setRateusdSend]=useState()
     const [rateusdRecive,setRateusdRecive]=useState()
     useEffect(() => {
-         if (context.Sendcurrency && context.Recivecurrency  ) {
-            console.log('3');
-           let value =context.Value * context.Sendcurrency.price
-           console.log(value);
-           let newValue=value / context.Recivecurrency.price
-           console.log(newValue);
+         if (context.Sendcurrency && context.Recivecurrency  ) { 
+           let value =context.Value * context.Sendcurrency.price 
+           let newValue=value / context.Recivecurrency.price 
            let lastValue=`${newValue}`
            setReciveValue(lastValue.slice(0,10) )
            let ratecurrceysend=context.Value * context.Sendcurrency.price
@@ -59,8 +56,7 @@ export default function ExchangeAmounts( ) {
     
     const inputChangeHandler=(e)=>{ 
         const regex= RegExp(/^[0-9\.]+$/) 
-        const regexStatus = regex.test(e.target.value)
-        console.log(regexStatus);
+        const regexStatus = regex.test(e.target.value) 
    if ( context.Value &&  context.Value.length == 1) {
     context.setValue(e.target.value)
    }else{
@@ -106,7 +102,7 @@ export default function ExchangeAmounts( ) {
 
             <lable className="select-outer" onClick={() => setSendExchangeDropDown(true)}>
                {context.Sendcurrency && <img width={30} className='mx-2' src={context.Sendcurrency.image} alt="" />}  
-                <p>{context.Sendcurrency  ? context.Sendcurrency.name: 'select' }</p>
+                <p>{context.Sendcurrency  ? context.Sendcurrency.symbol: 'select' }</p>
 
             </lable>
             {AllData&&(
@@ -117,7 +113,7 @@ export default function ExchangeAmounts( ) {
         </div>
 {context.Sendcurrency ?(
     <div className="exchange-amounts-details">
-            <p>1 {context.Sendcurrency.name} ≈ {context.Sendcurrency.price}</p>
+            <p>1 {context.Sendcurrency.symbol} ≈ {context.Sendcurrency.price}</p>
             <p>${rateusdSend}</p>
         </div>
 ):(
@@ -147,7 +143,7 @@ export default function ExchangeAmounts( ) {
             {/* <!-- exchange option --> */}
             <lable className="select-outer recive-select-outer" onClick={() => setReciveExchangeDropDown(true)}>
             {context.Recivecurrency && <img width={30} className='mx-2' src={context.Recivecurrency.image} alt="" />}  
-                <p>{context.Recivecurrency  ? context.Recivecurrency.name: 'select' }</p>
+                <p>{context.Recivecurrency  ? context.Recivecurrency.symbol: 'select' }</p>
 
             </lable>
 
@@ -156,7 +152,7 @@ export default function ExchangeAmounts( ) {
         </div>
         {context.Recivecurrency ?(
     <div className="exchange-amounts-details">
-            <p>1 {context.Recivecurrency.name} ≈ {context.Recivecurrency.price}</p>
+            <p>1 {context.Recivecurrency.symbol} ≈ {context.Recivecurrency.price}</p>
             <p>${rateusdRecive}</p>
         </div>
 ):(
