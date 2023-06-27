@@ -1,11 +1,11 @@
 import React from 'react'
 import './AvailableCurrencies.css'
-export default function AvailableCurrencies() {
+export default function AvailableCurrencies(props) {
   return (
     <div className='AvailableCurrencies'>
-      <img src="./images/order/icons8-bitcoin-60.png" alt="" />
+      <img src={props.image} alt="" />
 
-      <p>Bitcoin</p>
+      <p>{props.name}</p>
     </div>
   )
 }

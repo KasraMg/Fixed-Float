@@ -33,12 +33,15 @@ export default function ExchangeAmounts( ) {
       
     }, [context.Value])
     useEffect(() => {
-        let ratecurrceysend=context.Value * context.Sendcurrency.price
+        if (ReciveValue) {
+                   let ratecurrceysend=context.Value * context.Sendcurrency.price
         let ratecurrceyrecive=ReciveValue * context.Recivecurrency.price
         let Newratecurrceysend=`${ratecurrceysend}`
         let Newratecurrceyrecive=`${ratecurrceyrecive}`
         setRateusdSend(Newratecurrceysend.slice(0,20))
         setRateusdRecive(Newratecurrceyrecive.slice(0,20))
+        }
+ 
     }, [ReciveValue])
     
      
@@ -48,6 +51,8 @@ export default function ExchangeAmounts( ) {
         .then(data=>{
             setAllData(data)
             console.log(data)
+            context.setSendCurrency(data.Select1[14])
+            context.setReciveCurrency(data.Select1[33])
              
         })
     }, [])

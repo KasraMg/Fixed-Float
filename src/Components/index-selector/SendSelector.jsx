@@ -21,7 +21,7 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
     useEffect(() => { 
         if (inputData) {
              let newData = AllData.Select1.filter(data => {
-            return data.symbol.includes(inputData.toUpperCase()) 
+            return data.name.includes(inputData) 
         })
         setresult(newData)
       
@@ -42,7 +42,7 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
  
 const setCurrencyHandler=(data) => {
     console.log(data);
-    if (context.Recivecurrency && data.symbol==context.Recivecurrency.symbol) { 
+    if (context.Recivecurrency && data.name==context.Recivecurrency.name) { 
         context.setSendCurrency(context.Recivecurrency)
         context.setReciveCurrency(context.Sendcurrency)
     }else{
@@ -72,7 +72,10 @@ const setCurrencyHandler=(data) => {
                                                 <p style={{ position: 'relative', top: '3px' }}>{data.name}</p>
                                                 <img width={30} src={data.image} alt="" />
                                             </div>
-                                            <p>{data.symbol}</p>
+                                            <div className='selector-network'>
+                                         <p>{data.symbol}</p>
+                                         <img width={25} src={data.network_image}alt="" />
+                                    </div>
                                         </li>
                                     ))}
                                 </>
@@ -85,10 +88,14 @@ const setCurrencyHandler=(data) => {
                         {result && result.map(data => (
                                 <li className="option active" onClick={()=>setCurrencyHandler(data)} >
                                     <div>
-                                        <p style={{ position: 'relative', top: '3px' }}>{data.symbol}</p>                          
+                                        <p style={{ position: 'relative', top: '3px' }}>{data.name}</p>                          
                                         <img width={30} src={data.image} alt="" />
                                     </div>
-                                    <p>{data.symbol}</p>
+                                    <div className='selector-network'>
+                                         <p>{data.symbol}</p>
+                                         <img width={25} src={data.network_image}alt="" />
+                                    </div>
+                                   
                                 </li>
                             ))}
 

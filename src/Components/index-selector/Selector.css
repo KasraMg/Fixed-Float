@@ -36,6 +36,8 @@
 }
 .select-option ul li{
     display: flex;
+    align-items: center;
+    padding-bottom: 9px;
     justify-content: space-between;
     color: white;
     padding-right: 23px;
@@ -141,4 +143,20 @@ border-radius: 10px;
     }.select-option ul li {
         font-size: .9rem;
     }
+}
+
+.selector-network img{
+position: relative;
+margin-left: auto;
+}
+.selector-network p{
+margin-bottom: 3px !important;
+}
+.selector-network{
+    flex-direction: column !important;
+    align-items: center !important;
+}
+.select-option ul li div:nth-child(1){
+    position: relative;
+    top: 4px;
 }
