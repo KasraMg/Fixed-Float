@@ -69,7 +69,7 @@ const setCurrencyHandler=(data) => {
                                     {AllData && currencyData.Select1.map(data => (
                                         <li className="option active" onClick={()=>setCurrencyHandler(data)} >
                                             <div>
-                                                <p style={{ position: 'relative', top: '3px' }}>{data.symbol}</p>
+                                                <p style={{ position: 'relative', top: '3px' }}>{data.name}</p>
                                                 <img width={30} src={data.image} alt="" />
                                             </div>
                                             <p>{data.symbol}</p>

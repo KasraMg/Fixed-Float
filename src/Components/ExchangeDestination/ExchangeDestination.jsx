@@ -78,7 +78,7 @@ const context =useContext(allData)
       {/* <!-- exchange-Destination --> */}
       <div className="exchange-Destination">
       <p className="exchange-Destination-title">Destination</p>
-      <input placeholder={context.Recivecurrency ? `Your ${context.Recivecurrency.symbol} address` : `Select your Currency`} value={context.address} onChange={(e)=> context.setAddress(e.target.value)} type="text" />
+      <input placeholder={context.Recivecurrency ? `Your ${context.Recivecurrency.name} address` : `Select your Currency`} value={context.address} onChange={(e)=> context.setAddress(e.target.value)} type="text" />
       {showDeleteIcon ? (
         <AiOutlineClose className='delete-icon' onClick={()=>context.setAddress('')}/>
       ):(
