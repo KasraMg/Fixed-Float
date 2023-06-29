@@ -65,6 +65,7 @@ export default function Order() {
             } else {
               const minutesAndSec = data.secondsleft / 60
               setMinutes(`${minutesAndSec}`)
+              console.log(minutesAndSec);
             }
 
           })
@@ -145,7 +146,7 @@ export default function Order() {
           )}
 
           {details.status == 300 && (
-            <FirstOrderStatus Minutes={Minutes} details={details} />
+            <FirstOrderStatus Minutes={details.secondsleft < 1000 ? Minutes.slice(0,1):Minutes.slice(0,2)} details={details} />
           )}
 
           {details.status == 201 && (

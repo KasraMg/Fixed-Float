@@ -17,7 +17,11 @@ export default function ReciveSelector({ReciveExchangeDropDown,setReciveExchange
     useEffect(() => {
         if (inputData) {
              let newData =AllData && AllData.Select2.filter(data => {
-            return data.name.includes(inputData) 
+                if (data.name.includes(inputData) ) {
+                    return data.name.includes(inputData) 
+                } else {
+                    return data.symbol.toLowerCase().includes(inputData) 
+                }
         })
         setresult(newData)
       

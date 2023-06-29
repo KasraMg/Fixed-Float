@@ -13,7 +13,7 @@ const [token,setToken]=useState(null)
 const [userInfos,setUserInfos]=useState(null)
 const [Sendcurrency,setSendCurrency]=useState() 
 const [Recivecurrency,setReciveCurrency]=useState() 
-const [Value,setValue]=useState(null) 
+const [Value,setValue]=useState(5000) 
 const [address,setAddress]=useState()
 
 

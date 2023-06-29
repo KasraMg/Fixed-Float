@@ -21,7 +21,12 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
     useEffect(() => { 
         if (inputData) {
              let newData = AllData.Select1.filter(data => {
-            return data.name.includes(inputData) 
+                if (data.name.includes(inputData) ) {
+                    return data.name.includes(inputData) 
+                } else {
+                    return data.symbol.toLowerCase().includes(inputData) 
+                }
+           
         })
         setresult(newData)
       
