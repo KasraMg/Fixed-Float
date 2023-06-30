@@ -5,6 +5,7 @@ import './FirstOrderStatus.css'
 import { RiFileCopyFill } from 'react-icons/ri'
 import Barcode from '../Barcode/Barcode'
 export default function FirstOrderStatus({details,Minutes}) {
+  console.log(Minutes);
   return (
     <>
 
@@ -43,10 +44,20 @@ export default function FirstOrderStatus({details,Minutes}) {
 
           <div>
             <p>Time remaining</p>
-
-            <span>{Minutes.slice(0, 2)} minutes</span>
-
-
+            {Minutes == 'Cansel' ?(
+              <p style={{color:'red'}}>Cansel</p>
+            ):(
+              <>
+    {Minutes > 10  ?(
+            <span>{Minutes.slice(0,2)} minutes</span>
+        ):(
+            <span>{Minutes.slice(0,1) } minutes</span>
+        )}
+              </>
+            )}
+    
+          
+        
           </div>
 
 

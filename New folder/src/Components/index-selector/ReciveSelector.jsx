@@ -17,7 +17,14 @@ export default function ReciveSelector({ReciveExchangeDropDown,setReciveExchange
     useEffect(() => {
         if (inputData) {
              let newData =AllData && AllData.Select2.filter(data => {
-            return data.name.includes(inputData) 
+                if (data.name.toLowerCase().includes(inputData) ) {   
+                 
+                    return data.name.toLowerCase().includes(inputData.toLowerCase()) 
+                  
+                 
+                } else {
+                    return data.symbol.toLowerCase().includes(inputData) 
+                }
         })
         setresult(newData)
       
@@ -99,7 +106,7 @@ export default function ReciveSelector({ReciveExchangeDropDown,setReciveExchange
 
 
                         )}
-                        { error &&(
+                        {inputData && error &&(
                      
                         <p className='currsy-not-found'>Not Found :((</p>
                            

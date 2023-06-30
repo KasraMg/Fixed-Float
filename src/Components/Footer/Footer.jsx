@@ -1,13 +1,23 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import './Footer.css'
 import { Link } from 'react-router-dom'
 import { FaTelegramPlane } from 'react-icons/fa'
 import { AiFillInstagram, AiFillStar, AiOutlineMedium, AiOutlineReddit, AiOutlineTwitter } from 'react-icons/ai'
+import allData from '../../Context/allData'
 export default function Footer() {
+  const context=useContext(allData)
   return (
     <footer>
       <section>
-        <img src="/images/index/logo.PNG" alt="" />
+      <Link to="/" class="logo">
+        <p style={context.Sendcurrency &&{color:context.Sendcurrency.color}}   class="logo-1"></p>
+        <section>
+          <p  style={context.Recivecurrency &&{color:context.Recivecurrency.color}}  class="logo-2"></p>
+          <p style={context.Sendcurrency &&{color:context.Sendcurrency.color}}class="logo-3"></p>
+        </section>
+
+        <p style={context.Recivecurrency &&{color:context.Recivecurrency.color}} class="logo-4"></p>
+      </Link>
         <div>
             <Link to=""><FaTelegramPlane/></Link>
           <Link to=""> <AiOutlineTwitter/></Link> 

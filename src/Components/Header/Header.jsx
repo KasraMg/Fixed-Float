@@ -64,13 +64,13 @@ export default function Header() {
 
       <button className='offcanvas-btn' onClick={handleShow}><AiOutlineMenu /></button>
       <Link to="/" class="logo">
-        <p class="logo-1"></p>
+        <p style={userContext.Sendcurrency &&{color:userContext.Sendcurrency.color}}   class="logo-1"></p>
         <div>
-          <p class="logo-2"></p>
-          <p class="logo-3"></p>
+          <p  style={userContext.Recivecurrency &&{color:userContext.Recivecurrency.color}}  class="logo-2"></p>
+          <p style={userContext.Sendcurrency &&{color:userContext.Sendcurrency.color}}class="logo-3"></p>
         </div>
 
-        <p class="logo-4"></p>
+        <p style={userContext.Recivecurrency &&{color:userContext.Recivecurrency.color}} class="logo-4"></p>
       </Link>
       <div class="header-secton-right">
         <ul>
