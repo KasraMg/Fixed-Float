@@ -48,10 +48,10 @@ export default function FirstOrderStatus({details,Minutes}) {
               <p style={{color:'red'}}>Cansel</p>
             ):(
               <>
-    {Minutes >  "601"  ?(
-            <span>{Minutes.slice(0,1)} minutes</span>
+    {Minutes > 10  ?(
+            <span>{Minutes.slice(0,2)} minutes</span>
         ):(
-            <span>{Minutes.slice(0,2) } minutes</span>
+            <span>{Minutes.slice(0,1) } minutes</span>
         )}
               </>
             )}
