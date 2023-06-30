@@ -21,10 +21,25 @@ background: url("data:image/svg+xml,%3Csvg width='1233' height='333' viewBox='0 
 .your-send-order{
     display: flex;
     justify-content: right;
+    align-items: center;
     text-align: right;
 }
-.your-send-order,.your-receive-order{
-    width:400px;
+@media (min-width:1200px) {
+    .your-send-order p,.your-receive-order p{
+     width: 400px !important;
+    word-wrap: break-word;
+    line-height: 1.2rem;
+}
+}
+@media (min-width:1000px) {
+    .your-send-order p,.your-receive-order p{
+     width: 300px;
+    word-wrap: break-word;
+    line-height: 1.2rem;
+}
+}
+.your-send-order p,.your-receive-order p{
+    word-wrap: break-word;
 }
 .your-send-order span{
     font-size: 1.4em;
@@ -37,6 +52,7 @@ background: url("data:image/svg+xml,%3Csvg width='1233' height='333' viewBox='0 
 
 .your-receive-order{
     display: flex;
+    align-items: center;
     text-align: left;
 }
 
@@ -47,8 +63,7 @@ background: url("data:image/svg+xml,%3Csvg width='1233' height='333' viewBox='0 
     font-weight: 300;
     line-height: 1;
     opacity: .5;
-
-    white-space: nowrap;
+ 
 }
 .your-receive-order span{
     font-size: 1.4em;

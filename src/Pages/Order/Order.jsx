@@ -28,8 +28,7 @@ export default function Order() {
           method: 'POST'
         }).then(res => res.json())
           .then(data => {
-            setDetails(data)
-            console.log(data);
+            setDetails(data) 
             if (data.status == 200) {
               setstatus200(true)
 
@@ -57,15 +56,15 @@ export default function Order() {
 
             }
 
-            setLoader(false)
-            console.log(data)
+            setLoader(false) 
             if (data.secondsleft > 1801) {
               setMinutes(`0`)
               setSeconds(`0000`)
+            }else if(data.secondsleft < 65){
+              setMinutes('Cansel')
             } else {
               const minutesAndSec = data.secondsleft / 60
-              setMinutes(`${minutesAndSec}`)
-              console.log(minutesAndSec);
+              setMinutes(`${minutesAndSec}`) 
             }
 
           })
@@ -104,11 +103,12 @@ export default function Order() {
 
             }
             setDetails(data)
-            setLoader(false)
-            console.log(data.code)
+            setLoader(false) 
             if (data.secondsleft > 1801) {
               setMinutes(`0`)
               setSeconds(`0000`)
+            }else if(data.secondsleft < 65){
+              setMinutes('Cansel')
             } else {
               const minutesAndSec = data.secondsleft / 60
               setMinutes(`${minutesAndSec}`)
@@ -146,7 +146,7 @@ export default function Order() {
           )}
 
           {details.status == 300 && (
-            <FirstOrderStatus Minutes={details.secondsleft < 1000 ? Minutes.slice(0,1):Minutes.slice(0,2)} details={details} />
+            <FirstOrderStatus Minutes={Minutes} details={details} />
           )}
 
           {details.status == 201 && (

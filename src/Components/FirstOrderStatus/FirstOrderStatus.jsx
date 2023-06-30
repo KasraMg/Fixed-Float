@@ -44,14 +44,20 @@ export default function FirstOrderStatus({details,Minutes}) {
 
           <div>
             <p>Time remaining</p>
-        {Minutes < 1 ?(
-            <span>Cansel</span>
+            {Minutes == 'Cansel' ?(
+              <p style={{color:'red'}}>Cansel</p>
+            ):(
+              <>
+    {Minutes >  "601"  ?(
+            <span>{Minutes.slice(0,1)} minutes</span>
         ):(
-            <span>{Minutes} minutes</span>
+            <span>{Minutes.slice(0,2) } minutes</span>
         )}
+              </>
+            )}
+    
           
-
-
+        
           </div>
 
 

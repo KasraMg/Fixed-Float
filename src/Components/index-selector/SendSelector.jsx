@@ -20,9 +20,12 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
 
     useEffect(() => { 
         if (inputData) {
-             let newData = AllData.Select1.filter(data => {
-                if (data.name.includes(inputData) ) {
-                    return data.name.includes(inputData) 
+             let newData = AllData.Select1.filter(data => { 
+                if (data.name.toLowerCase().includes(inputData) ) {   
+                 
+                    return data.name.toLowerCase().includes(inputData.toLowerCase()) 
+                  
+                 
                 } else {
                     return data.symbol.toLowerCase().includes(inputData) 
                 }
@@ -30,8 +33,7 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
         })
         setresult(newData)
       
-        
-        console.log(result);
+         
         }
        
     }, [inputData])
@@ -46,7 +48,7 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
  }, [result])
  
 const setCurrencyHandler=(data) => {
-    console.log(data);
+    
     if (context.Recivecurrency && data.name==context.Recivecurrency.name) { 
         context.setSendCurrency(context.Recivecurrency)
         context.setReciveCurrency(context.Sendcurrency)
@@ -108,7 +110,7 @@ const setCurrencyHandler=(data) => {
 
 
                         )}
-                        { error &&(
+                        {inputData && error &&(
                      
                         <p className='currsy-not-found'>Not Found :((</p>
                            

@@ -64,7 +64,18 @@
 .select-option ul{
    padding-left: 0px !important;
    margin-bottom: 0px;
+   overflow-y: scroll;
+   height: 464px;
+   background-color: #212850;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
 }
+.select-option ul::-webkit-scrollbar-thumb{
+    background-color: #fff;
+    border-radius: 15px;
+    cursor: pointer; 
+}
+    
 .select-option ul li svg{
     width: 30px;
     position: relative;
@@ -92,10 +103,23 @@
     display: flex;
     align-items: center;
 }
-.select-option main::-webkit-scrollbar{
-background-color: gray !important;
+ .select-option ul::-webkit-scrollbar-button{
+background-color: #29315C !important;
 width: 6px !important;
 border-radius: 10px;
+height: 10px;
+}
+.select-option ul::-webkit-scrollbar-track{
+    background-color:#394273 !important;
+width: 6px !important;
+border-radius: 10px;
+height: 10px;
+}
+.select-option ul::-webkit-scrollbar{
+    background-color: #29315C !important;
+width: 6px !important;
+border-radius: 10px;
+height: 10px;
 }
 .select-option-bg{
     position: fixed;
@@ -104,9 +128,7 @@ border-radius: 10px;
     width: 100%;
     height: 100vh;
 }
-.select-option main{
-    overflow-y: scroll;
-}
+ 
 .select-option{
     width: 393px;
     height: 500px;
@@ -159,4 +181,9 @@ margin-bottom: 3px !important;
 .select-option ul li div:nth-child(1){
     position: relative;
     top: 4px;
+}
+
+.select-option main{
+    position: relative;
+    z-index: 999;
 }
