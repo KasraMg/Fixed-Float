@@ -39,14 +39,12 @@ header ul li a{
      transition: .3s all ease !important;
 }
 .logo-1::after {
-    content: "\e100";
-    color: #f7931a;
+    content: "\e100"; 
     position: relative;
     left: 5px;
 }
 .logo-2::after{
-    content: "\e103";
-    color: white;
+    content: "\e103"; 
     display: inline-block;
     font-size: 1.66em;
     margin: 0 0.32em;
@@ -56,8 +54,7 @@ header ul li a{
     vertical-align: middle;
 }
 .logo-3::after{
-    content: "\e103";
-    color: #f7931a;
+    content: "\e103"; 
     position: absolute;
     display: block;
     transform: rotate(175deg);
@@ -66,11 +63,11 @@ header ul li a{
     font-size: 1.4rem;
 }
 .logo-4::after{
-    content: "\e101";
-    color: white;
+    content: "\e101"; 
 }
 header p{
     font-family: icons;
+    transition: .2s all ease-in;
 }
 header a{
     display: flex;

@@ -47,6 +47,7 @@ p{
 }
 .select-outer p{
     white-space: nowrap;
+    transition: .2s all ease-in;
 }
 .select-outer:hover{
     opacity: .7;
@@ -88,12 +89,10 @@ p{
 
 }
 .exchange-amounts span:nth-child(1)::after{
-    content: "\e200";
- color: #f7931a;
+    content: "\e200"; 
 }
 .exchange-amounts span:nth-child(2){
-    transform: rotateY(194deg);
-    color: white;
+    transform: rotateY(194deg); 
     position: relative;
     right: 6px;
     bottom:5px ;
@@ -111,11 +110,13 @@ p{
     border: 1px solid #f7931a;
     border-radius: 10px;
     color: #f7931a;
+    transition: .2s all ease-in;
     letter-spacing: 1.2px;
 }
 .Receive-input{
       background-color: #00000082;
       outline: 0;
+      transition: .2s all ease-in;
       padding: .8rem 4rem .8rem 1rem;
     font-size: 1.6rem;
     border: 1px solid #fff;
@@ -134,6 +135,7 @@ p{
 .exchange-amounts-lable p{
     margin-bottom: .4rem;
     font-size: .9rem;
+    transition: .2s all ease-in;
 }
 .btn-reverse-to{
     cursor: pointer;

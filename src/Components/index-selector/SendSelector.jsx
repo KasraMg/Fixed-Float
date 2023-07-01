@@ -81,10 +81,13 @@ const setCurrencyHandler=(data) => {
                                             </div>
                                             <div className='selector-network'>
                                          <p>{data.symbol}</p>
-                                         <section style={{backgroundColor:data.color}}>
+                                         {data.network_image &&(
+                                            <section style={{backgroundColor:data.color}}>
                                                <img width={25} src={data.network_image}alt="" />
                                                <p style={{ color: data.color == '#000000'&&'yellow' }}>{data.network}</p>
-                                         </section>
+                                         </section> 
+                                         )}
+                                        
                                       
                                     </div>
                                         </li>
@@ -104,10 +107,12 @@ const setCurrencyHandler=(data) => {
                                     </div>
                                     <div className='selector-network'>
                                          <p>{data.symbol}</p>
-                                         <section style={{backgroundColor:data.color}}>
+                                         {data.network_image &&(
+                                            <section style={{backgroundColor:data.color}}>
                                                <img width={25} src={data.network_image}alt="" />
                                                <p style={{ color: data.color == '#000000'&&'yellow' }}>{data.network}</p>
-                                         </section>
+                                         </section> 
+                                         )}
                                     </div>
                                    
                                 </li>

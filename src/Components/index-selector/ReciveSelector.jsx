@@ -78,10 +78,12 @@ export default function ReciveSelector({ReciveExchangeDropDown,setReciveExchange
                                             </div>
                                             <div className='selector-network'>
                                          <p>{data.symbol}</p>
-                                         <section style={{backgroundColor:data.color}}>
+                                       {data.network_image &&(
+                                            <section style={{backgroundColor:data.color}}>
                                                <img width={25} src={data.network_image}alt="" />
                                                <p style={{ color: data.color == '#000000'&&'yellow' }}>{data.network}</p>
-                                         </section>
+                                         </section> 
+                                         )}
                                     </div>
                                         </li>
                                     ))}
@@ -100,10 +102,12 @@ export default function ReciveSelector({ReciveExchangeDropDown,setReciveExchange
                                     </div>
                                     <div className='selector-network'>
                                          <p>{data.symbol}</p>
-                                          <section style={{backgroundColor:data.color}}>
+                                        {data.network_image &&(
+                                            <section style={{backgroundColor:data.color}}>
                                                <img width={25} src={data.network_image}alt="" />
                                                <p style={{ color: data.color == '#000000'&&'yellow' }}>{data.network}</p>
-                                         </section>
+                                         </section> 
+                                         )}
                                     </div>
                                 </li>
                             ))}
