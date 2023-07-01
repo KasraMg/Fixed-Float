@@ -11,7 +11,7 @@ footer section span {
 footer section div {
     display: flex;
     gap: 30px;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 footer section img {
@@ -99,7 +99,10 @@ footer ul div a li {
     }
 
     footer section span {
-        bottom: 10px !important;
+        bottom: 10px !important; 
+            margin-top: 2rem;
+            position: unset !important;
+       
     }
 
 }
@@ -113,7 +116,7 @@ footer ul div a li {
 
 @media (max-width:950px) {
     footer section span {
-        position: absolute !important;
+        position: absolute ;
         bottom: -5px;
         top: unset !important;
     }
@@ -167,10 +170,11 @@ footer .logo-3::after {
 
 footer a {
     text-decoration: none;
+
 }
 
 footer .logo {
-    justify-content: center;
+    justify-content: center; 
 }
 
 @media (max-width:950px) {
@@ -186,10 +190,15 @@ footer .logo {
 @media (max-width:501px) {
     footer section a {
         font-size: 1.2rem !important;
-    }
+    } 
+   
 
     footer .logo-3::after {
         left: 44.5%;
         top: 5px
     }
+}
+footer{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }

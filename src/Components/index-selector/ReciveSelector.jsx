@@ -73,12 +73,15 @@ export default function ReciveSelector({ReciveExchangeDropDown,setReciveExchange
                                     {AllData && currencyData.Select1.map(data => (
                                         <li className="option active" onClick={()=>setCurrencyHandler(data)} >
                                             <div>
-                                                <p style={{ position: 'relative', top: '3px' }}>{data.name}</p>
+                                                <p style={{color:data.color, position: 'relative', top: '3px'}}>{data.name}</p>
                                                 <img width={30} src={data.image} alt="" />
                                             </div>
                                             <div className='selector-network'>
                                          <p>{data.symbol}</p>
-                                         <img width={25} src={data.network_image}alt="" />
+                                         <section style={{backgroundColor:data.color}}>
+                                               <img width={25} src={data.network_image}alt="" />
+                                               <p style={{ color: data.color == '#000000'&&'yellow' }}>{data.network}</p>
+                                         </section>
                                     </div>
                                         </li>
                                     ))}
@@ -92,12 +95,15 @@ export default function ReciveSelector({ReciveExchangeDropDown,setReciveExchange
                         {result && result.map(data => (
                                 <li className="option active" onClick={()=>setCurrencyHandler(data)} >
                                     <div>
-                                        <p style={{ position: 'relative', top: '3px' }}>{data.name}</p> 
+                                        <p style={{color:data.color, position: 'relative', top: '3px'}}>{data.name}</p> 
                                         <img width={30} src={data.image} alt="" />
                                     </div>
                                     <div className='selector-network'>
                                          <p>{data.symbol}</p>
-                                         <img width={25} src={data.network_image}alt="" />
+                                          <section style={{backgroundColor:data.color}}>
+                                               <img width={25} src={data.network_image}alt="" />
+                                               <p style={{ color: data.color == '#000000'&&'yellow' }}>{data.network}</p>
+                                         </section>
                                     </div>
                                 </li>
                             ))}
