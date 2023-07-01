@@ -1,0 +1,92 @@
+.Barcode{
+    background: white;
+    border-radius: 10px;
+    width: 270px;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+@media (max-width:1113px) {
+    .Barcode{
+        width: 100%;
+    } .barcode-1{
+        width: 100%;
+    }
+}
+@media (max-width:1023px) {
+    .Barcode{
+        width: 100% !important;
+    } 
+}
+ 
+.Barcode .nav-tabs{
+    position: absolute;
+    bottom: 4px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    border: 0px !important;
+    background-color: #ececec ;
+
+}
+.Barcode .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+border: 0px !important;
+color: black !important;
+white-space: nowrap;
+
+}
+.Barcode .nav-item{
+    width: 50%;
+}
+.Barcode .nav-link {
+    border: 0px !important;
+    color: #a6a6a6;
+    font-size: .9rem;
+    width: 100%;
+    white-space: nowrap;
+}
+.Barcode .nav-link:hover{
+color: #a6a6a6;
+}
+.Barcode .active{
+    color: black !important;
+}
+.Barcode .active:active{
+    color: black !important;
+}
+.Barcode svg{
+    width: 76%; 
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+@media (max-width:1151px) {
+    .Barcode img {
+        margin-top: 0rem;
+    }
+}
+
+@media (max-width:500px) {
+    .tab-content > .active {
+        display: block;
+        height: 210px;
+    }.Barcode svg{
+        position: relative;
+        bottom: 40px !important;
+    }  .Barcode svg {
+        width: 150px !important;
+    }
+
+}
+@media (max-width:1000px) {
+    .Barcode svg {
+        width: 42%; 
+        bottom: 11px;
+        position: relative;
+    }
+}
+@media (max-width:800px) {
+    .Barcode svg {
+        width: 52%; 
+    }
+}
