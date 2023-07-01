@@ -3,7 +3,7 @@ import { AiOutlineClose } from 'react-icons/ai'
 import './ExchangeDestination.css'
 import swal from 'sweetalert'
 import allData from '../../Context/allData'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Loader from '../Loader/Loader'
 export default function ExchangeDestination() {
 const [LoaderStatus, setLoader] = useState(false);
@@ -93,8 +93,8 @@ const context =useContext(allData)
   {/* <!-- exchange-Destination --> */}
   <div className="terms">
       <p>By using the site and creating an exchange, you agree to the
-          FixedFloat's <a href="">Terms of Services</a> and <a
-              href="">Privacy Policy</a></p>
+          FixedFloat's <Link to="/FAQ">FAQ</Link> and <Link
+              to="/Privacy-Policy">Privacy Policy</Link></p>
   </div>
 
   {LoaderStatus&&(

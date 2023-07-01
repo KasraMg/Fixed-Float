@@ -57,7 +57,8 @@ export default function Header() {
             <Link to="/FAQ"><li>FAQ</li></Link>
             <Link to="/Support"><li>Support</li></Link>
 
-
+            <p>Rules</p>
+            <Link to="/Privacy-Policy"><li>Privacy policy</li></Link>
           </ul>
         </Offcanvas.Body>
       </Offcanvas>

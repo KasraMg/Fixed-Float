@@ -33,13 +33,13 @@ export default function Footer() {
             <p>FixedFloat</p>
             <Link to="/"><li>Home</li></Link>  
             <Link to="/About"><li>About</li></Link>
-          
+            <Link to="/Login"><li>Login / Register</li></Link>
         </div>
        
         <div>
             <p>Popular</p>
             <Link to="/Blogs"><li>Blog</li></Link>
-            <Link to="/Login"><li>Login / register</li></Link>
+            <Link to="/Privacy-Policy"><li>Privacy policy</li></Link>
           
         </div>
         <div>
