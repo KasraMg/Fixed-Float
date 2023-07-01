@@ -47,7 +47,7 @@ const context =useContext(allData)
         })
       }else{
         setLoader(true)
-        fetch(`https://traderplus.info/exchange/api/payment_create.php?email=${context.userInfos ?context.userInfos.email :''}&adress=${context.address}&amount=${context.Value}&symbol1=${context.Sendcurrency.symbol}&symbol2=${context.Recivecurrency.symbol}`,{
+        fetch(`https://traderplus.info/exchange/api/payment_create.php?email=${context.userInfos ?context.userInfos.email :''}&adress=${context.address}&amount=${context.Value}&symbol1=${context.Sendcurrency.code}&symbol2=${context.Recivecurrency.code}`,{
           method:'POST'
         })
         .then(res=> res.json() )

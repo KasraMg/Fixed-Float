@@ -6,14 +6,18 @@ import Blogs from './Pages/BlogsCategory/Blogs'
 import Blog from "./Pages/Blog/Blog";
 import Login_Register from "./Pages/Login_Register/Login_Register"; 
 import FAQ from "./Pages/FAQ/FAQ";
+import Page404 from "./Pages/Page404/Page404";
+import Privacy from "./Pages/Privacy/Privacy";
+
+
 import UserDashboard from './Pages/userDashboard/UserDashboard'
 import OrderHistory from "./Pages/userDashboard/OrderHistory/OrderHistory";
 import UserProfile from "./Pages/userDashboard/UserProfile/UserProfile";
-import Page404 from "./Pages/Page404/Page404";
+
  const routes=[
 
 
-   {
+  {
     path:'/' , element:<Index/>
   },
    {
@@ -42,6 +46,9 @@ import Page404 from "./Pages/Page404/Page404";
   },
    {
     path:'/Blogs/:id' , element:<Blog/>
+  },
+   {
+    path:'Privacy-Policy' , element:<Privacy/>
   },
    {
     path:'/*' , element:<Page404/>

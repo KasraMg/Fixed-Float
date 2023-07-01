@@ -1,0 +1,16 @@
+.Privacy {
+    padding: 0rem 7.6rem;
+
+}
+
+@media (max-width:1350px) {
+    .Privacy {
+        padding: 0rem 2rem;
+    }
+}
+
+@media (max-width:767px) {
+    .Privacy {
+        padding: 0rem 1rem;
+    }
+}
