@@ -11,7 +11,7 @@ export default function ReciveSelector({ReciveExchangeDropDown,setReciveExchange
     const currencyData = { ...AllData }
     const filterHandler = (e) => {
         setInputData(e.target.value)
-
+       
     }
 
     useEffect(() => {
@@ -29,7 +29,7 @@ export default function ReciveSelector({ReciveExchangeDropDown,setReciveExchange
         setresult(newData)
       
         
-        console.log(result);
+       
         }
        
     }, [inputData])
@@ -70,7 +70,7 @@ export default function ReciveSelector({ReciveExchangeDropDown,setReciveExchange
 
                             {!inputData && (
                                 <>
-                                    {AllData && currencyData.Select1.map(data => (
+                                    {AllData && currencyData.Select2.map(data => (
                                         <li className="option active" onClick={()=>setCurrencyHandler(data)} >
                                             <div>
                                                 <p style={{color:data.color, position: 'relative', top: '3px'}}>{data.name}</p>
