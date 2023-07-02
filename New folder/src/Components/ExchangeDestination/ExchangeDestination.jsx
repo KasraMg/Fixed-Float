@@ -1,4 +1,4 @@
- import React,{ useEffect,useState,useContext } from 'react' 
+import React,{ useEffect,useState,useContext } from 'react' 
 import { AiOutlineClose } from 'react-icons/ai'
 import './ExchangeDestination.css'
 import swal from 'sweetalert'
@@ -47,8 +47,7 @@ const context =useContext(allData)
         })
       }else{
         setLoader(true)
-        fetch (`https://traderplus.info/exchange/api/payment_create.php?email=${context.userInfos ?context.userInfos.email :''}&adress=${context.address}&amount=${context.Value}&symbol1=${context.Sendcurrency.symbol}&symbol2=${context.Recivecurrency.symbol}&network2=${context.Recivecurrency.network && context.Recivecurrency.network}`,{
-
+        fetch(`https://traderplus.info/exchange/api/payment_create.php?email=${context.userInfos ?context.userInfos.email :''}&adress=${context.address}&amount=${context.Value}&symbol1=${context.Sendcurrency.code}&symbol2=${context.Recivecurrency.code}`,{
           method:'POST'
         })
         .then(res=> res.json() )

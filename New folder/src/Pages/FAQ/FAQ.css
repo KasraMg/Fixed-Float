@@ -1,0 +1,107 @@
+.FAQ{
+    padding: 0rem 7.6rem;
+
+}
+@media (max-width:1350px) {
+    .FAQ{
+        padding: 0rem 2rem;
+    }
+}
+@media (max-width:767px) {
+    .FAQ{
+        padding: 0rem 0rem;
+    }.FAQ-title{
+        font-size: 3.5em !important;
+
+    }.FAQ nav{
+        justify-content: center !important;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }.FAQ nav p{
+        text-align: center;
+    }.FAQ .index-faq {
+        padding: 0rem 1rem !important; 
+    }.faq-exchange-cryptocurrency{
+        grid-template-columns: auto !important;
+        justify-content: center;
+    }.FAQ  .accordion-body { 
+        text-align: center !important;
+        padding-right: 0px !important;
+    }
+}
+.FAQ-title{
+    font-size: 5em;
+    margin-top: 0.8125em;
+    margin-bottom: 0.8125em;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(180deg,#FFF 0,#B1DAFF 100%);
+    font-weight: 700;
+    line-height: 1.15em;
+    padding: 0rem 2rem;
+}
+.FAQ nav{
+    padding: 0rem 2rem;
+}
+.FAQ .index-faq{
+    padding: 0rem 2rem;
+}
+.FAQ nav p:hover{
+    opacity: .7;
+}
+.FAQ nav p{
+    padding: .6rem 1rem;
+    cursor: pointer;
+}
+.FAQ nav{
+    display: flex;
+    gap: 30px;
+    justify-content: left;
+    color: white;
+  
+}
+.FAQ .navActive:hover{
+    opacity: 1;
+}
+.FAQ .navActive{
+    color: #008FDF;
+    border-radius: 5px;
+    border: 1px solid #008FDF;
+
+}
+
+
+.faq-exchange-cryptocurrency p{
+    color: #008FDF;
+}
+.faq-exchange-cryptocurrency{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 1rem;
+    gap: 30px;
+}
+
+
+.faq-trust-FixedFloat p{
+    margin-bottom: 0px;
+    margin-top:30px;
+}
+.FAQ .accordion-item  a:hover{
+    color: #f7931a;
+}
+.FAQ .accordion-item a{
+    color: #f7931a;
+    text-decoration: none;
+}
+
+
+.faq-acordian-title{
+    font-size: 1.2rem;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(180deg,#FFF 0,#B1DAFF 100%);
+    font-weight: 800;
+ 
+}

@@ -1,0 +1,64 @@
+.UserDashboard{
+    padding: 0rem 7.6rem;
+    background-image: linear-gradient(0deg,#0c0d16,#151b23);
+}
+@media (max-width:1350px) {
+    .UserDashboard{
+        padding: 0rem 2rem;
+    }
+}
+@media (max-width: 600px){
+.UserDashboard {
+    padding: 0rem 1rem;
+}
+}
+.dashboard-routes{
+    padding-top: 2rem;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    width: 25%;
+    padding-right: 1rem;
+}
+.dashboard-routes li a{
+    text-decoration: none;
+    color: white;
+    opacity:.8;
+}
+.dashboard-routes li{ 
+    list-style: none;
+    opacity:.8;
+    padding: .6rem;
+    margin-top: .4rem;
+    cursor: pointer;
+    color: white;
+}
+.dashboard-active-routes a{
+    color: #008FDF !important;
+    text-decoration: none;
+}
+.dashboard-active-routes{
+    background-color: rgba(0,143,223,0.20);
+    border-color: transparent;
+    border-radius: 5px;
+    color: #008FDF !important;
+}
+.user-dashboard-icon{
+    font-size: 1.2rem;
+    margin-right: .5rem;
+}
+.main-UserDashboard{
+width: 70%;
+}
+.UserDashboard-dashboard-parent{
+    display: flex;
+}
+ 
+.dashboard-routes ul a{
+    text-decoration: none;
+}
+@media (max-width:1000px) {
+    .dashboard-routes{
+        display: none !important;
+    }.main-UserDashboard{
+        width: 100% !important;
+        }
+}
