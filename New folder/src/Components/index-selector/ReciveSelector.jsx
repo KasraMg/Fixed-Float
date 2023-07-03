@@ -11,7 +11,7 @@ export default function ReciveSelector({ReciveExchangeDropDown,setReciveExchange
     const currencyData = { ...AllData }
     const filterHandler = (e) => {
         setInputData(e.target.value)
-
+       
     }
 
     useEffect(() => {
@@ -29,7 +29,7 @@ export default function ReciveSelector({ReciveExchangeDropDown,setReciveExchange
         setresult(newData)
       
         
-         
+       
         }
        
     }, [inputData])

@@ -2,6 +2,7 @@ import React, { useState,useEffect,useContext } from 'react'
 import SendSelector from '../../Components/index-selector/SendSelector';
 import ReciveSelector from '../../Components/index-selector/ReciveSelector'; 
 import contextDatas from '../../Context/allData'
+import swal from 'sweetalert';
 export default function ExchangeAmounts( ) {
     const context =useContext(contextDatas)
     const [SendExchangeDropDown, setSendExchangeDropDown] = useState(false)
@@ -11,6 +12,7 @@ export default function ExchangeAmounts( ) {
     const [ReciveValue,setReciveValue]=useState(0) 
     const [rateusdSend,setRateusdSend]=useState()
     const [rateusdRecive,setRateusdRecive]=useState()
+    const [changeStatus,setChangeStatus]=useState()
     useEffect(() => {
          if (context.Sendcurrency && context.Recivecurrency  ) { 
            let value =context.Value * context.Sendcurrency.price 
@@ -74,11 +76,21 @@ export default function ExchangeAmounts( ) {
         let newSendCurrency={...context.Recivecurrency}
         let newReciveCurrency={...context.Sendcurrency}
 
-            if (context.Sendcurrency && context.Recivecurrency) {
-                context.setSendCurrency(newSendCurrency)
-                context.setReciveCurrency(newReciveCurrency)
-            }
-     
+        let res= AllData.Select1.find(data=>{
+            return data.symbol == context.Recivecurrency.symbol 
+        })
+        if (res) {
+            context.setSendCurrency(newSendCurrency)
+            context.setReciveCurrency(newReciveCurrency)
+        }else{
+            swal({
+                title:'This currency cannot be changed',
+                icon:'error',
+                button:'ok'
+            })
+        }
+            
+         
        
     }
 
