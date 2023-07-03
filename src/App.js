@@ -15,6 +15,7 @@ const [Sendcurrency,setSendCurrency]=useState()
 const [Recivecurrency,setReciveCurrency]=useState() 
 const [Value,setValue]=useState(5000) 
 const [address,setAddress]=useState()
+const [memo,setMemo]=useState()
 
 
 const login = (userInfos, token) => {
@@ -65,6 +66,8 @@ useEffect(() => {
         setAddress, 
         login, 
         logout,
+        setMemo,
+        memo
       }}>
 
 

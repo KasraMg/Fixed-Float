@@ -5,7 +5,7 @@ import './FirstOrderStatus.css'
 import { RiFileCopyFill } from 'react-icons/ri'
 import Barcode from '../Barcode/Barcode'
 export default function FirstOrderStatus({details,Minutes}) {
-  console.log(Minutes);
+  
   return (
     <>
 
