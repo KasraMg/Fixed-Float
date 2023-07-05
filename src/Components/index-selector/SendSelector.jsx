@@ -21,13 +21,19 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
     useEffect(() => { 
         if (inputData) {
              let newData = AllData.Select1.filter(data => { 
-                if (data.name.toLowerCase().includes(inputData) ) {   
-                 
-                    return data.name.toLowerCase().includes(inputData.toLowerCase()) 
-                  
-                 
+                if (data.name.toLowerCase().includes(inputData) || data.symbol.toLowerCase().includes(inputData) ) {   
+                 if (data.name.toLowerCase().includes(inputData)) {
+                     return data.name.toLowerCase().includes(inputData.toLowerCase()) 
+                 }else{
+                     return data.symbol.toLowerCase().includes(inputData) 
+                 }
+                    
                 } else {
-                    return data.symbol.toLowerCase().includes(inputData) 
+                    if (data.name.toUpperCase().includes(inputData)) {
+                        return data.name.toUpperCase().includes(inputData.toUpperCase()) 
+                    }else{
+                        return data.symbol.toUpperCase().includes(inputData) 
+                    }
                 }
            
         })

@@ -10,14 +10,22 @@ const [LoaderStatus, setLoader] = useState(false);
 const navigate=useNavigate()
 const context =useContext(allData) 
     const [showDeleteIcon,setShowDeleteIcon]=useState(false)
+    const [showMemoDeleteIcon,setShowMemoDeleteIcon]=useState(false)
     useEffect(() => {
        if (context.address) {
         setShowDeleteIcon(true)
        }else{
         setShowDeleteIcon(false)
        }
-    }, [context.address])
-    
+
+       if (context.memo) {
+        setShowMemoDeleteIcon(true)
+      }else{
+        setShowMemoDeleteIcon(false)
+      }
+    }, [context.address,context.memo])
+
+  
 
     const exchangeClickHandler=()=>{
 
@@ -47,7 +55,7 @@ const context =useContext(allData)
         })
       }else{
         setLoader(true)
-        fetch (`https://traderplus.info/exchange/api/payment_create.php?email=${context.userInfos ?context.userInfos.email :''}&adress=${context.address}&amount=${context.Value}&symbol1=${context.Sendcurrency.symbol}&symbol2=${context.Recivecurrency.symbol}&network2=${context.Recivecurrency.network && context.Recivecurrency.network}`,{
+        fetch (`https://traderplus.info/exchange/api/payment_create.php?email=${context.userInfos ?context.userInfos.email :''}&adress=${context.address}&amount=${context.Value}&symbol1=${context.Sendcurrency.code}&symbol2=${context.Recivecurrency.symbol}&network2=${context.Recivecurrency.network && context.Recivecurrency.network}&memo=${context.memo && context.memo}`,{
 
           method:'POST'
         })
@@ -73,6 +81,10 @@ const context =useContext(allData)
       const ClipBoardText=await navigator.clipboard.readText()
       context.setAddress(ClipBoardText)
     }
+    const pasteClipboardMemo= async()=>{
+      const ClipBoardText=await navigator.clipboard.readText()
+      context.setMemo(ClipBoardText)
+    }
   return (
 
     <>
@@ -87,10 +99,26 @@ const context =useContext(allData)
           <span onClick={pasteClipboard}></span> 
         </div>
       )}
-        
+   
+       
   </div>
-
-  <button className="Exchange-btn" onClick={exchangeClickHandler}>Exchange now</button>
+<div className='exchange-Destination-footer'>
+   <button className="Exchange-btn" onClick={exchangeClickHandler}>Exchange now</button>
+   {context.Recivecurrency && context.Recivecurrency.memo == 1&&(
+         <div>
+          <p>MEMO (optional)</p>
+          <input value={context.memo} onChange={(e)=> context.setMemo(e.target.value)} placeholder='Memo / Tag' type="text" />
+          {showMemoDeleteIcon ? (
+        <AiOutlineClose className='delete-icon-memo' onClick={()=>context.setMemo('')}/>
+      ):(
+        <div>
+          <span onClick={pasteClipboardMemo}></span> 
+        </div>
+      )}
+        </div>
+      )}
+</div>
+ 
   {/* <!-- exchange-Destination --> */}
   <div className="terms">
       <p>By using the site and creating an exchange, you agree to the

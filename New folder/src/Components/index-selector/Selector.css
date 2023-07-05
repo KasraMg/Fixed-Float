@@ -153,7 +153,9 @@ height: 10px;
         vertical-align: middle;
         margin-left: .5rem;
 }
-
+.select-outer {
+right: 20px;
+}
 .currsy-not-found{
     text-align: center;
     color: white;

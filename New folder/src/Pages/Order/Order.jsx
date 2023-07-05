@@ -29,6 +29,7 @@ export default function Order() {
         }).then(res => res.json())
           .then(data => {
             setDetails(data) 
+            
             if (data.status == 200) {
               setstatus200(true)
 
@@ -86,6 +87,7 @@ export default function Order() {
           method: 'POST'
         }).then(res => res.json())
           .then(data => {
+            console.log(data);
             if (data.status == 200) {
               setstatus200(true)
             }

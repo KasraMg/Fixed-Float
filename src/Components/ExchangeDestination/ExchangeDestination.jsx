@@ -31,7 +31,7 @@ const context =useContext(allData)
 
       if (!context.address) {
         swal({
-          title:'please type the context.address',
+          title:'please type the address',
           icon:'error',
           buttons:'try again'
         })
@@ -55,7 +55,7 @@ const context =useContext(allData)
         })
       }else{
         setLoader(true)
-        fetch (`https://traderplus.info/exchange/api/payment_create.php?email=${context.userInfos ?context.userInfos.email :''}&adress=${context.address}&amount=${context.Value}&symbol1=${context.Sendcurrency.symbol}&symbol2=${context.Recivecurrency.symbol}&network2=${context.Recivecurrency.network && context.Recivecurrency.network}&memo=${context.memo && context.memo}`,{
+        fetch (`https://traderplus.info/exchange/api/payment_create.php?email=${context.userInfos ?context.userInfos.email :''}&adress=${context.address}&amount=${context.Value}&symbol1=${context.Sendcurrency.code}&symbol2=${context.Recivecurrency.symbol}&network2=${context.Recivecurrency.network && context.Recivecurrency.network}&memo=${context.memo && context.memo}`,{
 
           method:'POST'
         })
@@ -67,7 +67,7 @@ const context =useContext(allData)
             navigate(`/order/${data.hash_change}`)
           }else if(data.code==400) {
             swal({
-              title:'The operation failed',
+              title:data.message,
               icon:'error',
               buttons:'try again'
             })
