@@ -60,8 +60,7 @@ const context =useContext(allData)
           method:'POST'
         })
         .then(res=> res.json() )
-        .then(data=>{
-          console.log(data)
+        .then(data=>{ 
           setLoader(false)
           if (data.code==200) {
             navigate(`/order/${data.hash_change}`)
