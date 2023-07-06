@@ -69,7 +69,7 @@ export default function ReciveSelector({ReciveExchangeDropDown,setReciveExchange
        <img src="./images/index/Capture.PNG" alt=""/>
     </div>
 
-    <main>
+    <main style={{overflow:'hidden'}}>
         <p className="select-option-title">All currencies</p>
     <ul  onClick={()=>setReciveExchangeDropDown(false)}>
     {showResult && (

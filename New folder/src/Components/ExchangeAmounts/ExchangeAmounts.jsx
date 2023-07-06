@@ -12,7 +12,7 @@ export default function ExchangeAmounts( ) {
     const [ReciveValue,setReciveValue]=useState(0) 
     const [rateusdSend,setRateusdSend]=useState()
     const [rateusdRecive,setRateusdRecive]=useState()
-    const [changeStatus,setChangeStatus]=useState()
+    const [Count, setCount] = useState();
     useEffect(() => {
          if (context.Sendcurrency && context.Recivecurrency  ) { 
            let value =context.Value * context.Sendcurrency.price 
@@ -44,17 +44,30 @@ export default function ExchangeAmounts( ) {
     
      
     useEffect(() => {
+        setInterval(() => {
         fetch('https://traderplus.info/exchange/api/market2.json')
         .then(res=>res.json())
         .then(data=>{
-            setAllData(data)
-            console.log(data)
+            setAllData(data) 
             context.setSendCurrency(data.Select1[5])
             context.setReciveCurrency(data.Select1[33])
              
         })
+        setCount(prev => prev + 1)
+    }, 20000);
+    }, [Count])
+    useEffect(() => {
+        
+        fetch('https://traderplus.info/exchange/api/market2.json')
+        .then(res=>res.json())
+        .then(data=>{
+            setAllData(data) 
+            context.setSendCurrency(data.Select1[5])
+            context.setReciveCurrency(data.Select1[33])
+             
+        })
+         
     }, [])
-    
     const inputChangeHandler=(e)=>{ 
         const regex= RegExp(/^[0-9\.]+$/) 
         const regexStatus = regex.test(e.target.value) 
