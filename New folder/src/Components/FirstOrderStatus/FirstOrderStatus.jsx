@@ -74,7 +74,7 @@ export default function FirstOrderStatus({details,Minutes}) {
       <div className="order-detail">
         <span >Send <p className='mb-0'> {details.amount_user}  {details.symbol1}</p> to the address:</span>
         <p className='order-detail-address'>{details.adress_nowpayment} <RiFileCopyFill onClick={() => navigator.clipboard.writeText(details.adress_nowpayment)} className='order-copy-icon' /></p>
-        <span className="order-detail-span-2">he exchange rate will be fixed after receiving <strong style={{ color: 'white' }}>1</strong> network confirmations.</span>
+        <span className="order-detail-span-2">he exchange rate will be fixed after receiving <strong style={{ color: 'white' }}>{details.confirm}</strong> network confirmations.</span>
 
 
         <div>

@@ -70,7 +70,7 @@ export default function Order() {
 
           })
         setCount(prev => prev + 1)
-      }, 40000);
+      }, 5000);
 
     }
 
@@ -87,7 +87,7 @@ export default function Order() {
           method: 'POST'
         }).then(res => res.json())
           .then(data => {
-            console.log(data);
+           
             if (data.status == 200) {
               setstatus200(true)
             }
@@ -118,7 +118,7 @@ export default function Order() {
 
           })
         setCount(prev => prev + 1)
-      }, 30000);
+      }, 5000);
 
     }
 

@@ -16,21 +16,28 @@ export default function ReciveSelector({ReciveExchangeDropDown,setReciveExchange
 
     useEffect(() => {
         if (inputData) {
-             let newData =AllData && AllData.Select2.filter(data => {
-                if (data.name.toLowerCase().includes(inputData) ) {   
-                 
+            let newData = AllData.Select2.filter(data => { 
+               if (data.name.toLowerCase().includes(inputData.toLowerCase()) || data.symbol.toLowerCase().includes(inputData) ) {   
+                   console.log(inputData.toLowerCase());
+                if (data.name.toLowerCase().includes(inputData.toLowerCase())) {
                     return data.name.toLowerCase().includes(inputData.toLowerCase()) 
-                  
-                 
-                } else {
+                }else{
                     return data.symbol.toLowerCase().includes(inputData) 
                 }
-        })
-        setresult(newData)
-      
+                   
+               } else {
+                   if (data.name.toUpperCase().includes(inputData)) {
+                       return data.name.toUpperCase().includes(inputData.toUpperCase()) 
+                   }else{
+                       return data.symbol.toUpperCase().includes(inputData) 
+                   }
+               }
+          
+       })
+       setresult(newData)
+     
         
-       
-        }
+       }
        
     }, [inputData])
 

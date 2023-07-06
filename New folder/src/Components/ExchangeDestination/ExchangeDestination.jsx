@@ -31,7 +31,7 @@ const context =useContext(allData)
 
       if (!context.address) {
         swal({
-          title:'please type the context.address',
+          title:'please type the address',
           icon:'error',
           buttons:'try again'
         })
@@ -60,14 +60,13 @@ const context =useContext(allData)
           method:'POST'
         })
         .then(res=> res.json() )
-        .then(data=>{
-          console.log(data)
+        .then(data=>{ 
           setLoader(false)
           if (data.code==200) {
             navigate(`/order/${data.hash_change}`)
           }else if(data.code==400) {
             swal({
-              title:'The operation failed',
+              title:data.message,
               icon:'error',
               buttons:'try again'
             })
