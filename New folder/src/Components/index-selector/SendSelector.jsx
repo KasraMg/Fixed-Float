@@ -72,7 +72,7 @@ const setCurrencyHandler=(data) => {
                 <img   src="./images/index/Capture.PNG" alt="" />
             </div>
 
-            <main>
+            <main style={{overflow:'hidden'}}>
                 <p className="select-option-title">All currencies</p>
                 <ul onClick={() => setSendExchangeDropDown(false)}>
                     {showResult && (

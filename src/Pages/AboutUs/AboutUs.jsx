@@ -39,8 +39,8 @@ export default function AboutUs() {
 
             <main>
                 <AdvantageSection icon={ <AiFillLike className='AdvantageSection-icon'/>}  text='The maximum ease of making an exchange and the ability to choose a strategy will allow you to make a profitable exchange'/>
-                <AdvantageSection icon={ <SiSpringsecurity className='AdvantageSection-icon'/>}  text='The maximum ease of making an exchange and the ability to choose a strategy will allow you to make a profitable exchange'/>
-                <AdvantageSection icon={ <MdOutlineTimer className='AdvantageSection-icon'/>}  text='The maximum ease of making an exchange and the ability to choose a strategy will allow you to make a profitable exchange'/>
+                <AdvantageSection icon={ <SiSpringsecurity className='AdvantageSection-icon'/>}  text='We provide a secure exchange. You do not risk anything and you can immediately see the size of the commission'/>
+                <AdvantageSection icon={ <MdOutlineTimer className='AdvantageSection-icon'/>}  text='You can make automatic exchange with maximum speed on any devices'/>
             </main>
 
         </div>

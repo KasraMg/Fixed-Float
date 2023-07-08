@@ -48,9 +48,13 @@ export default function ExchangeAmounts( ) {
         fetch('https://traderplus.info/exchange/api/market2.json')
         .then(res=>res.json())
         .then(data=>{
+            console.log(data);
             setAllData(data) 
-            context.setSendCurrency(data.Select1[5])
-            context.setReciveCurrency(data.Select1[33])
+            if (Count < 1) {
+                context.setSendCurrency(data.Select1[5])
+                context.setReciveCurrency(data.Select1[33]) 
+            }
+          
              
         })
         setCount(prev => prev + 1)
@@ -61,6 +65,7 @@ export default function ExchangeAmounts( ) {
         fetch('https://traderplus.info/exchange/api/market2.json')
         .then(res=>res.json())
         .then(data=>{
+            console.log(data);
             setAllData(data) 
             context.setSendCurrency(data.Select1[5])
             context.setReciveCurrency(data.Select1[33])
