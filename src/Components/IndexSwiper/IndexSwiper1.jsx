@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 export default function App() {
     const [details,setDeatils]=useState() 
     useEffect(() => {
-        fetch(`https://traderplus.info/exchange/api/blogs.php?typeing=news&pageopen=1`)
+        fetch(`  https://testsitexchange.com/api/blogs.php?typeing=news&pageopen=1`)
         .then(res=>res.json())
           .then(data=>{  
               setDeatils(data.blogs); 

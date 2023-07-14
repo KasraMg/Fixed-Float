@@ -18,7 +18,9 @@
 .select-option-title{
     color: #636363;
     font-size: .8em;
-    padding: 0.5em 1.25em 0.4rem;
+    padding: 0.5em 1.25em 0.4rem; 
+    padding-top: 1rem;
+    background-color: #29315C;
     letter-spacing: 1.1px;
     margin-bottom: 0px;
 }
