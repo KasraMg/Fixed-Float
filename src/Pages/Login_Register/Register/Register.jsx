@@ -47,7 +47,7 @@ export default function Register() {
 
                 if (registerform.values.PassWord == registerform.values.ReapetPassWord) {
                     setLoader(true)
-                    fetch(`  https://testsitexchange.com/api/register.php?name=${registerform.values.name}&email=${registerform.values.email}&password1=${registerform.values.PassWord}&password2=${registerform.values.ReapetPassWord}`, {
+                    fetch(`   http://testsitexchange.com/api/register.php?name=${registerform.values.name}&email=${registerform.values.email}&password1=${registerform.values.PassWord}&password2=${registerform.values.ReapetPassWord}`, {
                         method: 'POST'
                     })
                         .then(res => res.json())

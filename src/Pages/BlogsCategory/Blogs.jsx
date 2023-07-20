@@ -11,7 +11,7 @@ const [pageCount,setPageCount]=useState(1)
 const [blogsCount,setBlogsCount]=useState()
 
     useEffect(() => { 
-      fetch(`  https://testsitexchange.com/api/blogs.php?typeing=${activeCat}&pageopen=${pageCount}`)
+      fetch(`   http://testsitexchange.com/api/blogs.php?typeing=${activeCat}&pageopen=${pageCount}`)
       .then(res=>res.json())
         .then(data=>{ 
             setDeatils(data); 

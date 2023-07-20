@@ -8,7 +8,7 @@ export default function OrderGuide() {
   const EmailRegxe = RegExp(/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/)
   const seEmailHandler = () => {
     if (EmailRegxe.test(email)) {
-      fetch(`  https://testsitexchange.com/api/payment_email.php?hash_change=${param.id}&email=${email}`)
+      fetch(`   http://testsitexchange.com/api/payment_email.php?hash_change=${param.id}&email=${email}`)
       .then(res=>res.json())
       .then(data=>{
         console.log(data);

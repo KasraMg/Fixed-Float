@@ -15,7 +15,7 @@ export default function Barcode() {
   useEffect(() => {
     if (hashChange) {
       
-        fetch(`  https://testsitexchange.com/api/payment_check.php?payment_id=&hash_change=${hashChange.id}`,{
+        fetch(`   http://testsitexchange.com/api/payment_check.php?payment_id=&hash_change=${hashChange.id}`,{
           method:'POST'
          }).then(res=>res.json())
          .then(data=>{
@@ -38,7 +38,7 @@ export default function Barcode() {
 
   useEffect(() => {
     if (firstRequest && hashChange) {
-       fetch(`  https://testsitexchange.com/api/payment_check.php?payment_id=&hash_change=${hashChange.id}`,{
+       fetch(`   http://testsitexchange.com/api/payment_check.php?payment_id=&hash_change=${hashChange.id}`,{
       method:'POST'
      }).then(res=>res.json())
      .then(data=>{ 

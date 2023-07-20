@@ -39,7 +39,7 @@ export default function FirstOrderStatus({details,Minutes}) {
         <div className="order-info ">
           <div>
             <p>Order ID</p>
-            <span onClick={() => navigator.clipboard.writeText('3157H2')}>{details.order_id} <RiFileCopyFill className='order-copy-icon' /></span>
+            <span onClick={() => navigator.clipboard.writeText(details.order_id)}>{details.order_id} <RiFileCopyFill className='order-copy-icon' /></span>
           </div>
 
           <div>

@@ -15,7 +15,7 @@ export default function Blog() {
     const myHtmlContent = blogData &&`${blogData.text}`;
     useEffect(() => {
         setloaderStatus(true)
-       fetch(`  https://testsitexchange.com/api/blog.php?id_blog=${param.id}`)
+       fetch(`   http://testsitexchange.com/api/blog.php?id_blog=${param.id}`)
        .then(res=>res.json())
        .then(data=>{ 
        

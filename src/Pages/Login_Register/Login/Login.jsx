@@ -44,7 +44,7 @@ export default function Login() {
                 })
             } else {
                 setLoader(true)
-                fetch(`  https://testsitexchange.com/api/login.php?email=${loginform.values.email}&password=${loginform.values.PassWord}`, {
+                fetch(`   http://testsitexchange.com/api/login.php?email=${loginform.values.email}&password=${loginform.values.PassWord}`, {
 
                     method: 'POST'
                 })

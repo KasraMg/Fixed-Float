@@ -45,7 +45,7 @@ export default function ExchangeAmounts( ) {
      
     useEffect(() => {
         setInterval(() => {
-        fetch('  https://testsitexchange.com/api/market2.json')
+        fetch('http://testsitexchange.com/api/market2.json')
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
@@ -62,7 +62,7 @@ export default function ExchangeAmounts( ) {
     }, [Count])
     useEffect(() => {
         
-        fetch('  https://testsitexchange.com/api/market2.json')
+        fetch('http://testsitexchange.com/api/market2.json')
         .then(res=>res.json())
         .then(data=>{
             console.log(data);

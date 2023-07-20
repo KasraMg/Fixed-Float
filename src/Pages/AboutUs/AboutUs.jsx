@@ -10,7 +10,7 @@ import { MdOutlineTimer } from 'react-icons/md'
 export default function AboutUs() {
     const [currency,setCurrency]=useState()
     useEffect(() => {
-      fetch('  https://testsitexchange.com/api/coins.json')
+      fetch('   http://testsitexchange.com/api/coins.json')
       .then(res=>res.json())
       .then(data=>{
         console.log(data);
