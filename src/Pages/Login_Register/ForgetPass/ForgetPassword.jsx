@@ -28,7 +28,7 @@ const [loaderStatus,setLoader]=useState(false)
             })
         }  else{
             setLoader(true)
-            fetch(`   http://testsitexchange.com/api/user_forgetpassword.php?email=${forgetpassword.values.email}`,{
+            fetch(`   https://testsitexchange.com/api/user_forgetpassword.php?email=${forgetpassword.values.email}`,{
                 method:'POST'
             })
             .then(res=>res.json())

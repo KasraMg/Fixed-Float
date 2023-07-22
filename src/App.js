@@ -37,7 +37,7 @@ useEffect(() => {
   const localStorageData = JSON.parse(localStorage.getItem("FixedFloat"));
 
   if (localStorageData) { 
-    fetch(`   http://testsitexchange.com/api/user_info.php?token=${localStorageData.token}`, {
+    fetch(`   https://testsitexchange.com/api/user_info.php?token=${localStorageData.token}`, {
       method:'POST'
     })
       .then((res) => res.json())

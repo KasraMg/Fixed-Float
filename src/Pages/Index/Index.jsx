@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 export default function Index() {
     const [lastOrder, setLastOrder] = useState()
     useEffect(() => {
-        fetch('   http://testsitexchange.com/api/main_10list.php')
+        fetch('https://testsitexchange.com/api/main_10list.php')
             .then(res => res.json())
             .then(data => {
                 setLastOrder(data.orders_open) 
