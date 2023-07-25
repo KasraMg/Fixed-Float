@@ -36,7 +36,7 @@ export default function FinalOrderStatus({details}) {
         <div className="order-info order-info-2">
           <div>
             <p>Order ID</p>
-            <span onClick={() => navigator.clipboard.writeText('3157H2')}>3157H2 <RiFileCopyFill className='order-copy-icon' /></span>
+            <span onClick={() => navigator.clipboard.writeText(details.order_id)}>{details.order_id} <RiFileCopyFill className='order-copy-icon' /></span>
           </div>
 
           <div>
@@ -112,7 +112,7 @@ export default function FinalOrderStatus({details}) {
         <div>
           <p>Fee</p>
            <ins></ins>
-          <p> 1 TRX </p>
+          <p> 1 {details.symbol1} </p>
         </div>
       </section>
 
@@ -139,7 +139,7 @@ export default function FinalOrderStatus({details}) {
         <div>
           <p>Fee</p>
            <ins></ins>
-          <p> 1 TRX </p>
+          <p> 1 {details.symbol2} </p>
         </div>
       </section>
     </div>
