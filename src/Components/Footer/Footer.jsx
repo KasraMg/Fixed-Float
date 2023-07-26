@@ -1,8 +1,6 @@
 import React,{ useContext,useEffect,useState } from 'react'
 import './Footer.css'
-import { Link } from 'react-router-dom'
-import { FaTelegramPlane } from 'react-icons/fa'
-import { AiFillInstagram, AiFillStar, AiOutlineMedium, AiOutlineReddit, AiOutlineTwitter } from 'react-icons/ai'
+import { Link } from 'react-router-dom' 
 import allData from '../../Context/allData' 
 export default function Footer() {
   const context=useContext(allData)
@@ -10,8 +8,7 @@ export default function Footer() {
   useEffect(() => {
      fetch('https://testsitexchange.com/api/social.php')
      .then(res=>res.json())
-     .then(data=>{
-      console.log(data);
+     .then(data=>{ 
       setSocial(data);
      })
   }, [])
@@ -30,7 +27,7 @@ export default function Footer() {
       </Link>
         <div>
           {social && social.social.map(data=>(
-            <a href={data.link}><img height={22.5} style={{width:'22.5px'}} src={data.icon} alt="" /></a>
+            <a className='social' href={data.link}><img height={22.5}   src={data.icon} alt="" /></a>
           ))} 
         </div>
         <span>© 2018–2023 FixedFloat. All rights reserved.</span>

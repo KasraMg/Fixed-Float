@@ -202,3 +202,7 @@ footer{
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
+
+.social img{
+    width: 22.5px !important;
+}

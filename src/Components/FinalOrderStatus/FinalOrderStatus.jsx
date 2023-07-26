@@ -3,7 +3,7 @@ import OrderDetail from '../OrderDetail/OrderDetail'
 import OrderGuide from '../OrderGuide/OrderGuide'
 import { RiFileCopyFill } from 'react-icons/ri'
 import './FinalOrderStatus.css'
-export default function FinalOrderStatus({details}) {
+export default function FinalOrderStatus({details}) { 
   return (
     
     <>
@@ -102,7 +102,7 @@ export default function FinalOrderStatus({details}) {
         <div>
           <p>Received Time</p>
           <ins></ins>
-          <p>{details.time_change}</p>
+          <p>{details.time_recive}</p>
         </div>
         <div>
           <p>Amount</p>
@@ -112,7 +112,7 @@ export default function FinalOrderStatus({details}) {
         <div>
           <p>Fee</p>
            <ins></ins>
-          <p> 1 {details.symbol1} </p>
+          <p> {details.fee1} {details.symbol1} </p>
         </div>
       </section>
 
@@ -139,7 +139,7 @@ export default function FinalOrderStatus({details}) {
         <div>
           <p>Fee</p>
            <ins></ins>
-          <p> 1 {details.symbol2} </p>
+          <p> {details.fee2} {details.symbol2} </p>
         </div>
       </section>
     </div>

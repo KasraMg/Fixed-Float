@@ -47,8 +47,7 @@ export default function ExchangeAmounts( ) {
         setInterval(() => {
         fetch('https://testsitexchange.com/api/market2.json')
         .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
+        .then(data=>{ 
             setAllData(data) 
             if (Count < 1) {
                 context.setSendCurrency(data.Select1[5])
@@ -64,8 +63,7 @@ export default function ExchangeAmounts( ) {
         
         fetch('https://testsitexchange.com/api/market2.json')
         .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
+        .then(data=>{ 
             setAllData(data) 
             context.setSendCurrency(data.Select1[5])
             context.setReciveCurrency(data.Select1[33])

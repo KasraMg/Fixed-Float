@@ -11,8 +11,7 @@ export default function Support() {
   useEffect(() => {
     fetch('https://testsitexchange.com/api/social.php')
     .then(res=>res.json())
-    .then(data=>{
-     console.log(data);
+    .then(data=>{ 
      setSocial(data);
     })
  }, [])
