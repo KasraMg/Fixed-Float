@@ -56,7 +56,7 @@ export default function FinalOrderStatus({details}) {
 
           <div>
             <p>Received Time</p>
-            <p>{details.time_change.slice(0, 10)}    {details.time_change.slice(11, 20)}</p>
+            <p>{details.time_recive.slice(0, 10)}    {details.time_recive.slice(11, 20)}</p>
           </div>
 
           <div className='border-0'>
