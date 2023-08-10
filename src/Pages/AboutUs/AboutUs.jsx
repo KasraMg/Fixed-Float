@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ useEffect,useState } from 'react'
 import './AboutUs.css'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
@@ -8,6 +8,16 @@ import { SiSpringsecurity } from 'react-icons/si'
 import AvailableCurrencies from '../../Components/AvailableCurrencies/AvailableCurrencies'
 import { MdOutlineTimer } from 'react-icons/md'
 export default function AboutUs() {
+    const [currency,setCurrency]=useState()
+    useEffect(() => {
+      fetch(` https://pilbil.com/api/coins.json`)
+      .then(res=>res.json())
+      .then(data=>{
+        console.log(data);
+        setCurrency(data)
+      })
+    }, [])
+    
   return (
     <div className='AboutUs'>
         <Header/>
@@ -29,8 +39,8 @@ export default function AboutUs() {
 
             <main>
                 <AdvantageSection icon={ <AiFillLike className='AdvantageSection-icon'/>}  text='The maximum ease of making an exchange and the ability to choose a strategy will allow you to make a profitable exchange'/>
-                <AdvantageSection icon={ <SiSpringsecurity className='AdvantageSection-icon'/>}  text='The maximum ease of making an exchange and the ability to choose a strategy will allow you to make a profitable exchange'/>
-                <AdvantageSection icon={ <MdOutlineTimer className='AdvantageSection-icon'/>}  text='The maximum ease of making an exchange and the ability to choose a strategy will allow you to make a profitable exchange'/>
+                <AdvantageSection icon={ <SiSpringsecurity className='AdvantageSection-icon'/>}  text='We provide a secure exchange. You do not risk anything and you can immediately see the size of the commission'/>
+                <AdvantageSection icon={ <MdOutlineTimer className='AdvantageSection-icon'/>}  text='You can make automatic exchange with maximum speed on any devices'/>
             </main>
 
         </div>
@@ -55,26 +65,11 @@ export default function AboutUs() {
         <p className="Supported-currencies-title">Supported currencies</p>
 
         <main>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
-            <AvailableCurrencies/>
+            {currency && currency.map(data=>(
+                 <AvailableCurrencies {...data}/> 
+            ))}
+          
+             
         </main>
         </div>
         

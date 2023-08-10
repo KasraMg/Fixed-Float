@@ -23,6 +23,7 @@ font-size: 1.2rem;
 @media (min-width:424px) {
     .AvailableCurrencies {
         width: 180px;
+        height: 180px;
     }
 }
 @media (max-width:424px) {

@@ -24,6 +24,8 @@ color: white;
     display: flex;
     font-size: 1.05em;
     justify-content: center;
+    position: relative;
+    left: 10px;
     align-items: center;
     padding: 0.3em 0.5em;
     width: 100%;
@@ -78,6 +80,7 @@ color: white;
     padding: 1rem 3rem;
     cursor: pointer;
     margin-top: 2.4rem;
+    margin-left: auto;
     border-radius: 10px;
     background-color: #008FDF;
     color: white;
@@ -94,4 +97,86 @@ color: white;
     font-size: .9rem;
     padding-top: .8rem;
     color: #ffffff8a;
+}
+.exchange-Destination-footer input{
+    background-color: black;
+    font-size: 1.2rem;
+    color: #FFF;
+    background-color: #00000091;
+    padding: 1rem 1rem;
+    border-radius:10px;
+    outline: 0; 
+    font-weight: 400;
+    width: 222px;
+    letter-spacing: 1.2px;
+    border: none;
+}
+.exchange-Destination-footer p{
+    color: white;
+    position: relative;
+    top: 8px;
+    left: 17px;
+}
+.exchange-Destination-footer{
+    display: flex;
+    padding-top: .2rem;
+    align-items: end;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+@media (max-width:910px) {
+    .exchange-Destination-footer{
+        flex-direction: column-reverse !important; 
+        padding: 0.5rem 0.7rem 0.5rem 1rem;
+        overflow: hidden;
+    }  .exchange-Destination-footer div{
+        width: 100%;  
+    }.exchange-Destination-footer input{
+        width: 100% ;
+    }.exchange-Destination-footer span:nth-child(1)::before {
+        right: 13px !important;
+    }.delete-icon-memo{
+        background-color: transparent !important;
+        right: 15px !important;
+    }.exchange-Destination span{
+        left: -11px !important;
+    }
+}
+@media (max-width:500px) {
+    .exchange-Destination-footer input{
+        font-size: .8rem !important;
+        padding-right: 3rem !important;
+    } .exchange-Destination-footer span:nth-child(1)::before {
+        font-size: 1.2rem !important;
+    }.delete-icon-memo{
+        top: 56px !important;
+    }.exchange-Destination-footer span:nth-child(1)::before {
+        top: -35px !important;
+    }
+}
+.exchange-Destination-footer div {
+position: relative;
+}
+.exchange-Destination-footer span:nth-child(1)::before {
+    font-family: "Icons";
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+    content: "\e206";
+    font-size: 1.4rem ;
+    color: white;
+    position: absolute;
+    cursor: pointer;
+    right: 10px;
+    top: -40px;
+}
+
+.delete-icon-memo{
+    position: absolute;
+    right: 9px;
+    top: 63px;
+    cursor: pointer;
+    color: white;
+    background-color: #1e2032;
 }

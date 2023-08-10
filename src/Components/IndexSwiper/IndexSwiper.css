@@ -1,4 +1,13 @@
 
+.swiper-index-2  section {
+  height: 448px;
+  position: relative;
+}
+.swiper-time{
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+}
 .IndexSwiper .swiper {
     width: 100%;
     height: 100%;
@@ -9,8 +18,14 @@
     line-height: 1.375em;
     opacity: .7;
     font-size: .9rem;
+     
   }
   
+
+  .IndexSwiper .swiper-slide a{
+    text-decoration: none;
+    color: white; 
+  }
   .IndexSwiper .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -26,7 +41,7 @@
 
   }
   .IndexSwiper .swiper-slide div{
-    padding: 1.8em 1.5em 2em;
+    padding: 1.2em 1.5em 2em;
     display: flex;
     flex-direction: column;
   }
@@ -102,6 +117,8 @@ left: 70px !important;
         left: 37% !important;
       }.IndexSwiper .swiper-button-next{
         left:49% !important;
+      }.swiper-time{ 
+        left: 17px !important;
       }
   }
   @media (max-width:500px) {
@@ -114,6 +131,8 @@ left: 70px !important;
         top: 82% !important;
       }.IndexSwiper .swiper-slide div {
         padding: 1.8em 1em 2em !important;
+      }.index-swiper-btn {
+        padding: 0.5em 2.5em !important;
       }
   }
   @media (max-width:350px) {
@@ -142,12 +161,18 @@ left: 70px !important;
  top: 20px;
   font-size: 1.2rem !important;
   margin-right: auto;
+  border-radius: 5px;
   color: white !important;
 }
 .IndexSwiper1 .swiper-slide p {
   font-size: 1.7em;
   width: 380px;
   line-height: 1;
+  background: black;
+  opacity: .7;
+  width: max-content;
+  border-radius: 10px;
+  padding: .5rem 1rem;
 }
 .IndexSwiper1 .swiper-slide p{
   text-align: left;
@@ -155,8 +180,11 @@ left: 70px !important;
  position: relative;
  top: 20px;
 }
+.IndexSwiper1 .swiper-slide button a{
+  padding: .5rem 1.5rem;
+}
 .IndexSwiper1 .swiper-slide button{
-  padding: .5em 1.5em;
+  padding: .5em 0em;
   background-color: #008FDF;
   border-radius: 10px;
    position: relative;
@@ -167,13 +195,19 @@ left: 70px !important;
   border: none;
   margin-right: auto;
 }
-
+ 
+.IndexSwiper1 .swiper-slide span {
+  line-height: 1.375em;
+  opacity: .7;
+  font-size: .9rem;
+  background: black;
+  padding: 0rem 1rem;
+}
 .IndexSwiper1 .swiper-slide-next,
 .IndexSwiper1 .swiper-slide{
-  opacity: .3;
-height: 370px ;
-  position: relative;
-  top: 50px;
+ 
+height: 400px !important ;
+  position: relative; 
 }
 .swiper-slide-active{
   height: 100% !important;
@@ -200,4 +234,21 @@ height: 370px ;
   .IndexSwiper1 .swiper-slide{
     top: 18px !important;
   }
+}
+
+.IndexSwiper1 .swiper-slide-next,
+.IndexSwiper1 .swiper-slide{
+  opacity: .3;
+
+height: 400px !important ;
+  position: relative;
+  top: 50px;
+  position: relative; 
+}
+.swiper-slide-active{
+  height: 100% !important;
+}
+
+#fadeSlide{
+  background: none !important;
 }

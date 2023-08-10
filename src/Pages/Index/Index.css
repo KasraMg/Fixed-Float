@@ -47,6 +47,7 @@ p{
 }
 .select-outer p{
     white-space: nowrap;
+    transition: .2s all ease-in;
 }
 .select-outer:hover{
     opacity: .7;
@@ -88,12 +89,10 @@ p{
 
 }
 .exchange-amounts span:nth-child(1)::after{
-    content: "\e200";
- color: #f7931a;
+    content: "\e200"; 
 }
 .exchange-amounts span:nth-child(2){
-    transform: rotateY(194deg);
-    color: white;
+    transform: rotateY(194deg); 
     position: relative;
     right: 6px;
     bottom:5px ;
@@ -111,11 +110,13 @@ p{
     border: 1px solid #f7931a;
     border-radius: 10px;
     color: #f7931a;
+    transition: .2s all ease-in;
     letter-spacing: 1.2px;
 }
 .Receive-input{
       background-color: #00000082;
       outline: 0;
+      transition: .2s all ease-in;
       padding: .8rem 4rem .8rem 1rem;
     font-size: 1.6rem;
     border: 1px solid #fff;
@@ -134,6 +135,7 @@ p{
 .exchange-amounts-lable p{
     margin-bottom: .4rem;
     font-size: .9rem;
+    transition: .2s all ease-in;
 }
 .btn-reverse-to{
     cursor: pointer;
@@ -190,6 +192,8 @@ p{
     }
     .advantages-inner div img{
         right:-70px !important;
+    }.index header{
+        padding:0rem 1rem;
     }
  }
  @media (max-width:500px) {
@@ -440,25 +444,33 @@ background-image: url("data:image/svg+xml,%3Csvg width='393' height='544' fill='
         margin-bottom: 0px;
         margin-top: 3px;
     }.exchange-form-outer-title{
-        font-size: 1.5rem;
+        font-size: 1.4rem; 
     }
 }
-
+.exchange-Destination input { 
+    padding-right: 3rem !important;
+}
 @media (max-width:500px) {
     .exchange-Destination input {
-        font-size: .8rem;
+        font-size: .8rem !important;
+        padding-right: 3rem !important;
     }.Send-input{
         font-size: 1.2rem;
+        height: 51px;
+    }.select-outer {
+        bottom: -2px !important;
     }
     .Receive-input{
         font-size: 1.2rem;
+        height: 51px;
     }.select-outer{
         font-size: 1rem;
     }.select-outer svg {
 bottom: 4px;
     }.select-outer img{
-        bottom: 5px;
-        width: 34px;
+        bottom: 2px;
+        width:27px;
+        position: relative;
     }.exchange-amounts-details p{
         font-size: .7rem;
         margin-left: 1rem;
@@ -474,11 +486,23 @@ bottom: 4px;
     }.exchange-amounts span {
         font-size: .9rem;
     }.exchange-form-outer-background{
-        bottom: 56%;
+        bottom: 64%;
+    }  .delete-icon {  
+        bottom: 34px !important; 
     }
+
 }
 
-
+@media (max-width:900px) {
+    .exchange-Destination span {
+        right: 10px;
+        bottom: 15px;
+        position: relative;
+    }   .delete-icon { 
+        right: 25px !important; 
+        bottom: 36px !important; 
+    }
+}
 
 .IndexSwiper{
     margin-bottom: 4rem;
@@ -523,5 +547,29 @@ bottom: 4px;
     }
     
 
-
-    
+ .input-network-img{
+    position: absolute;
+    right: 42px;
+    top: 48px;
+    height: 17px;
+ }
+.input-network-img2{
+    position: absolute;
+    right: 42px;
+    top: 39px;
+    height: 17px;
+}
+ .symbol-network{
+    position: relative;
+    bottom: 5px;
+ }
+ @media (max-width:500px) {
+    .input-network-img2 {
+        top: 30px;
+        right: 33px;
+    }
+    .input-network-img {
+        top: 30px;
+        right: 33px;
+    }
+ }

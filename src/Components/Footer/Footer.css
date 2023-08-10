@@ -1,124 +1,215 @@
-footer section span{
+footer section span {
     color: white;
     font-weight: 300;
     opacity: .5;
     font-size: .72em;
- position: relative;
-   
- top: 20px;
+    position: relative;
+
+    top: 20px;
 }
- 
-footer section div{
+
+footer section div {
     display: flex;
     gap: 30px;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
-footer section img{
+
+footer section img {
     width: 300px;
 }
-footer{
-    margin: 12rem 2rem 1rem;
-    padding-top: 2.5rem;
+
+footer {
+    margin: 7rem 2rem 1rem;
+    padding-top: 2.5.1rem;
     border-top: 1px solid white;
     display: flex;
-  justify-content: space-between;
-  position: relative;
-  padding-bottom: 1rem;
+    justify-content: space-between;
+    position: relative;
+    padding-bottom: 1rem;
 }
-footer section a{
+
+footer section a {
     color: white;
     font-size: 1.4rem;
 }
-footer section a:hover{
+
+footer section a:hover {
     color: white;
 }
-footer ul{
+
+footer ul {
     display: flex;
     gap: 200px;
     margin-right: 2rem;
 }
-footer ul div p{
+
+footer ul div p {
     color: white;
     opacity: .4;
     font-size: 1.1rem;
 }
-footer ul div a:hover{
+
+footer ul div a:hover {
     color: #f7931a;
 }
-footer ul div a{
+
+footer ul div a {
     color: white;
     text-decoration: none;
 }
-footer ul div a li{ 
+
+footer ul div a li {
     list-style: none;
     font-size: 1.1rem;
     margin-top: .5rem;
 }
+
 @media (max-width:1200px) {
     footer ul {
         gap: 90px;
 
     }
 }
+
 @media (max-width:627px) {
-   footer ul {
+    footer ul {
         display: none !important;
         gap: 52px !important;
-        grid-template-columns: auto ;
+        grid-template-columns: auto;
 
-            justify-content: center !important;
-            text-align: center;
-            margin-bottom: 4rem !important;
-    }footer section img {
+        justify-content: center !important;
+        text-align: center;
+        margin-bottom: 4rem !important;
+    }
+
+    footer section img {
         width: 70% !important;
-    }footer section div {
+    }
+
+    footer section div {
         gap: 21px !important;
-    }footer section div {
+    }
+
+    footer section div {
         margin-top: 1rem !important;
     }
-    footer{
+
+    footer {
         padding-bottom: 4rem;
-    }footer section span{
-        bottom: 10px !important;
+    }
+
+    footer section span {
+        bottom: 10px !important; 
+            margin-top: 2rem;
+            position: unset !important;
+       
     }
 
 }
+
 @media (max-width:390px) {
     footer section img {
-        width:260px !important;
+        width: 260px !important;
         margin-bottom: 1.5rem;
     }
 }
+
 @media (max-width:950px) {
-    footer section span{
-        position: absolute !important;   
-        bottom: -5px ;
+    footer section span {
+        position: absolute ;
+        bottom: -5px;
         top: unset !important;
-       }
-    footer{
+    }
+
+    footer {
         flex-direction: column;
-  
-            margin: 12rem 0rem 2rem !important;
-    }footer section span {
+
+        margin: 12rem 0rem 2rem !important;
+    }
+
+    footer section span {
         margin-left: auto;
-        margin-right: auto; 
+        margin-right: auto;
         display: block;
         width: 100%;
         text-align: center;
-    }footer ul {
+    }
+
+    footer ul {
         justify-content: space-between;
         gap: 0px;
         margin-top: 2rem;
         margin-bottom: 2rem;
-    }footer section img {
+    }
+
+    footer section img {
         margin-left: auto;
         margin-right: auto;
         display: block;
         margin-top: 1rem;
-    }footer section div {
+    }
+
+    footer section div {
 
         justify-content: space-around;
+    }footer .logo-3::after {
+        left:119px !important; 
+    
+    }
+    
+    footer .logo{
+        width: 300px;
+        margin: 0px auto;
     }
 }
 
 
+footer p {
+    font-family: icons;
+    transition: .2s all ease-in;
+}
+
+footer .logo-3::after {
+    left:86px;
+    top: -1px;
+    font-size: 2rem;
+
+}
+footer .logo-2::after {
+    left: 5px;
+    top: -1px;
+    font-size: 2rem;
+
+}
+
+footer .logo-4{
+    right: 29px ;
+}
+footer a {
+    text-decoration: none;
+
+}
+
+footer .logo {
+    justify-content: center; 
+}
+
+ 
+@media (max-width:501px) {
+    footer section a {
+        font-size: 1.2rem !important;
+    } footer .logo-2::after {
+        left: 1px !important;
+    }
+   
+
+    
+}
+footer{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.social img{
+    width: 22.5px !important;
+}

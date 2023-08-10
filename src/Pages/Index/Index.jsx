@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import RecentItem from '../../Components/index-recent-trac-item/RecentItem'
 import './Index.css'
 import Accordion from 'react-bootstrap/Accordion';
@@ -6,15 +6,26 @@ import IndexSwiper2 from '../../Components/IndexSwiper/IndexSwiper2'
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import IndexSwiper1 from '../../Components/IndexSwiper/IndexSwiper1'
-import ExchangeAmounts from '../../Components/ExchangeAmounts/ExchangeAmounts'; 
+import ExchangeAmounts from '../../Components/ExchangeAmounts/ExchangeAmounts';
 import ExchangeDestination from '../../Components/ExchangeDestination/ExchangeDestination';
-export default function Index() {
+import { Link } from 'react-router-dom';
+export default function Index() { 
+    const [lastOrder, setLastOrder] = useState()
+    useEffect(() => {
+        fetch(`https://pilbil.com/api/main_10list.php`)
+            .then(res => res.json())
+            .then(data => {
+                setLastOrder(data.orders_open) 
+            })
+    }, [])
 
 
 
     return (
         <div className='index'>
             <Header />
+        
+
             <img className="exchange-form-outer-background"
                 src="https://fixedfloat.com/assets/images/background/main_bg.svg"
                 alt="" />
@@ -27,15 +38,15 @@ export default function Index() {
                 </p>
 
 
-                          <ExchangeAmounts  />
+                <ExchangeAmounts />
 
-                         <ExchangeDestination/>
+                <ExchangeDestination />
 
-          
+
             </div>
             {/* <!-- exchange-form -->*/}
 
-            <div class="background-svg">
+            <div className="background-svg">
                 <img src="../../images/index/svgexport-74.svg" alt="" />
                 <img src="../../images/index/svgexport-73.svg" alt="" />
             </div>
@@ -43,12 +54,12 @@ export default function Index() {
 
 
 
-            <main class="index-main">
+            <main className="index-main">
 
                 {/* <!-- advantages --> */}
-                <section class="advantages">
-                    <p class="advantages-title">Trusted since 2018</p>
-                    <div class="advantages-inner">
+                <section className="advantages">
+                    <p className="advantages-title">Trusted since 2018</p>
+                    <div className="advantages-inner">
                         <div>
                             <img src="../../images/index/svgexport-68.svg" alt="" />
 
@@ -84,25 +95,22 @@ export default function Index() {
                 {/* <!-- advantages --> */}
 
                 {/* <!-- Recent-transactions --> */}
-                <section class="Recent-transactions">
-                    <p class="Recent-transactions-title">Recent transactions</p>
+                <section className="Recent-transactions">
+                    <p className="Recent-transactions-title">Recent transactions</p>
                     <ul>
-                        <RecentItem />
-                        <RecentItem />
-                        <RecentItem />
-                        <RecentItem />
-                        <RecentItem />
-                        <RecentItem />
-                        <RecentItem />
-                        <RecentItem />
+                        {lastOrder && lastOrder.map(data => (
+                            <RecentItem   {...data}/>
+                        ))}
+
+                        
                     </ul>
 
                 </section>
                 {/* <!-- Recent-transactions --> */}
 
                 {/* <!-- index-faq --> */}
-                <section class="index-faq">
-                    <p class="index-faq-title">FAQ</p>
+                <section className="index-faq">
+                    <p className="index-faq-title">FAQ</p>
                     <Accordion defaultActiveKey="0">
                         <Accordion.Item eventKey="0">
                             <Accordion.Header><span>1</span>
@@ -125,7 +133,7 @@ export default function Index() {
                             </Accordion.Header>
                             <Accordion.Body>
                                 <p>Honesty is our main priority, so we commit to full transparency and make all the fees clear:</p>
-                                <p class="mb-2">•  1% if you opt for a <strong>fixed rate</strong></p>
+                                <p className="mb-2">•  1% if you opt for a <strong>fixed rate</strong></p>
                                 <p>•  0.5% if you opt for a <strong>floating rate</strong></p>
                             </Accordion.Body>
                         </Accordion.Item>
@@ -136,17 +144,17 @@ export default function Index() {
 
                 <div className='IndexSwiper IndexSwiper1'>
                     <p className="IndexSwiper-title">News</p>
-                    <IndexSwiper1 />
-                    <button className='index-swiper-btn'>Read All</button>
+                    <IndexSwiper1 /> 
+                    <Link style={{textDecoration:'none'}} to={`/blogs`}> <button className='index-swiper-btn'>Read All</button></Link>
                 </div>
                 <div className='IndexSwiper'>
                     <p className="IndexSwiper-title">Guides and tutorials</p>
-                    <IndexSwiper2 />
-                    <button className='index-swiper-btn'>Read All</button>
+                    <IndexSwiper2 /> 
+                    <Link style={{textDecoration:'none'}} to={`/blogs`}> <button className='index-swiper-btn'>Read All</button></Link>
                 </div>
 
             </main>
-            <Footer/>
+            <Footer />
         </div>
 
     )

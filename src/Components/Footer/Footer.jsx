@@ -1,20 +1,40 @@
-import React from 'react'
+import React,{ useContext,useEffect,useState } from 'react'
 import './Footer.css'
-import { Link } from 'react-router-dom'
-import { FaTelegramPlane } from 'react-icons/fa'
-import { AiFillInstagram, AiFillStar, AiOutlineMedium, AiOutlineReddit, AiOutlineTwitter } from 'react-icons/ai'
+import { Link } from 'react-router-dom' 
+import allData from '../../Context/allData' 
 export default function Footer() {
+  const context=useContext(allData)
+  const [social,setSocial]=useState()
+  useEffect(() => {
+     fetch(`https://pilbil.com/api/social.php`)
+     .then(res=>res.json())
+     .then(data=>{ 
+      setSocial(data);
+     })
+  }, [])
+  
   return (
     <footer>
       <section>
-        <img src="/images/index/logo.PNG" alt="" />
+      <Link to="/" className="logo">
+       
+      <svg   width="68" height="70">
+        <text font-size="45" font-family="logo" x="10" y="50" fill={context.Sendcurrency && context.Sendcurrency.color} style={{position:'relative',zIndex:'999'}}>PiL</text>
+      </svg>
+       
         <div>
-            <Link to=""><FaTelegramPlane/></Link>
-          <Link to=""> <AiOutlineTwitter/></Link> 
-          <Link to=""><AiFillInstagram/></Link>  
-           <Link to=""><AiOutlineReddit/></Link> 
-           <Link to=""><AiOutlineMedium/></Link> 
-          <Link to=""><AiFillStar/></Link>  
+          <p  style={context.Recivecurrency &&{color:context.Recivecurrency.color}}  className="logo-2"></p>
+          <p style={context.Sendcurrency &&{color:context.Sendcurrency.color}}className="logo-3"></p>
+        </div>
+
+        <svg className='logo-4' width="68" height="70">
+            <text font-size="45" font-family="logo" x="10" y="50" fill={context.Recivecurrency && context.Recivecurrency.color} style={{position:'relative',zIndex:'999'}}>biL</text>
+         </svg>
+      </Link>
+        <div>
+          {social && social.social.map(data=>(
+            <a className='social' key={data.icon} href={data.link}><img height={22.5}   src={data.icon} alt="" /></a>
+          ))} 
         </div>
         <span>© 2018–2023 FixedFloat. All rights reserved.</span>
       </section>
@@ -23,13 +43,13 @@ export default function Footer() {
             <p>FixedFloat</p>
             <Link to="/"><li>Home</li></Link>  
             <Link to="/About"><li>About</li></Link>
-          
+            <Link to="/Login"><li>Login / Register</li></Link>
         </div>
        
         <div>
             <p>Popular</p>
             <Link to="/Blogs"><li>Blog</li></Link>
-            <Link to="/Login"><li>Login / register</li></Link>
+            <Link to="/Privacy-Policy"><li>Privacy policy</li></Link>
           
         </div>
         <div>

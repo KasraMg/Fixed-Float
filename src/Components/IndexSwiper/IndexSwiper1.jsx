@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState,useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import './IndexSwiper.css'
@@ -9,8 +9,17 @@ import "swiper/css/scrollbar";
 import { Navigation } from "swiper";
 // import required modules
 import { Scrollbar } from "swiper";
-
+import { Link } from "react-router-dom";
 export default function App() {
+    const [details,setDeatils]=useState() 
+    useEffect(() => {
+        fetch(`https://pilbil.com/api/blogs.php?typeing=news&pageopen=1`)
+        .then(res=>res.json())
+          .then(data=>{   
+              setDeatils(data.blogs); 
+                console.log(data);
+          })
+    }, [])
     return (
         <>
             <Swiper
@@ -40,51 +49,20 @@ export default function App() {
                 modules={[Scrollbar, Navigation]}
                 className="mySwiper"
             >
-                <SwiperSlide>
-                     <p>News of cryptocurrencies of the 2nd week of May 2023</p>
-                     <span className="index-swiper-1-span">The BTC network fee rose above $30, Terraform Labs co-founders Do Kwon was released from prison on bail, technical failures occurred twice in the Ethereum network.</span>
-                        <button>Read</button>
+                {details && details.map(data=>(
+                    <>
+                     <SwiperSlide style={{ background:` url(${data.image})`}}>
+                     <p>{data.title}</p>
+                     <span className="index-swiper-1-span">{data.description.length > 79 ? data.description.slice(0,79) +'...' : data.description}</span>
+                     <button>      <Link to={`/blogs/${data.id_blog}`}>Read</Link></button> 
                 </SwiperSlide>
-                <SwiperSlide style={{ background:' url(https://fixedfloat.com/media/thumbs/blog/news/FF-New_News_05-23_01_w768.jpg)'}}>
-                   <p>News of cryptocurrencies of the 2nd week of May 2023</p>
-                     <span className="index-swiper-1-span">The BTC network fee rose above $30, Terraform Labs co-founders Do Kwon was released from prison on bail, technical failures occurred twice in the Ethereum network.</span>
-                        <button>Read</button>
-                    </SwiperSlide>
-                <SwiperSlide>
-                   <p>News of cryptocurrencies of the 2nd week of May 2023</p>
-                     <span className="index-swiper-1-span">The BTC network fee rose above $30, Terraform Labs co-founders Do Kwon was released from prison on bail, technical failures occurred twice in the Ethereum network.</span>
-                        <button>Read</button>
-                    </SwiperSlide>
-                <SwiperSlide style={{ background:' url(https://fixedfloat.com/media/thumbs/blog/news/FF-New_News_05-23_01_w768.jpg)'}}>
-                   <p>News of cryptocurrencies of the 2nd week of May 2023</p>
-                     <span className="index-swiper-1-span">The BTC network fee rose above $30, Terraform Labs co-founders Do Kwon was released from prison on bail, technical failures occurred twice in the Ethereum network.</span>
-                        <button>Read</button>
-                    </SwiperSlide>
-                <SwiperSlide>
-                   <p>News of cryptocurrencies of the 2nd week of May 2023</p>
-                     <span className="index-swiper-1-span">The BTC network fee rose above $30, Terraform Labs co-founders Do Kwon was released from prison on bail, technical failures occurred twice in the Ethereum network.</span>
-                        <button>Read</button>
-                    </SwiperSlide>
-                <SwiperSlide style={{ background:' url(https://fixedfloat.com/media/thumbs/blog/news/FF-New_News_05-23_01_w768.jpg)'}}>
-                   <p>News of cryptocurrencies of the 2nd week of May 2023</p>
-                     <span className="index-swiper-1-span">The BTC network fee rose above $30, Terraform Labs co-founders Do Kwon was released from prison on bail, technical failures occurred twice in the Ethereum network.</span>
-                        <button>Read</button>
-                    </SwiperSlide>
-                <SwiperSlide>
-                   <p>News of cryptocurrencies of the 2nd week of May 2023</p>
-                     <span className="index-swiper-1-span">The BTC network fee rose above $30, Terraform Labs co-founders Do Kwon was released from prison on bail, technical failures occurred twice in the Ethereum network.</span>
-                        <button>Read</button>
-                    </SwiperSlide>
-                <SwiperSlide>
-                   <p>News of cryptocurrencies of the 2nd week of May 2023</p>
-                     <span className="index-swiper-1-span">The BTC network fee rose above $30, Terraform Labs co-founders Do Kwon was released from prison on bail, technical failures occurred twice in the Ethereum network.</span>
-                        <button>Read</button>
-                    </SwiperSlide>
-                <SwiperSlide>
-                   <p>News of cryptocurrencies of the 2nd week of May 2023</p>
-                     <span className="index-swiper-1-span">The BTC network fee rose above $30, Terraform Labs co-founders Do Kwon was released from prison on bail, technical failures occurred twice in the Ethereum network.</span>
-                        <button>Read</button>
-                    </SwiperSlide>
+               
+           </>
+                ))}
+                <SwiperSlide id="fadeSlide">
+               
+               </SwiperSlide>
+           
             </Swiper>
         </>
 

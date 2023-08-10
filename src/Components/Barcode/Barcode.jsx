@@ -8,29 +8,51 @@ export default function Barcode() {
   const [details,setDetails]=useState() 
   const [addressBarcode, setaddressBarcode] = useState();
   const [allDataBarcode, setAllDataBarcode] = useState();
+  const [firstRequest, setfirstRequest] = useState(true);
+  
   let hashChange=useParams() 
-  let dataa;
+  let dataa; 
   useEffect(() => {
     if (hashChange) {
-        fetch(`https://traderplus.info/exchange/api/payment_check.php?payment_id=&hash_change=${hashChange.id}`,{
-      method:'POST'
-     }).then(res=>res.json())
-     .then(data=>{
-      console.log(data)
-      setDetails(data) 
-      setaddressBarcode(`${data.adress_nowpayment}`) 
-      setAllDataBarcode(`${data.symbol1}:${data.adress_nowpayment}?amount=${data.amount_user}`)
-      console.log(allDataBarcode);
-     })
-
+      
+        fetch(`  https://pilbil.com/api/payment_check.php?payment_id=&hash_change=${hashChange.id}`,{
+          method:'POST'
+         }).then(res=>res.json())
+         .then(data=>{
+          setDetails(data) 
+          setaddressBarcode(`${data.adress_nowpayment}`) 
+          setAllDataBarcode(`${data.symbol1}:${data.adress_nowpayment}?amount=${data.amount_user}`)
+       
+         })
+    
+    
+     
     }
 
    if (details) {
     dataa=`${details.adress_nowpayment}` 
-    console.log(dataa);
+  
    }
    
   }, [])
+
+  useEffect(() => {
+    if (firstRequest && hashChange) {
+       fetch(`  https://pilbil.com/api/payment_check.php?payment_id=&hash_change=${hashChange.id}`,{
+      method:'POST'
+     }).then(res=>res.json())
+     .then(data=>{ 
+      setDetails(data) 
+      setaddressBarcode(`${data.adress_nowpayment}`) 
+      setAllDataBarcode(`${data.symbol1}:${data.adress_nowpayment}?amount=${data.amount_user}`)
+      console.log(allDataBarcode);
+      setfirstRequest(false)
+     })
+    }
+   
+  }, [])
+  
+ 
   return (
     <>
     {details && (

@@ -39,6 +39,7 @@
 }
 .Recent-transactions ul li main p{
     white-space: nowrap;
+    width: 70px;
     }
 .Recent-transactions ul li main{
     display: flex;
@@ -96,6 +97,16 @@
     }.Recent-transactions-title {
         text-align: left !important;
         font-size: 1.7rem !important;
+    }.Recent-transactions ul li main {
+        justify-content: center !important;
+    }.Recent-transactions ul li main p {
+       white-space: unset !important;
+       font-size: .6rem !important;
+    } .Recent-transactions ul li main {
+        position: relative;
+        left: 0px !important;
+    }.Recent-transactions ul li main p { 
+        width: 116px !important;
     }
 }
 @media (min-width:556px) {
@@ -132,8 +143,21 @@
         gap: 3px;
     }.Recent-transactions li hr{
         display: block !important;
+    }.recentItem-time p{
+        position: relative;
+        top: 3px;
+    }.smallAnmount{
+        position: relative;
+        right:10px;
     }
 }
+@media (max-width:800px) {
+    .Recent-transactions ul li main {
+        position: relative;
+        left: 20px;
+    }
+}
+ 
 .Recent-transactions li hr{
     display: none;
     margin: 0rem 0 !important; 
@@ -146,7 +170,7 @@
 
 @media (max-width:390px) {
     .recentItem-time {
-        padding-left:1rem !important;
+        padding-left:2rem !important;
         position: relative;
         left: 10px;
     }
