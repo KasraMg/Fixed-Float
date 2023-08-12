@@ -45,7 +45,7 @@ export default function ExchangeAmounts( ) {
      
     useEffect(() => {
         setInterval(() => {
-        fetch('https://testsitexchange.com/api/market2.json')
+        fetch(`https://pilbil.com/api/market2.json`)
         .then(res=>res.json())
         .then(data=>{ 
             setAllData(data) 
@@ -61,7 +61,7 @@ export default function ExchangeAmounts( ) {
     }, [Count])
     useEffect(() => {
         
-        fetch('https://testsitexchange.com/api/market2.json')
+        fetch(`https://pilbil.com/api/market2.json`)
         .then(res=>res.json())
         .then(data=>{ 
             setAllData(data) 

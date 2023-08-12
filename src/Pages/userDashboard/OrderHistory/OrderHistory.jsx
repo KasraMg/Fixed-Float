@@ -13,7 +13,7 @@ export default function OrderHistory() {
     if (localStorageData) {
       setLoaderStatus(true)
 
-      fetch(`   https://testsitexchange.com/api/user_orders.php?pageopen=${orders_openCount}&pageclose=${orders_closeCount}&token=${localStorageData.token}`,{
+      fetch(`  https://pilbil.com/api/user_orders.php?pageopen=${orders_openCount}&pageclose=${orders_closeCount}&token=${localStorageData.token}`,{
         method: 'POST'
       })
         .then(res => res.json())

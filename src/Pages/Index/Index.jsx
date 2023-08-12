@@ -9,10 +9,10 @@ import IndexSwiper1 from '../../Components/IndexSwiper/IndexSwiper1'
 import ExchangeAmounts from '../../Components/ExchangeAmounts/ExchangeAmounts';
 import ExchangeDestination from '../../Components/ExchangeDestination/ExchangeDestination';
 import { Link } from 'react-router-dom';
-export default function Index() {
+export default function Index() { 
     const [lastOrder, setLastOrder] = useState()
     useEffect(() => {
-        fetch('https://testsitexchange.com/api/main_10list.php')
+        fetch(`https://pilbil.com/api/main_10list.php`)
             .then(res => res.json())
             .then(data => {
                 setLastOrder(data.orders_open) 

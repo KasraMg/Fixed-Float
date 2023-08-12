@@ -23,7 +23,7 @@ export default function UserProfile() {
               if (newPassword) {
                 const localStorageData = JSON.parse(localStorage.getItem("FixedFloat"));
                 setLoaderStatus(true)
-                fetch(`   https://testsitexchange.com/api/user_password_change.php?password=${CurrentPassword}&password1=${newPassword}&token=${localStorageData.token}`,{
+                fetch(` https://pilbil.com/api/user_password_change.php?password=${CurrentPassword}&password1=${newPassword}&token=${localStorageData.token}`,{
                     method:'POST'
                 })
                 .then(res=>res.json())

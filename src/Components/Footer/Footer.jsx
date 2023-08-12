@@ -6,7 +6,7 @@ export default function Footer() {
   const context=useContext(allData)
   const [social,setSocial]=useState()
   useEffect(() => {
-     fetch('https://testsitexchange.com/api/social.php')
+     fetch(`https://pilbil.com/api/social.php`)
      .then(res=>res.json())
      .then(data=>{ 
       setSocial(data);

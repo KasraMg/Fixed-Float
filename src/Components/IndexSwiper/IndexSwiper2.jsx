@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 export default function App() {
     const [details,setDeatils]=useState() 
     useEffect(() => {
-        fetch(`   https://testsitexchange.com/api/blogs.php?typeing=&pageopen=1`)
+        fetch(` https://pilbil.com/api/blogs.php?typeing=&pageopen=1`)
         .then(res=>res.json())
           .then(data=>{  
               setDeatils(data.blogs);  
