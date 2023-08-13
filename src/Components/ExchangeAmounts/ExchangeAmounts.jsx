@@ -50,8 +50,8 @@ export default function ExchangeAmounts( ) {
         .then(data=>{ 
             setAllData(data) 
             if (Count < 1) {
-                context.setSendCurrency(data.Select1[5])
-                context.setReciveCurrency(data.Select1[33]) 
+                context.setSendCurrency(data.Select1[0])
+                context.setReciveCurrency(data.Select2[672]) 
             }
           
              
@@ -63,10 +63,10 @@ export default function ExchangeAmounts( ) {
         
         fetch(`https://pilbil.com/api/market2.json`)
         .then(res=>res.json())
-        .then(data=>{ 
+        .then(data=>{  
             setAllData(data) 
-            context.setSendCurrency(data.Select1[5])
-            context.setReciveCurrency(data.Select1[33])
+            context.setSendCurrency(data.Select1[0])
+            context.setReciveCurrency(data.Select2[672])
              
         })
          
@@ -121,7 +121,7 @@ export default function ExchangeAmounts( ) {
             <p style={context.Sendcurrency &&{color:context.Sendcurrency.color}}>{context.Sendcurrency  ? context.Sendcurrency.name:'select'}</p>
         </section>
         <div style={{ position: "relative" }}>
-            <input style={context.Sendcurrency &&{color:context.Sendcurrency.color}} maxLength={13} autocomplete="off" value={ context.Value } placeholder='0'   onChange={(e)=>inputChangeHandler(e)}
+            <input style={context.Sendcurrency &&{color:context.Sendcurrency.color,borderColor:context.Sendcurrency.color}} maxLength={13} autocomplete="off" value={ context.Value } placeholder='0'   onChange={(e)=>inputChangeHandler(e)}
                 className="Send-input mt-lg-2" type="text" />
 
             <lable className="select-outer" onClick={() => setSendExchangeDropDown(true)}>
@@ -162,7 +162,7 @@ export default function ExchangeAmounts( ) {
             <p style={context.Recivecurrency &&{color:context.Recivecurrency.color}}>    <p>{context.Recivecurrency  ? context.Recivecurrency.name:'select'}</p></p>
         </section>
         <div style={{ position: "relative" }}>
-            <input style={context.Recivecurrency &&{color:context.Recivecurrency.color}} className="Receive-input" placeholder='0'  value={ReciveValue}
+            <input style={context.Recivecurrency &&{color:context.Recivecurrency.color,borderColor:context.Recivecurrency.color}} className="Receive-input" placeholder='0'  value={ReciveValue}
                 autocomplete="off" type="text" />
             {/* <!-- exchange option --> */}
             <lable className="select-outer recive-select-outer" onClick={() => setReciveExchangeDropDown(true)}>

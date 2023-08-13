@@ -74,7 +74,7 @@ export default function FirstOrderStatus({details,Minutes}) {
         <span >Send <p className='mb-0'> {details.amount_user}  {details.symbol1}</p> to the address:</span>
         <p className='order-detail-address'>{details.adress_nowpayment} <RiFileCopyFill onClick={() => navigator.clipboard.writeText(details.adress_nowpayment)} className='order-copy-icon' /></p>
         <span className="order-detail-span-2">he exchange rate will be fixed after receiving <strong style={{ color: 'white' }}>{details.confirm}</strong> network confirmations.</span>
-        <p className='mt-3' style={{color:'rgb(19 255 57 / 53%)'}}>After payment,wait 3 minutes for processing</p>
+        <p className='mt-3' style={{color:'rgb(19 255 57 / 53%)',fontSize:'1.3rem'}}>After payment,wait 3 minutes for processing</p>
 
         <div>
           <span>Receiving address ETH</span>

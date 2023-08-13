@@ -2,16 +2,14 @@ import React, { useEffect,useState } from 'react'
 import './Support.css'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
-import SupportSection from '../../Components/SupportSection/SupportSection'
-import { BsChatTextFill } from 'react-icons/bs'
-import { FaTelegramPlane } from 'react-icons/fa'
-import {  AiOutlineTwitter,AiOutlineMail } from 'react-icons/ai'
+import SupportSection from '../../Components/SupportSection/SupportSection' 
 export default function Support() {
   const [social,setSocial]=useState()
   useEffect(() => {
-    fetch('https://testsitexchange.com/api/social.php')
+    fetch('https://pilbil.com/api/social.php')
     .then(res=>res.json())
     .then(data=>{ 
+      console.log(data);
      setSocial(data);
     })
  }, [])

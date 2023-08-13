@@ -55,6 +55,18 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
         }
     }, [result])
 
+//     useEffect(() => {
+//         AllData.Selectpin1.map(data=>{
+//               currencyData.Select1.map(dd=>{
+//                 if (dd.name !==data.name) {
+//                     currencyFilterings+=dd
+//                  } 
+//         })
+        
+//         } )
+// console.log(currencyFilterings);
+
+//     }, [])
     const setCurrencyHandler = (data) => {
 
         if (context.Recivecurrency && data.name == context.Recivecurrency.name) {
