@@ -19,7 +19,7 @@ const registerSchema = Yup.object().shape({
 
     name: Yup.string() 
     .min(3, "Name must have 3 characters")
-    .max(12, "Name must have a maximum of 12 characters")
+    .max(30, "Name must have a maximum of 12 characters")
     .required("Enter the Name"),
 });
 
