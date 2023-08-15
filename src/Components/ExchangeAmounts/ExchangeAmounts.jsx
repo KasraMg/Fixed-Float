@@ -50,10 +50,8 @@ export default function ExchangeAmounts( ) {
         .then(data=>{ 
             setAllData(data) 
             if (Count < 1) {
-
-              
-                context.setSendCurrency(data.Selectpin1[0])
-                context.setReciveCurrency(data.Selectpin2[29]) 
+                context.setSendCurrency(data.defultlist1 )
+                context.setReciveCurrency(data.defultlist2)
             } 
         })
         setCount(prev => prev + 1)
@@ -63,22 +61,10 @@ export default function ExchangeAmounts( ) {
         
         fetch(`https://pilbil.com/api/market2.json`)
         .then(res=>res.json())
-        .then(data=>{  
-            console.log(data);
-            setAllData(data) 
-            console.log(data.defultlist1);
-
-            let def1=data.Select1.find(ssss=>{ 
-                return ssss.symbol == "BTC"  
-            })
-            let def2=data.Select2.find(ssss=>{
-                return ssss.symbol ==  '700'
-              
-            })
-            console.log(def1);
-            console.log(def2);
-            context.setSendCurrency(data.Selectpin1[0])
-            context.setReciveCurrency(data.Selectpin2[29])
+        .then(data=>{   
+            setAllData(data)  
+            context.setSendCurrency(data.defultlist1 )
+            context.setReciveCurrency(data.defultlist2)
              
         })
          
