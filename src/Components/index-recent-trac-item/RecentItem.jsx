@@ -1,13 +1,12 @@
 import React from 'react'
 import './RecentItem.css'
-export default function recentItem(props) {
-     
+export default function recentItem(props) { 
     return (
         <li>
             <div className='recentItem-time'>
                 <p>{props.time.slice(0,11)}</p>
-                <p class="Recent-transactions-time Recent-transactions-time-2"><i
-                class="ico-timer"></i>23 sec</p>
+                <p className="Recent-transactions-time Recent-transactions-time-2"><i
+                className="ico-timer"></i>23 sec</p>
             </div>
             <hr />
             <main>
@@ -17,8 +16,8 @@ export default function recentItem(props) {
                 <img src={props.image2} alt="" />
                 <p> {props.symbol2}</p>
             </main>
-            <p class="Recent-transactions-time Recent-transactions-time-1"><i
-                class="ico-timer"></i>{props.time2}</p>
+            <p className="Recent-transactions-time Recent-transactions-time-1"><i
+                className="ico-timer"></i>{props.time2}</p>
         </li>
     )
 }

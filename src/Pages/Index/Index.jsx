@@ -44,7 +44,7 @@ export default function Index() {
             </div>
             {/* <!-- exchange-form -->*/}
 
-            <div class="background-svg">
+            <div className="background-svg">
                 <img src="../../images/index/svgexport-74.svg" alt="" />
                 <img src="../../images/index/svgexport-73.svg" alt="" />
             </div>
@@ -52,12 +52,12 @@ export default function Index() {
 
 
 
-            <main class="index-main">
+            <main className="index-main">
 
                 {/* <!-- advantages --> */}
-                <section class="advantages">
-                    <p class="advantages-title">Trusted since 2018</p>
-                    <div class="advantages-inner">
+                <section className="advantages">
+                    <p className="advantages-title">Trusted since 2018</p>
+                    <div className="advantages-inner">
                         <div>
                             <img src="../../images/index/svgexport-68.svg" alt="" />
 
@@ -93,11 +93,11 @@ export default function Index() {
                 {/* <!-- advantages --> */}
 
                 {/* <!-- Recent-transactions --> */}
-                <section class="Recent-transactions">
-                    <p class="Recent-transactions-title">Recent transactions</p>
+                <section className="Recent-transactions">
+                    <p className="Recent-transactions-title">Recent transactions</p>
                     <ul>
                         {lastOrder && lastOrder.map(data => (
-                            <RecentItem {...data}/>
+                            <RecentItem   {...data}/>
                         ))}
 
                         
@@ -107,8 +107,8 @@ export default function Index() {
                 {/* <!-- Recent-transactions --> */}
 
                 {/* <!-- index-faq --> */}
-                <section class="index-faq">
-                    <p class="index-faq-title">FAQ</p>
+                <section className="index-faq">
+                    <p className="index-faq-title">FAQ</p>
                     <Accordion defaultActiveKey="0">
                         <Accordion.Item eventKey="0">
                             <Accordion.Header><span>1</span>
@@ -131,7 +131,7 @@ export default function Index() {
                             </Accordion.Header>
                             <Accordion.Body>
                                 <p>Honesty is our main priority, so we commit to full transparency and make all the fees clear:</p>
-                                <p class="mb-2">•  1% if you opt for a <strong>fixed rate</strong></p>
+                                <p className="mb-2">•  1% if you opt for a <strong>fixed rate</strong></p>
                                 <p>•  0.5% if you opt for a <strong>floating rate</strong></p>
                             </Accordion.Body>
                         </Accordion.Item>

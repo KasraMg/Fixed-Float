@@ -64,16 +64,16 @@ export default function Header() {
       </Offcanvas>
 
       <button className='offcanvas-btn' onClick={handleShow}><AiOutlineMenu /></button>
-      <Link to="/" class="logo">
-        <p style={userContext.Sendcurrency &&{color:userContext.Sendcurrency.color}}   class="logo-1"></p>
+      <Link to="/" className="logo">
+        <p style={userContext.Sendcurrency &&{color:userContext.Sendcurrency.color}}   className="logo-1"></p>
         <div>
-          <p  style={userContext.Recivecurrency &&{color:userContext.Recivecurrency.color}}  class="logo-2"></p>
-          <p style={userContext.Sendcurrency &&{color:userContext.Sendcurrency.color}}class="logo-3"></p>
+          <p  style={userContext.Recivecurrency &&{color:userContext.Recivecurrency.color}}  className="logo-2"></p>
+          <p style={userContext.Sendcurrency &&{color:userContext.Sendcurrency.color}}className="logo-3"></p>
         </div>
 
-        <p style={userContext.Recivecurrency &&{color:userContext.Recivecurrency.color}} class="logo-4"></p>
+        <p style={userContext.Recivecurrency &&{color:userContext.Recivecurrency.color}} className="logo-4"></p>
       </Link>
-      <div class="header-secton-right">
+      <div className="header-secton-right">
         <ul>
           <li><Link to="/About">About</Link></li>
           <li><Link to="/Blogs">Blog</Link> </li>
@@ -81,13 +81,13 @@ export default function Header() {
           <li><Link to="/Support">Support</Link> </li>
         </ul>
         {userContext.userInfos ? (
-          <div class="header-account" onClick={() => setShowCms(prev => !prev)}>
+          <div className="header-account" onClick={() => setShowCms(prev => !prev)}>
             <p className='profile-text'> Account </p>
           </div>
 
         ) : (
           <>
-            <div class="header-btns">
+            <div className="header-btns">
               <button><Link to='/Login'>Sign in</Link></button>
               <button> <Link to="/Register">Sign up</Link></button>
             </div>

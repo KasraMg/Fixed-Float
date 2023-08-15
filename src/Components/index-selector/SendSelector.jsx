@@ -54,19 +54,7 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
 
         }
     }, [result])
-
-//     useEffect(() => {
-//         AllData.Selectpin1.map(data=>{
-//               currencyData.Select1.map(dd=>{
-//                 if (dd.name !==data.name) {
-//                     currencyFilterings+=dd
-//                  } 
-//         })
-        
-//         } )
-// console.log(currencyFilterings);
-
-//     }, [])
+ 
     const setCurrencyHandler = (data) => {
 
         if (context.Recivecurrency && data.name == context.Recivecurrency.name) {
@@ -92,13 +80,13 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
                 
                 <ul onClick={() => setSendExchangeDropDown(false)}>
                     {AllData && !inputData && AllData.Selectpin1.map(data => (
-                        <li className="option active" onClick={() => setCurrencyHandler(data)} >
+                        <li key={data.code} className="option active" onClick={() => setCurrencyHandler(data)} >
                             <div>
                                 <p style={{ color: data.color, position: 'relative', top: '3px' }} >{data.name}</p>
                                 <img width={30} src={data.image} alt="" />
                             </div>
                             <div className='selector-network'>
-                                <p>{data.symbol}</p>
+                                <p>{data.code}</p>
                                 {data.network_image && (
                                     <section style={{ backgroundColor: data.color }}>
                                         <img width={25} src={data.network_image} alt="" />
@@ -121,7 +109,7 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
                                 <>
                                   <p className="select-option-title mt-0 pt-3">All currencies</p>
                                     {AllData && currencyData.Select1.map(data => (
-                                        <li className="option active" onClick={() => setCurrencyHandler(data)} >
+                                        <li key={data.code} className="option active" onClick={() => setCurrencyHandler(data)} >
                                             <div>
                                                 <p style={{ color: data.color, position: 'relative', top: '3px' }} >{data.name}</p>
                                                 <img width={30} src={data.image} alt="" />
@@ -148,7 +136,7 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
                                 <>
                                      <p className="select-option-title mt-0 pt-3">Found currencies</p>
                                     {result && result.map(data => (
-                                        <li className="option active" onClick={() => setCurrencyHandler(data)} >
+                                        <li key={data.symbol} className="option active" onClick={() => setCurrencyHandler(data)} >
                                             <div>
                                                 <p style={{ color: data.color, position: 'relative', top: '3px' }}>{data.name}</p>
                                                 <img width={30} src={data.image} alt="" />

@@ -16,18 +16,18 @@ export default function Footer() {
   return (
     <footer>
       <section>
-      <Link to="/" class="logo">
-        <p style={context.Sendcurrency &&{color:context.Sendcurrency.color}}   class="logo-1"></p>
+      <Link to="/" className="logo">
+        <p style={context.Sendcurrency &&{color:context.Sendcurrency.color}}   className="logo-1"></p>
         <section>
-          <p  style={context.Recivecurrency &&{color:context.Recivecurrency.color}}  class="logo-2"></p>
-          <p style={context.Sendcurrency &&{color:context.Sendcurrency.color}}class="logo-3"></p>
+          <p  style={context.Recivecurrency &&{color:context.Recivecurrency.color}}  className="logo-2"></p>
+          <p style={context.Sendcurrency &&{color:context.Sendcurrency.color}}className="logo-3"></p>
         </section>
 
-        <p style={context.Recivecurrency &&{color:context.Recivecurrency.color}} class="logo-4"></p>
+        <p style={context.Recivecurrency &&{color:context.Recivecurrency.color}} className="logo-4"></p>
       </Link>
         <div>
           {social && social.social.map(data=>(
-            <a className='social' href={data.link}><img height={22.5}   src={data.icon} alt="" /></a>
+            <a className='social' key={data.icon} href={data.link}><img height={22.5}   src={data.icon} alt="" /></a>
           ))} 
         </div>
         <span>© 2018–2023 FixedFloat. All rights reserved.</span>
