@@ -61,7 +61,7 @@ export default function ExchangeAmounts( ) {
         
         fetch(`https://pilbil.com/api/market2.json`)
         .then(res=>res.json())
-        .then(data=>{   
+        .then(data=>{    
             setAllData(data)  
             context.setSendCurrency(data.defultlist1 )
             context.setReciveCurrency(data.defultlist2)
@@ -93,9 +93,12 @@ export default function ExchangeAmounts( ) {
         let res= AllData.Select1.find(data=>{
             return data.symbol == context.Recivecurrency.symbol 
         })
-        if (res) {
-            context.setSendCurrency(newSendCurrency)
-            context.setReciveCurrency(newReciveCurrency)
+         let res2= AllData.Select2.find(data=>{
+            return data.symbol == context.Sendcurrency.symbol 
+        })
+        if (res && res2) {
+            context.setSendCurrency(res)
+            context.setReciveCurrency(res2)
         }else{
             swal({
                 title:'This currency cannot be changed',

@@ -33,7 +33,7 @@ export default function ReciveSelector({ ReciveExchangeDropDown, setReciveExchan
                     }
                 }
 
-            })
+            }) 
             setresult(newData)
 
 
@@ -75,14 +75,14 @@ export default function ReciveSelector({ ReciveExchangeDropDown, setReciveExchan
                 )}
                 
                 <ul onClick={() => setReciveExchangeDropDown(false)}>
-                    {AllData && !inputData && AllData.Selectpin2.map(data => (
-                        <li key={data.code} className="option active" onClick={() => setCurrencyHandler(data)} >
+                    {AllData && !inputData && currencyData.Select2.map(data => (
+                        <li style={data.pin == 1 ? null:{display:'none'}}   className="option active" onClick={() => setCurrencyHandler(data)} >
                             <div>
                                 <p style={{ color: data.color, position: 'relative', top: '3px' }} >{data.name}</p>
                                 <img width={30} src={data.image} alt="" />
                             </div>
                             <div className='selector-network'>
-                                <p>{data.code}</p>
+                                <p>{data.symbol}</p>
                                 {data.network_image && (
                                     <section style={{ backgroundColor: data.color }}>
                                         <img width={25} src={data.network_image} alt="" />
@@ -101,7 +101,7 @@ export default function ReciveSelector({ ReciveExchangeDropDown, setReciveExchan
                                 <>
                                 <p className="select-option-title mt-0 pt-3">All currencies</p>
                                     {AllData && currencyData.Select2.map(data => (
-                                        <li key={data.code} className="option active" onClick={() => setCurrencyHandler(data)} >
+                                        <li style={data.pin == 0 ? null:{display:'none'}}    className="option active" onClick={() => setCurrencyHandler(data)} >
                                             <div>
                                                 <p style={{ color: data.color, position: 'relative', top: '3px' }}>{data.name}</p>
                                                 <img width={30} src={data.image} alt="" />
@@ -126,7 +126,7 @@ export default function ReciveSelector({ ReciveExchangeDropDown, setReciveExchan
                                 <>
                                  <p className="select-option-title mt-0 pt-3">Found currencies</p>
                                     {result && result.map(data => (
-                                        <li key={data.symbol} className="option active" onClick={() => setCurrencyHandler(data)} >
+                                        <li  className="option active" onClick={() => setCurrencyHandler(data)} >
                                             <div>
                                                 <p style={{ color: data.color, position: 'relative', top: '3px' }}>{data.name}</p>
                                                 <img width={30} src={data.image} alt="" />

@@ -65,6 +65,7 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
         }
     }
 
+ 
     return (
         <div className={SendExchangeDropDown ? 'select-option ' : 'select-option select-not-active'}>
             <div className="select-option-bg" onClick={() => setSendExchangeDropDown(false)}></div>
@@ -79,8 +80,8 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
                 )}
                 
                 <ul onClick={() => setSendExchangeDropDown(false)}>
-                    {AllData && !inputData && AllData.Selectpin1.map(data => (
-                        <li key={data.code} className="option active" onClick={() => setCurrencyHandler(data)} >
+                    {AllData && !inputData && currencyData.Select1.map(data => (
+                        <li style={data.pin == 1 ? null:{display:'none'}}  className="option active" onClick={() => setCurrencyHandler(data)} >
                             <div>
                                 <p style={{ color: data.color, position: 'relative', top: '3px' }} >{data.name}</p>
                                 <img width={30} src={data.image} alt="" />
@@ -109,7 +110,7 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
                                 <>
                                   <p className="select-option-title mt-0 pt-3">All currencies</p>
                                     {AllData && currencyData.Select1.map(data => (
-                                        <li key={data.code} className="option active" onClick={() => setCurrencyHandler(data)} >
+                                        <li style={data.pin == 0 ? null:{display:'none'}}  className="option active" onClick={() => setCurrencyHandler(data)} >
                                             <div>
                                                 <p style={{ color: data.color, position: 'relative', top: '3px' }} >{data.name}</p>
                                                 <img width={30} src={data.image} alt="" />

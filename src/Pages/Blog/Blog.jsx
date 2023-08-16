@@ -4,8 +4,7 @@ import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
 import {  Link, useNavigate, useParams } from 'react-router-dom'
 import swal from 'sweetalert'
-import Loader from '../../Components/Loader/Loader'
-import DOMPurify from 'dompurify'
+import Loader from '../../Components/Loader/Loader' 
 import  IndexSwiper2 from '../../Components/IndexSwiper/IndexSwiper2' 
 export default function Blog() {
     const param=useParams()
@@ -22,7 +21,7 @@ export default function Blog() {
            setloaderStatus(false)
         if (data.code==200) {
             setBlogData(data) 
-          console.log(data.text);
+          console.log(data);
         }else{
             swal({
                 title:'Blog not found',
@@ -39,12 +38,15 @@ export default function Blog() {
         {blogData &&(
             <>
              <Header/>
-        <img className='Blog-bg' src={blogData.image} alt="" />
+             <div className='blog-header'>
+                  <img className='Blog-bg' src={blogData.image} alt="" />
 
         <section className='blog-intro'>
             <p className="blog-title">{blogData.title}</p>
             <span>{blogData.time.slice(0,11)}</span>
         </section>
+             </div>
+      
 
         <main>
     
