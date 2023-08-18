@@ -127,9 +127,12 @@ export default function ExchangeAmounts( ) {
 
             <lable className="select-outer" onClick={() => setSendExchangeDropDown(true)}>
                {context.Sendcurrency && <img width={30} className='mx-2' src={context.Sendcurrency.image} alt="" />}  
-                <p style={context.Sendcurrency &&{color:context.Sendcurrency.color}}>{context.Sendcurrency  ? context.Sendcurrency.symbol: 'select' }</p>
+                <p className={context.Sendcurrency && context.Sendcurrency.network_image ?'symbol-network':null} style={context.Sendcurrency &&{color:context.Sendcurrency.color}}>{context.Sendcurrency  ? context.Sendcurrency.symbol: 'select' }</p>
 
             </lable>
+            {context.Sendcurrency && context.Sendcurrency.network_image &&(
+             <img className='input-network-img' width={40} src={context.Sendcurrency.network_image} alt="" />
+            )}
             {AllData&&(
         <SendSelector AllData={AllData} sendExchangeValue={sendExchangeValue} setSendExchangeValue={setSendExchangeValue} setSendExchangeDropDown={setSendExchangeDropDown} SendExchangeDropDown={SendExchangeDropDown} />
             )}
@@ -168,10 +171,12 @@ export default function ExchangeAmounts( ) {
             {/* <!-- exchange option --> */}
             <lable className="select-outer recive-select-outer" onClick={() => setReciveExchangeDropDown(true)}>
             {context.Recivecurrency && <img width={30} className='mx-2' src={context.Recivecurrency.image} alt="" />}  
-                <p style={context.Recivecurrency &&{color:context.Recivecurrency.color}}>{context.Recivecurrency  ? context.Recivecurrency.symbol: 'select' }</p>
+                <p className={context.Recivecurrency && context.Recivecurrency.network_image ?'symbol-network':null} style={context.Recivecurrency &&{color:context.Recivecurrency.color}}>{context.Recivecurrency  ? context.Recivecurrency.symbol: 'select' }</p>
 
             </lable>
-
+            {context.Recivecurrency && context.Recivecurrency.network_image &&(
+             <img className='input-network-img2' width={40} src={context.Recivecurrency.network_image} alt="" />
+            )}
             <ReciveSelector AllData={AllData} setReciveExchangeDropDown={setReciveExchangeDropDown} ReciveExchangeDropDown={ReciveExchangeDropDown} />
             {/* <!-- exchange option --> */}
         </div>

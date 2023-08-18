@@ -17,7 +17,7 @@ export default function App() {
         .then(res=>res.json())
           .then(data=>{   
               setDeatils(data.blogs); 
-                
+                console.log(data);
           })
     }, [])
     return (

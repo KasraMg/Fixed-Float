@@ -547,4 +547,19 @@ bottom: 4px;
     }
     
 
- 
+ .input-network-img{
+    position: absolute;
+    right: 42px;
+    top: 48px;
+    height: 17px;
+ }
+.input-network-img2{
+    position: absolute;
+    right: 42px;
+    top: 39px;
+    height: 17px;
+}
+ .symbol-network{
+    position: relative;
+    bottom: 5px;
+ }

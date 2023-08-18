@@ -89,9 +89,9 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
                             <div className='selector-network'>
                                 <p>{data.code}</p>
                                 {data.network_image && (
-                                    <section style={{ backgroundColor: data.color }}>
+                                    <section >
                                         <img width={25} src={data.network_image} alt="" />
-                                        <p style={{ color: data.color == '#000000' && 'yellow' }}>{data.network}</p>
+                                       
                                     </section>
                                 )}
 
@@ -118,9 +118,9 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
                                             <div className='selector-network'>
                                                 <p>{data.symbol}</p>
                                                 {data.network_image && (
-                                                    <section style={{ backgroundColor: data.color }}>
+                                                    <section >
                                                         <img width={25} src={data.network_image} alt="" />
-                                                        <p style={{ color: data.color == '#000000' && 'yellow' }}>{data.network}</p>
+                                                       
                                                     </section>
                                                 )}
 
@@ -145,9 +145,9 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
                                             <div className='selector-network'>
                                                 <p>{data.symbol}</p>
                                                 {data.network_image && (
-                                                    <section style={{ backgroundColor: data.color }}>
+                                                    <section >
                                                         <img width={25} src={data.network_image} alt="" />
-                                                        <p style={{ color: data.color == '#000000' && 'yellow' }}>{data.network}</p>
+                                                       
                                                     </section>
                                                 )}
                                             </div>
