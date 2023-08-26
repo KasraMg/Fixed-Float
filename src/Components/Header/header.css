@@ -46,10 +46,10 @@ header ul li a{
 .logo-2::after{
     content: "\e103"; 
     display: inline-block;
-    font-size: 1.66em;
+    font-size: 2.2rem;
     margin: 0 0.32em;
     position: relative;
-    left: 0px;
+    left: -8px;
     top: 9px;
     vertical-align: middle;
 }
@@ -57,14 +57,36 @@ header ul li a{
     content: "\e103"; 
     position: absolute;
     display: block;
-    transform: rotate(175deg);
-    left: 92px;
-    top: 18px;
-    font-size: 1.4rem;
+    transform: rotate(175deg); 
+    left: 81px;
+    top: 4px; 
+    font-size: 2.2rem;
 }
-.logo-4::after{
-    content: "\e101"; 
+.headerSvg {
+    position: relative;
+    top: 8px;
 }
+@media (max-width:500px) {
+   .headerSvg text{
+       font-size: 2rem !important;
+    } .logo-2::after{ 
+        top: 5px;
+        font-size: 1.5rem; 
+    }
+    .logo-3::after{ 
+        font-size:1.5rem;
+    }.headerSvg {
+        width: 55px;
+        top: 0px;
+    }.logo-3::after {
+        left: 57px;
+        top: 13px;
+    }
+}
+ .logo-4{
+    position: relative;
+    right: 19px;
+ }
 header p{
     font-family: icons;
     transition: .2s all ease-in;
@@ -153,9 +175,7 @@ background-color: transparent;
 @media (max-width:500px) {
     .logo{
         font-size: 13px;
-    }.logo-3::after {
-        left: 73px;
-    }
+    } 
 }
 
 /* offcanvas */

@@ -563,3 +563,13 @@ bottom: 4px;
     position: relative;
     bottom: 5px;
  }
+ @media (max-width:500px) {
+    .input-network-img2 {
+        top: 30px;
+        right: 33px;
+    }
+    .input-network-img {
+        top: 30px;
+        right: 33px;
+    }
+ }

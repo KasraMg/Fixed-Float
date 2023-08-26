@@ -152,6 +152,14 @@ footer ul div a li {
     footer section div {
 
         justify-content: space-around;
+    }footer .logo-3::after {
+        left:119px !important; 
+    
+    }
+    
+    footer .logo{
+        width: 300px;
+        margin: 0px auto;
     }
 }
 
@@ -162,12 +170,21 @@ footer p {
 }
 
 footer .logo-3::after {
-    left: 128px;
+    left:86px;
+    top: -1px;
+    font-size: 2rem;
+
+}
+footer .logo-2::after {
+    left: 5px;
     top: -1px;
     font-size: 2rem;
 
 }
 
+footer .logo-4{
+    right: 29px ;
+}
 footer a {
     text-decoration: none;
 
@@ -177,26 +194,16 @@ footer .logo {
     justify-content: center; 
 }
 
-@media (max-width:950px) {
-    footer .logo-3::after {
-        left: 47.5%;
-    }
-}
-@media (max-width:600px) {
-    footer .logo-3::after {
-        left: 46.5%; 
-    }
-}
+ 
 @media (max-width:501px) {
     footer section a {
         font-size: 1.2rem !important;
-    } 
+    } footer .logo-2::after {
+        left: 1px !important;
+    }
    
 
-    footer .logo-3::after {
-        left: 44.5%;
-        top: 5px
-    }
+    
 }
 footer{
     padding-top: 2rem;

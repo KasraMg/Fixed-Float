@@ -65,13 +65,18 @@ export default function Header() {
 
       <button className='offcanvas-btn' onClick={handleShow}><AiOutlineMenu /></button>
       <Link to="/" className="logo">
-        <p style={userContext.Sendcurrency &&{color:userContext.Sendcurrency.color}}   className="logo-1"></p>
+      <svg className='headerSvg'  width="78" height="70">
+        <text font-size="3rem" font-family="logo" x="10" y="50" fill={userContext.Sendcurrency && userContext.Sendcurrency.color} style={{position:'relative',zIndex:'999'}}>PiL</text>
+      </svg>
+       
         <div>
           <p  style={userContext.Recivecurrency &&{color:userContext.Recivecurrency.color}}  className="logo-2"></p>
           <p style={userContext.Sendcurrency &&{color:userContext.Sendcurrency.color}}className="logo-3"></p>
         </div>
 
-        <p style={userContext.Recivecurrency &&{color:userContext.Recivecurrency.color}} className="logo-4"></p>
+        <svg className='logo-4 headerSvg' width="78" height="70">
+            <text font-size="3rem" font-family="logo" x="10" y="50" fill={userContext.Recivecurrency && userContext.Recivecurrency.color} style={{position:'relative',zIndex:'999'}}>biL</text>
+         </svg>
       </Link>
       <div className="header-secton-right">
         <ul>

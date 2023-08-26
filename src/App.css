@@ -4,6 +4,13 @@
   
 }
 
+@font-face {
+  font-family: logo;
+  src: url(./fonts/BAUHS93.TTF) ;
+  
+}
+
+
 ::selection {
   background: rgba(16,106,208,0.35);
 }

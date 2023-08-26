@@ -24,6 +24,8 @@ export default function Index() {
     return (
         <div className='index'>
             <Header />
+        
+
             <img className="exchange-form-outer-background"
                 src="https://fixedfloat.com/assets/images/background/main_bg.svg"
                 alt="" />

@@ -17,13 +17,19 @@ export default function Footer() {
     <footer>
       <section>
       <Link to="/" className="logo">
-        <p style={context.Sendcurrency &&{color:context.Sendcurrency.color}}   className="logo-1"></p>
-        <section>
+       
+      <svg   width="68" height="70">
+        <text font-size="45" font-family="logo" x="10" y="50" fill={context.Sendcurrency && context.Sendcurrency.color} style={{position:'relative',zIndex:'999'}}>PiL</text>
+      </svg>
+       
+        <div>
           <p  style={context.Recivecurrency &&{color:context.Recivecurrency.color}}  className="logo-2"></p>
           <p style={context.Sendcurrency &&{color:context.Sendcurrency.color}}className="logo-3"></p>
-        </section>
+        </div>
 
-        <p style={context.Recivecurrency &&{color:context.Recivecurrency.color}} className="logo-4"></p>
+        <svg className='logo-4' width="68" height="70">
+            <text font-size="45" font-family="logo" x="10" y="50" fill={context.Recivecurrency && context.Recivecurrency.color} style={{position:'relative',zIndex:'999'}}>biL</text>
+         </svg>
       </Link>
         <div>
           {social && social.social.map(data=>(
