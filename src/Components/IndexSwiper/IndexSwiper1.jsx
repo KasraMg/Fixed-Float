@@ -52,7 +52,7 @@ export default function App() {
                 {details && details.map(data=>(
                      <SwiperSlide style={{ background:` url(${data.image})`}}>
                      <p>{data.title}</p>
-                     <span className="index-swiper-1-span">{data.description}</span>
+                     <span className="index-swiper-1-span">{data.description.length > 79 ? data.description.slice(0,79) +'...' : data.description}</span>
                      <button>      <Link to={`/blogs/${data.id_blog}`}>Read</Link></button> 
                 </SwiperSlide>
                 ))}

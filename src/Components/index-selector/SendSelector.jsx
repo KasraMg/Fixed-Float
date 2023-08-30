@@ -83,7 +83,7 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
                     {AllData && !inputData && currencyData.Select1.map(data => (
                         <li style={data.pin == 1 ? null:{display:'none'}}  className="option active" onClick={() => setCurrencyHandler(data)} >
                             <div>
-                                <p style={{ color: data.color, position: 'relative', top: '3px' }} >{data.name}</p>
+                                <p style={{ color: data.color, position: 'relative', top: '3px',fontSize:'1.1rem' }} >{data.name}</p>
                                 <img width={30} src={data.image} alt="" />
                             </div>
                             <div className='selector-network'>
@@ -112,7 +112,7 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
                                     {AllData && currencyData.Select1.map(data => (
                                         <li style={data.pin == 0 ? null:{display:'none'}}  className="option active" onClick={() => setCurrencyHandler(data)} >
                                             <div>
-                                                <p style={{ color: data.color, position: 'relative', top: '3px' }} >{data.name}</p>
+                                                <p style={{ color: data.color, position: 'relative', top: '3px',fontSize:'1.1rem' }} >{data.name}</p>
                                                 <img width={30} src={data.image} alt="" />
                                             </div>
                                             <div className='selector-network'>
@@ -139,7 +139,7 @@ export default function SendSelector({ SendExchangeDropDown, setSendExchangeDrop
                                     {result && result.map(data => (
                                         <li key={data.symbol} className="option active" onClick={() => setCurrencyHandler(data)} >
                                             <div>
-                                                <p style={{ color: data.color, position: 'relative', top: '3px' }}>{data.name}</p>
+                                                <p style={{ color: data.color, position: 'relative', top: '3px',fontSize:'1.1rem' }}>{data.name}</p>
                                                 <img width={30} src={data.image} alt="" />
                                             </div>
                                             <div className='selector-network'>
