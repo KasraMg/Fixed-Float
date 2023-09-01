@@ -235,3 +235,20 @@ height: 400px !important ;
     top: 18px !important;
   }
 }
+
+.IndexSwiper1 .swiper-slide-next,
+.IndexSwiper1 .swiper-slide{
+  opacity: .3;
+
+height: 400px !important ;
+  position: relative;
+  top: 50px;
+  position: relative; 
+}
+.swiper-slide-active{
+  height: 100% !important;
+}
+
+#fadeSlide{
+  background: none !important;
+}

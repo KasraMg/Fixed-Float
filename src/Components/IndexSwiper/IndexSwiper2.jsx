@@ -16,7 +16,8 @@ export default function App() {
     useEffect(() => {
         fetch(` https://pilbil.com/api/blogs.php?typeing=&pageopen=1`)
         .then(res=>res.json())
-          .then(data=>{  
+          .then(data=>{   
+            console.log(data);
               setDeatils(data.blogs);  
           })
     }, [])
