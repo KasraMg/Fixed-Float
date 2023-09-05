@@ -52,7 +52,7 @@ export default function App() {
                 className="mySwiper swiper-index-2"
             >
                 {details && details.map(data=>(
-                       <SwiperSlide>
+                       <SwiperSlide style={data.type=='news' ? {display:'none'}: null}>
                     <section>
                        <Link style={{width:'100%'}} to={`/blogs/${data.id_blog}`}>
                        <img style={{height:'234px'}} src={data.image} alt="" />
