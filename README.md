@@ -1,6 +1,6 @@
 <h1 align="center">Digital currency exchange  :)) </h1>
 </br>
-<img src="./public/Images/fixedFloat.PNG" width="100%"></img> 
+<img src="./public/images/fixedFloat.PNG" width="100%"></img> 
 </br>
 
 <div align="center">
