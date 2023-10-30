@@ -42,7 +42,7 @@ export default function Blog() {
                   <img className='Blog-bg' src={blogData.image} alt="" />
 
         <section className='blog-intro'>
-            <p className="blog-title">{blogData.title}</p>
+            <h1 className="blog-title">{blogData.title}</h1>
             <span>{blogData.time.slice(0,11)}</span>
         </section>
              </div>
